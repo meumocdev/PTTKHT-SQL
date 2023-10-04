@@ -28,474 +28,451 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.label6 = new System.Windows.Forms.Label();
-            this.button3 = new System.Windows.Forms.Button();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.button5 = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.Nhacungcap = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Mahang = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Tenhang = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.soluong = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Tongtien = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.SuspendLayout();
+            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
+            panel1 = new Panel();
+            button7 = new Button();
+            button6 = new Button();
+            button4 = new Button();
+            button2 = new Button();
+            button1 = new Button();
+            panel2 = new Panel();
+            textBox1 = new TextBox();
+            comboBox2 = new ComboBox();
+            comboBox1 = new ComboBox();
+            dateTimePicker1 = new DateTimePicker();
+            label6 = new Label();
+            button3 = new Button();
+            label5 = new Label();
+            label4 = new Label();
+            label3 = new Label();
+            button5 = new Button();
+            dataGridView1 = new DataGridView();
+            Nhacungcap = new DataGridViewTextBoxColumn();
+            Column3 = new DataGridViewTextBoxColumn();
+            Mahang = new DataGridViewTextBoxColumn();
+            Tenhang = new DataGridViewTextBoxColumn();
+            soluong = new DataGridViewTextBoxColumn();
+            Column1 = new DataGridViewTextBoxColumn();
+            Tongtien = new DataGridViewTextBoxColumn();
+            Column2 = new DataGridViewTextBoxColumn();
+            label1 = new Label();
+            panel1.SuspendLayout();
+            panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.LightCyan;
-            this.panel1.Controls.Add(this.button7);
-            this.panel1.Controls.Add(this.button6);
-            this.panel1.Controls.Add(this.button4);
-            this.panel1.Controls.Add(this.button2);
-            this.panel1.Controls.Add(this.button1);
-            this.panel1.Controls.Add(this.panel2);
-            this.panel1.Controls.Add(this.button5);
-            this.panel1.Controls.Add(this.dataGridView1);
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(3, -1);
-            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1063, 556);
-            this.panel1.TabIndex = 1;
+            panel1.BackColor = Color.LightCyan;
+            panel1.Controls.Add(button7);
+            panel1.Controls.Add(button6);
+            panel1.Controls.Add(button4);
+            panel1.Controls.Add(button2);
+            panel1.Controls.Add(button1);
+            panel1.Controls.Add(panel2);
+            panel1.Controls.Add(button5);
+            panel1.Controls.Add(dataGridView1);
+            panel1.Controls.Add(label1);
+            panel1.Location = new Point(3, -1);
+            panel1.Margin = new Padding(3, 2, 3, 2);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(930, 521);
+            panel1.TabIndex = 1;
             // 
             // button7
             // 
-            this.button7.BackColor = System.Drawing.Color.Lavender;
-            this.button7.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button7.ForeColor = System.Drawing.Color.DarkMagenta;
-            this.button7.Location = new System.Drawing.Point(669, 487);
-            this.button7.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(141, 32);
-            this.button7.TabIndex = 31;
-            this.button7.Text = "IN";
-            this.button7.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button7.UseVisualStyleBackColor = false;
+            button7.BackColor = Color.Lavender;
+            button7.Cursor = Cursors.Hand;
+            button7.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            button7.ForeColor = Color.DarkMagenta;
+            button7.Location = new Point(585, 457);
+            button7.Margin = new Padding(3, 2, 3, 2);
+            button7.Name = "button7";
+            button7.Size = new Size(123, 30);
+            button7.TabIndex = 31;
+            button7.Text = "IN";
+            button7.TextAlign = ContentAlignment.TopCenter;
+            button7.UseVisualStyleBackColor = false;
             // 
             // button6
             // 
-            this.button6.BackColor = System.Drawing.Color.Lavender;
-            this.button6.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button6.ForeColor = System.Drawing.Color.DarkMagenta;
-            this.button6.Location = new System.Drawing.Point(865, 487);
-            this.button6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(141, 31);
-            this.button6.TabIndex = 30;
-            this.button6.Text = "XÓA";
-            this.button6.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button6.UseVisualStyleBackColor = false;
+            button6.BackColor = Color.Lavender;
+            button6.Cursor = Cursors.Hand;
+            button6.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            button6.ForeColor = Color.DarkMagenta;
+            button6.Location = new Point(757, 457);
+            button6.Margin = new Padding(3, 2, 3, 2);
+            button6.Name = "button6";
+            button6.Size = new Size(123, 29);
+            button6.TabIndex = 30;
+            button6.Text = "XÓA";
+            button6.TextAlign = ContentAlignment.TopCenter;
+            button6.UseVisualStyleBackColor = false;
             // 
             // button4
             // 
-            this.button4.BackColor = System.Drawing.Color.Lavender;
-            this.button4.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.ForeColor = System.Drawing.Color.DarkMagenta;
-            this.button4.Location = new System.Drawing.Point(865, 362);
-            this.button4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(141, 31);
-            this.button4.TabIndex = 29;
-            this.button4.Text = "ĐẶT HÀNG";
-            this.button4.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button4.UseVisualStyleBackColor = false;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            button4.BackColor = Color.Lavender;
+            button4.Cursor = Cursors.Hand;
+            button4.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            button4.ForeColor = Color.DarkMagenta;
+            button4.Location = new Point(757, 339);
+            button4.Margin = new Padding(3, 2, 3, 2);
+            button4.Name = "button4";
+            button4.Size = new Size(123, 29);
+            button4.TabIndex = 29;
+            button4.Text = "ĐẶT HÀNG";
+            button4.TextAlign = ContentAlignment.TopCenter;
+            button4.UseVisualStyleBackColor = false;
+            button4.Click += button4_Click;
             // 
             // button2
             // 
-            this.button2.BackColor = System.Drawing.Color.Lavender;
-            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.DarkMagenta;
-            this.button2.Location = new System.Drawing.Point(865, 427);
-            this.button2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(141, 30);
-            this.button2.TabIndex = 27;
-            this.button2.Text = "THÊM";
-            this.button2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button2.UseVisualStyleBackColor = false;
+            button2.BackColor = Color.Lavender;
+            button2.Cursor = Cursors.Hand;
+            button2.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            button2.ForeColor = Color.DarkMagenta;
+            button2.Location = new Point(757, 400);
+            button2.Margin = new Padding(3, 2, 3, 2);
+            button2.Name = "button2";
+            button2.Size = new Size(123, 28);
+            button2.TabIndex = 27;
+            button2.Text = "THÊM";
+            button2.TextAlign = ContentAlignment.TopCenter;
+            button2.UseVisualStyleBackColor = false;
             // 
             // button1
             // 
-            this.button1.BackColor = System.Drawing.Color.Lavender;
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.DarkMagenta;
-            this.button1.Location = new System.Drawing.Point(669, 427);
-            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(141, 30);
-            this.button1.TabIndex = 26;
-            this.button1.Text = "SỬA";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button1.UseVisualStyleBackColor = false;
+            button1.BackColor = Color.Lavender;
+            button1.Cursor = Cursors.Hand;
+            button1.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            button1.ForeColor = Color.DarkMagenta;
+            button1.Location = new Point(585, 400);
+            button1.Margin = new Padding(3, 2, 3, 2);
+            button1.Name = "button1";
+            button1.Size = new Size(123, 28);
+            button1.TabIndex = 26;
+            button1.Text = "SỬA";
+            button1.TextAlign = ContentAlignment.TopCenter;
+            button1.UseVisualStyleBackColor = false;
             // 
             // panel2
             // 
-            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel2.Controls.Add(this.textBox1);
-            this.panel2.Controls.Add(this.comboBox2);
-            this.panel2.Controls.Add(this.comboBox1);
-            this.panel2.Controls.Add(this.dateTimePicker1);
-            this.panel2.Controls.Add(this.label6);
-            this.panel2.Controls.Add(this.button3);
-            this.panel2.Controls.Add(this.label5);
-            this.panel2.Controls.Add(this.label4);
-            this.panel2.Controls.Add(this.label3);
-            this.panel2.Location = new System.Drawing.Point(43, 362);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(592, 163);
-            this.panel2.TabIndex = 25;
+            panel2.BorderStyle = BorderStyle.FixedSingle;
+            panel2.Controls.Add(textBox1);
+            panel2.Controls.Add(comboBox2);
+            panel2.Controls.Add(comboBox1);
+            panel2.Controls.Add(dateTimePicker1);
+            panel2.Controls.Add(label6);
+            panel2.Controls.Add(button3);
+            panel2.Controls.Add(label5);
+            panel2.Controls.Add(label4);
+            panel2.Controls.Add(label3);
+            panel2.Location = new Point(38, 339);
+            panel2.Margin = new Padding(4);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(518, 153);
+            panel2.TabIndex = 25;
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(168, 86);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(253, 22);
-            this.textBox1.TabIndex = 32;
+            textBox1.Location = new Point(147, 81);
+            textBox1.Margin = new Padding(4);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(222, 23);
+            textBox1.TabIndex = 32;
             // 
             // comboBox2
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(168, 124);
-            this.comboBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(253, 24);
-            this.comboBox2.TabIndex = 31;
+            comboBox2.FormattingEnabled = true;
+            comboBox2.Location = new Point(147, 116);
+            comboBox2.Margin = new Padding(4);
+            comboBox2.Name = "comboBox2";
+            comboBox2.Size = new Size(222, 23);
+            comboBox2.TabIndex = 31;
             // 
             // comboBox1
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(168, 49);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(253, 24);
-            this.comboBox1.TabIndex = 30;
+            comboBox1.FormattingEnabled = true;
+            comboBox1.Location = new Point(147, 46);
+            comboBox1.Margin = new Padding(4);
+            comboBox1.Name = "comboBox1";
+            comboBox1.Size = new Size(222, 23);
+            comboBox1.TabIndex = 30;
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(168, 7);
-            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(251, 22);
-            this.dateTimePicker1.TabIndex = 29;
-            this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
+            dateTimePicker1.Location = new Point(147, 7);
+            dateTimePicker1.Margin = new Padding(4);
+            dateTimePicker1.Name = "dateTimePicker1";
+            dateTimePicker1.Size = new Size(220, 23);
+            dateTimePicker1.TabIndex = 29;
+            dateTimePicker1.ValueChanged += dateTimePicker1_ValueChanged;
             // 
             // label6
             // 
-            this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.Color.LightCyan;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.DarkMagenta;
-            this.label6.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.label6.Location = new System.Drawing.Point(20, 124);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(112, 20);
-            this.label6.TabIndex = 4;
-            this.label6.Text = "Nhà cung cấp";
-            this.label6.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            label6.AutoSize = true;
+            label6.BackColor = Color.LightCyan;
+            label6.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            label6.ForeColor = Color.DarkMagenta;
+            label6.ImageAlign = ContentAlignment.TopCenter;
+            label6.Location = new Point(18, 116);
+            label6.Name = "label6";
+            label6.Size = new Size(90, 16);
+            label6.TabIndex = 4;
+            label6.Text = "Nhà cung cấp";
+            label6.TextAlign = ContentAlignment.TopCenter;
             // 
             // button3
             // 
-            this.button3.BackColor = System.Drawing.Color.Lavender;
-            this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.Color.DarkMagenta;
-            this.button3.Location = new System.Drawing.Point(459, 78);
-            this.button3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(112, 28);
-            this.button3.TabIndex = 28;
-            this.button3.Text = "TÌM KIẾM";
-            this.button3.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button3.UseVisualStyleBackColor = false;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            button3.BackColor = Color.Lavender;
+            button3.Cursor = Cursors.Hand;
+            button3.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            button3.ForeColor = Color.DarkMagenta;
+            button3.Location = new Point(402, 73);
+            button3.Margin = new Padding(3, 2, 3, 2);
+            button3.Name = "button3";
+            button3.Size = new Size(98, 26);
+            button3.TabIndex = 28;
+            button3.Text = "TÌM KIẾM";
+            button3.TextAlign = ContentAlignment.TopCenter;
+            button3.UseVisualStyleBackColor = false;
+            button3.Click += button3_Click;
             // 
             // label5
             // 
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.LightCyan;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.DarkMagenta;
-            this.label5.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.label5.Location = new System.Drawing.Point(20, 86);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(78, 20);
-            this.label5.TabIndex = 3;
-            this.label5.Text = "Tên hàng";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            label5.AutoSize = true;
+            label5.BackColor = Color.LightCyan;
+            label5.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            label5.ForeColor = Color.DarkMagenta;
+            label5.ImageAlign = ContentAlignment.TopCenter;
+            label5.Location = new Point(18, 81);
+            label5.Name = "label5";
+            label5.Size = new Size(64, 16);
+            label5.TabIndex = 3;
+            label5.Text = "Tên hàng";
+            label5.TextAlign = ContentAlignment.TopCenter;
             // 
             // label4
             // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.LightCyan;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.DarkMagenta;
-            this.label4.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.label4.Location = new System.Drawing.Point(20, 49);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(73, 20);
-            this.label4.TabIndex = 2;
-            this.label4.Text = "Mã hàng";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.label4.Click += new System.EventHandler(this.label4_Click);
+            label4.AutoSize = true;
+            label4.BackColor = Color.LightCyan;
+            label4.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            label4.ForeColor = Color.DarkMagenta;
+            label4.ImageAlign = ContentAlignment.TopCenter;
+            label4.Location = new Point(18, 46);
+            label4.Name = "label4";
+            label4.Size = new Size(59, 16);
+            label4.TabIndex = 2;
+            label4.Text = "Mã hàng";
+            label4.TextAlign = ContentAlignment.TopCenter;
+            label4.Click += label4_Click;
             // 
             // label3
             // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.LightCyan;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.DarkMagenta;
-            this.label3.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.label3.Location = new System.Drawing.Point(20, 7);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(129, 20);
-            this.label3.TabIndex = 1;
-            this.label3.Text = "Ngày nhập hàng";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            label3.AutoSize = true;
+            label3.BackColor = Color.LightCyan;
+            label3.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            label3.ForeColor = Color.DarkMagenta;
+            label3.ImageAlign = ContentAlignment.TopCenter;
+            label3.Location = new Point(18, 7);
+            label3.Name = "label3";
+            label3.Size = new Size(106, 16);
+            label3.TabIndex = 1;
+            label3.Text = "Ngày nhập hàng";
+            label3.TextAlign = ContentAlignment.TopCenter;
             // 
             // button5
             // 
-            this.button5.BackColor = System.Drawing.Color.Lavender;
-            this.button5.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.ForeColor = System.Drawing.Color.DarkMagenta;
-            this.button5.Location = new System.Drawing.Point(669, 362);
-            this.button5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(141, 30);
-            this.button5.TabIndex = 23;
-            this.button5.Text = "BÁN HÀNG";
-            this.button5.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button5.UseVisualStyleBackColor = false;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
+            button5.BackColor = Color.Lavender;
+            button5.Cursor = Cursors.Hand;
+            button5.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            button5.ForeColor = Color.DarkMagenta;
+            button5.Location = new Point(585, 339);
+            button5.Margin = new Padding(3, 2, 3, 2);
+            button5.Name = "button5";
+            button5.Size = new Size(123, 28);
+            button5.TabIndex = 23;
+            button5.Text = "BÁN HÀNG";
+            button5.TextAlign = ContentAlignment.TopCenter;
+            button5.UseVisualStyleBackColor = false;
+            button5.Click += button5_Click;
             // 
             // dataGridView1
             // 
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.Lavender;
-            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.DarkMagenta;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Lavender;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.DarkMagenta;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Nhacungcap,
-            this.Column3,
-            this.Mahang,
-            this.Tenhang,
-            this.soluong,
-            this.Column1,
-            this.Tongtien,
-            this.Column2});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.DarkMagenta;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Lavender;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.DarkMagenta;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dataGridView1.GridColor = System.Drawing.Color.Thistle;
-            this.dataGridView1.Location = new System.Drawing.Point(43, 73);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.DarkMagenta;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Lavender;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.DarkMagenta;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            this.dataGridView1.RowHeadersWidth = 51;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.DarkMagenta;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.Lavender;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.DarkMagenta;
-            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle4;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(963, 268);
-            this.dataGridView1.TabIndex = 11;
+            dataGridView1.BackgroundColor = Color.Lavender;
+            dataGridView1.BorderStyle = BorderStyle.Fixed3D;
+            dataGridView1.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = SystemColors.Window;
+            dataGridViewCellStyle5.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle5.ForeColor = Color.DarkMagenta;
+            dataGridViewCellStyle5.SelectionBackColor = Color.Lavender;
+            dataGridViewCellStyle5.SelectionForeColor = Color.DarkMagenta;
+            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.True;
+            dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { Nhacungcap, Column3, Mahang, Tenhang, soluong, Column1, Tongtien, Column2 });
+            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = SystemColors.Window;
+            dataGridViewCellStyle6.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle6.ForeColor = Color.DarkMagenta;
+            dataGridViewCellStyle6.SelectionBackColor = Color.Lavender;
+            dataGridViewCellStyle6.SelectionForeColor = Color.DarkMagenta;
+            dataGridViewCellStyle6.WrapMode = DataGridViewTriState.False;
+            dataGridView1.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridView1.GridColor = Color.Thistle;
+            dataGridView1.Location = new Point(38, 68);
+            dataGridView1.Margin = new Padding(3, 2, 3, 2);
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle7.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = SystemColors.Control;
+            dataGridViewCellStyle7.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle7.ForeColor = Color.DarkMagenta;
+            dataGridViewCellStyle7.SelectionBackColor = Color.Lavender;
+            dataGridViewCellStyle7.SelectionForeColor = Color.DarkMagenta;
+            dataGridViewCellStyle7.WrapMode = DataGridViewTriState.True;
+            dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridView1.RowHeadersWidth = 51;
+            dataGridViewCellStyle8.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle8.ForeColor = Color.DarkMagenta;
+            dataGridViewCellStyle8.SelectionBackColor = Color.Lavender;
+            dataGridViewCellStyle8.SelectionForeColor = Color.DarkMagenta;
+            dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridView1.RowTemplate.Height = 24;
+            dataGridView1.Size = new Size(843, 251);
+            dataGridView1.TabIndex = 11;
             // 
             // Nhacungcap
             // 
-            this.Nhacungcap.FillWeight = 80F;
-            this.Nhacungcap.HeaderText = "Nhà cung cấp";
-            this.Nhacungcap.MinimumWidth = 6;
-            this.Nhacungcap.Name = "Nhacungcap";
-            this.Nhacungcap.Width = 78;
+            Nhacungcap.FillWeight = 80F;
+            Nhacungcap.HeaderText = "Nhà cung cấp";
+            Nhacungcap.MinimumWidth = 6;
+            Nhacungcap.Name = "Nhacungcap";
+            Nhacungcap.Width = 78;
             // 
             // Column3
             // 
-            this.Column3.HeaderText = "Ngày nhập hàng";
-            this.Column3.MinimumWidth = 6;
-            this.Column3.Name = "Column3";
-            this.Column3.Width = 125;
+            Column3.HeaderText = "Ngày nhập hàng";
+            Column3.MinimumWidth = 6;
+            Column3.Name = "Column3";
+            Column3.Width = 125;
             // 
             // Mahang
             // 
-            this.Mahang.DataPropertyName = "Mahang";
-            this.Mahang.FillWeight = 80F;
-            this.Mahang.HeaderText = "Mã hàng";
-            this.Mahang.MinimumWidth = 6;
-            this.Mahang.Name = "Mahang";
-            this.Mahang.Width = 78;
+            Mahang.DataPropertyName = "Mahang";
+            Mahang.FillWeight = 80F;
+            Mahang.HeaderText = "Mã hàng";
+            Mahang.MinimumWidth = 6;
+            Mahang.Name = "Mahang";
+            Mahang.Width = 78;
             // 
             // Tenhang
             // 
-            this.Tenhang.DataPropertyName = "Tenhang";
-            this.Tenhang.FillWeight = 80F;
-            this.Tenhang.HeaderText = "Tên hàng";
-            this.Tenhang.MinimumWidth = 6;
-            this.Tenhang.Name = "Tenhang";
-            this.Tenhang.Width = 78;
+            Tenhang.DataPropertyName = "Tenhang";
+            Tenhang.FillWeight = 80F;
+            Tenhang.HeaderText = "Tên hàng";
+            Tenhang.MinimumWidth = 6;
+            Tenhang.Name = "Tenhang";
+            Tenhang.Width = 78;
             // 
             // soluong
             // 
-            this.soluong.DataPropertyName = "soluong";
-            this.soluong.FillWeight = 80F;
-            this.soluong.HeaderText = "Số lượng nhập";
-            this.soluong.MinimumWidth = 6;
-            this.soluong.Name = "soluong";
-            this.soluong.Width = 78;
+            soluong.DataPropertyName = "soluong";
+            soluong.FillWeight = 80F;
+            soluong.HeaderText = "Số lượng nhập";
+            soluong.MinimumWidth = 6;
+            soluong.Name = "soluong";
+            soluong.Width = 78;
             // 
             // Column1
             // 
-            this.Column1.HeaderText = "Số lượng tồn";
-            this.Column1.MinimumWidth = 6;
-            this.Column1.Name = "Column1";
-            this.Column1.Width = 125;
+            Column1.HeaderText = "Số lượng tồn";
+            Column1.MinimumWidth = 6;
+            Column1.Name = "Column1";
+            Column1.Width = 125;
             // 
             // Tongtien
             // 
-            this.Tongtien.DataPropertyName = "Tongtien";
-            this.Tongtien.FillWeight = 80F;
-            this.Tongtien.HeaderText = "Đơn giá nhập";
-            this.Tongtien.MinimumWidth = 6;
-            this.Tongtien.Name = "Tongtien";
-            this.Tongtien.Width = 78;
+            Tongtien.DataPropertyName = "Tongtien";
+            Tongtien.FillWeight = 80F;
+            Tongtien.HeaderText = "Đơn giá nhập";
+            Tongtien.MinimumWidth = 6;
+            Tongtien.Name = "Tongtien";
+            Tongtien.Width = 78;
             // 
             // Column2
             // 
-            this.Column2.HeaderText = "Đơn giá bán";
-            this.Column2.MinimumWidth = 6;
-            this.Column2.Name = "Column2";
-            this.Column2.Width = 125;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.DarkMagenta;
-            this.label2.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.label2.Location = new System.Drawing.Point(976, 4);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(30, 29);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "X";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            Column2.HeaderText = "Đơn giá bán";
+            Column2.MinimumWidth = 6;
+            Column2.Name = "Column2";
+            Column2.Width = 125;
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.LightCyan;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.DarkMagenta;
-            this.label1.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.label1.Location = new System.Drawing.Point(460, 12);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(139, 29);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "KHO HÀNG";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            label1.AutoSize = true;
+            label1.BackColor = Color.LightCyan;
+            label1.Font = new Font("Microsoft Sans Serif", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
+            label1.ForeColor = Color.DarkMagenta;
+            label1.ImageAlign = ContentAlignment.TopCenter;
+            label1.Location = new Point(402, 11);
+            label1.Name = "label1";
+            label1.Size = new Size(111, 24);
+            label1.TabIndex = 0;
+            label1.Text = "KHO HÀNG";
+            label1.TextAlign = ContentAlignment.TopCenter;
             // 
             // Depot
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1067, 554);
-            this.Controls.Add(this.panel1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.Name = "Depot";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form2";
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            this.ResumeLayout(false);
-
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(934, 519);
+            Controls.Add(panel1);
+            Margin = new Padding(4);
+            MaximizeBox = false;
+            MinimizeBox = false;
+            Name = "Depot";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "Form2";
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
+            panel2.ResumeLayout(false);
+            panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ResumeLayout(false);
         }
 
         #endregion
 
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Nhacungcap;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Mahang;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Tenhang;
-        private System.Windows.Forms.DataGridViewTextBoxColumn soluong;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Tongtien;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.TextBox textBox1;
+        private Panel panel1;
+        private DataGridView dataGridView1;
+        private Label label1;
+        private Panel panel2;
+        private Button button4;
+        private Button button3;
+        private Button button2;
+        private Button button1;
+        private Label label6;
+        private Label label5;
+        private Label label4;
+        private Label label3;
+        private Button button5;
+        private DataGridViewTextBoxColumn Nhacungcap;
+        private DataGridViewTextBoxColumn Column3;
+        private DataGridViewTextBoxColumn Mahang;
+        private DataGridViewTextBoxColumn Tenhang;
+        private DataGridViewTextBoxColumn soluong;
+        private DataGridViewTextBoxColumn Column1;
+        private DataGridViewTextBoxColumn Tongtien;
+        private DataGridViewTextBoxColumn Column2;
+        private Button button7;
+        private Button button6;
+        private DateTimePicker dateTimePicker1;
+        private ComboBox comboBox2;
+        private ComboBox comboBox1;
+        private TextBox textBox1;
     }
 }

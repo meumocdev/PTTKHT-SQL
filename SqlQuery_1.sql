@@ -76,7 +76,7 @@ GO
 
 ---- Stored and trigger
 -- ImportDate After OrderDate
-CREATE TRIGGER TG_ImportBill_Them ON IMPORTBILL 
+CREATE TRIGGER TG_ImportBill_Add ON IMPORTBILL 
 FOR INSERT 
 AS 
 	DECLARE  @ImportDate DATETIME ,@OrderDate DATETIME ,@ShippmentID CHAR(4)

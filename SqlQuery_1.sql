@@ -73,6 +73,28 @@ ALTER TABLE DetailBillExport  ADD CONSTRAINT FRK_DetailBillExport_Product_Produc
 ALTER TABLE DetailBillExport  ADD CONSTRAINT FRK_DetailBillExport_ExportBill_ExportBillID FOREIGN KEY(ExportBillID)  REFERENCES ExportBill(ExportBillID)
 ALTER TABLE InStorage  ADD CONSTRAINT FRK_InStorage_Product_ProductID FOREIGN KEY(ProductID)  REFERENCES Product(ProductID)
 GO
+
+---- Stored and trigger
+-- ImportDate After OrderDate
+CREATE TRIGGER TG_ImportBill_Them ON IMPORTBILL 
+FOR INSERT 
+AS 
+	DECLARE  @ImportDate DATETIME ,@OrderDate DATETIME ,@ShippmentID CHAR(4)
+SELECT @ImportDate  = ImportDate ,@ShippmentID  = ShippmentID FROM  IMPORTBILL
+SELECT @OrderDate  = OrderDate FROM ORDERS
+WHERE  ShippmentID = @ShippmentID
+IF @ImportDate < @OrderDate
+	BEGIN 
+		PRINT ' ImportDate After OrderDate '
+		ROLLBACK TRANSACTION
+		END
+SELECT * FROM ORDERS 
+INSERT INTO IMPORTBILL VALUES('N005','D001','2002/01/16')
+SELECT * FROM IMPORTBILL
+--
+
+
+
 INSERT INTO Supplier (SupplierID,SupplierName,Address,Tel) VALUES ('C01','Bui Tien  Truong','Xuan La, Tay Ho, Ha Noi','0989995221')
 INSERT INTO Supplier (SupplierID,SupplierName,Address,Tel) VALUES ('C02','Nguyen  Thi Thu','Quan La, Tay Ho, Ha Noi','0979012300')
 INSERT INTO Supplier (SupplierID,SupplierName,Address,Tel) VALUES ('C03','Ngo  Thanh Tung','Kim Lien, Dong Da','0988098591')

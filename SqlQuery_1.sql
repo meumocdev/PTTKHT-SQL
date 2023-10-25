@@ -160,4 +160,117 @@ INSERT INTO InStorage(MonthYear,ProductID,InStorageBefore,TotalAmountImport,Tota
 INSERT INTO InStorage(MonthYear,ProductID,InStorageBefore,TotalAmountImport,TotalAmountExport) VALUES('200202','DD02',8,0,0)
 INSERT INTO InStorage(MonthYear,ProductID,InStorageBefore,TotalAmountImport,TotalAmountExport) VALUES('200202','VD02',20,0,0)
 INSERT INTO InStorage(MonthYear,ProductID,InStorageBefore,TotalAmountImport,TotalAmountExport) VALUES('200202','TV14',5,0,0)
-INSERT INTO InStorage(MonthYear,ProductID,InStorageBefore,TotalAmountImport,TotalAmountExport) VALUES('200202','TV29',12,0,0)﻿
+INSERT INTO InStorage(MonthYear,ProductID,InStorageBefore,TotalAmountImport,TotalAmountExport) VALUES('200202','TV29',12,0,0)
+
+---------------------------------------------------------------PERMISSION-----------------------------------------------------------------------------
+-- Tạo User Người Đại Diện bán hàng (SaleRep) với các quyền sau
+
+-- Sửa , xóa   Order
+-- Sửa , xóa   DetailOrder
+-- Sửa , xóa , thêm [DetailBillExport]
+
+-- Xem [ExportBill]
+-- Xem [InStorage]
+
+------ Tạo Người Đại Diện Bán Hàng ------
+CREATE LOGIN Sale WITH PASSWORD = '123456789';
+
+USE Storage;
+CREATE USER SaleRep FOR LOGIN Sale;
+
+GRANT SELECT ON [dbo].[InStorage] TO SaleRep;
+----------------------------------------
+
+------ KIỂM TRA XEM ĐÃ HOẠT ĐỘNG HAY CHƯA -------
+SELECT permission_name 
+FROM sys.database_permissions 
+WHERE grantee_principal_id = USER_ID('SaleRep');
+
+-- NHỚ kết nối với Sale trước khi sử dụng câu lệnh dứoi
+
+SELECT * FROM  [dbo].[InStorage]
+
+DELETE FROM InStorage WHERE ProductID = 'TV29'
+
+INSERT INTO InStorage(MonthYear,ProductID,InStorageBefore,TotalAmountImport,TotalAmountExport) VALUES('200202','TV29',13,0,0)
+
+-- NẾU KHÔNG DELETE ĐƯỢC THÌ ĐÃ THÀNH CÔNG ( NẾU DEBUG KO ĐƯỢC VUI LÒNG LIÊN HỆ 114)
+
+-------------------- CẤP QUYỀN XEM THÊM SỬA XÓA -----------------------------------
+
+--(NHỚ CHUYỂN LẠI SANG QUYỀN ADMIN TRƯỚC KHI THỰC HIỆN CÁC LỆNH SAU) ---
+
+GRANT INSERT, UPDATE  ON [Storage].[dbo].[DetailOrder] TO DBUser;
+GRANT INSERT, UPDATE  ON [Storage].[dbo].[Orders] TO DBUser;
+GRANT SELECT ON [Storage].[dbo].[ExportBill] TO DBUser;
+GRANT INSERT, UPDATE, DELETE ON [Storage].[dbo].[DetailBillExport] TO DBUser;
+
+--CHECK XEM ĐÃ THÀNH CÔNG HAY CHƯA
+
+SELECT permission_name 
+FROM sys.database_permissions 
+WHERE grantee_principal_id = USER_ID('SaleRep');
+
+-----------------------------------------------------------------------------------------------------
+
+-- Tạo User Người Đại Diện Nhập Hàng (ProductRep) với các quyền sau
+
+-- Sửa , xóa , thêm [DetailBillImport]
+
+-- Xem [PRODUCT]
+-- Xem [SUPPLIER]
+-- Xem [BillImport]
+
+
+------ Tạo Người Đại Diện Nhập Hàng ------
+--(NHỚ CHUYỂN LẠI SANG QUYỀN ADMIN TRƯỚC KHI THỰC HIỆN CÁC LỆNH SAU) ---
+
+
+CREATE LOGIN Import WITH PASSWORD = '123456789';
+
+USE Storage;
+CREATE USER ImportRep FOR LOGIN Import;
+
+GRANT SELECT ON [dbo].[InStorage] TO ImportRep;
+
+GRANT SELECT ON [dbo].[Product] TO ImportRep;
+
+GRANT SELECT ON [dbo].[Supplier] TO ImportRep;
+
+GRANT SELECT ON [dbo].[ExportBill] TO ImportRep;
+
+----------------------------------------
+
+------ KIỂM TRA XEM ĐÃ HOẠT ĐỘNG HAY CHƯA -------
+--(NHỚ CHUYỂN SANG ADMIN)
+
+SELECT permission_name 
+FROM sys.database_permissions 
+WHERE grantee_principal_id = USER_ID('ImportRep');
+
+-- NHỚ kết nối với Sale trước khi sử dụng câu lệnh dứoi
+
+SELECT * FROM  [dbo].[InStorage]
+
+DELETE FROM InStorage WHERE ProductID = 'TV29'
+
+INSERT INTO InStorage(MonthYear,ProductID,InStorageBefore,TotalAmountImport,TotalAmountExport) VALUES('200202','TV29',13,0,0)
+
+-- NẾU KHÔNG DELETE ĐƯỢC THÌ ĐÃ THÀNH CÔNG ( NẾU DEBUG KO ĐƯỢC VUI LÒNG LIÊN HỆ 114)
+
+-------------------- CẤP QUYỀN XEM THÊM SỬA XÓA -----------------------------------
+
+--(NHỚ CHUYỂN LẠI SANG QUYỀN ADMIN TRƯỚC KHI THỰC HIỆN CÁC LỆNH SAU) ---
+
+GRANT INSERT, UPDATE, DELETE ON [Storage].[dbo].[DetailBillImport] TO ImportRep;
+
+--CHECK XEM ĐÃ THÀNH CÔNG HAY CHƯA
+
+SELECT permission_name 
+FROM sys.database_permissions 
+WHERE grantee_principal_id = USER_ID('ImportRep');
+
+
+---------------------------
+
+

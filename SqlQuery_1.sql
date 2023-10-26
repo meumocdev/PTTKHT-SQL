@@ -5,9 +5,10 @@ CREATE TABLE PRODUCT(
 		ProductID  CHAR(4),
 		ProductName  VARCHAR(100),
 		Currency  VARCHAR(10) DEFAULT '',
-		Percents  REAL CONSTRAINT PRK_Product_ProductID PRIMARY KEY(ProductID),
+		ImportPriceItem MONEY,
+		ExportPriceItem MONEY, 
+		CONSTRAINT PRK_Product_ProductID PRIMARY KEY(ProductID),
 		CONSTRAINT UNQ_Product_ProductName UNIQUE(ProductName),
-		CONSTRAINT CHK_Product_Percents CHECK(Percents BETWEEN 0 AND 100)
 );
 CREATE TABLE Supplier(
 		SupplierID  CHAR (3),
@@ -102,15 +103,15 @@ INSERT INTO Supplier (SupplierID,SupplierName,Address,Tel) VALUES ('C04','Bui Ti
 INSERT INTO Supplier (SupplierID,SupplierName,Address,Tel) VALUES ('C05','Hong  That Cong','Ha Noi','chua co')
 INSERT INTO Supplier (SupplierID,SupplierName,Address,Tel) VALUES ('C07','Bui Duc  Kien','To 11, Cum 2, Xuan La','0437530097')
 
-INSERT INTO Product (ProductID,ProductName,Currency,Percents) VALUES ('DD01','Dau DVD Hitachi 1 dia','Bo',40)
-INSERT INTO Product (ProductID,ProductName,Currency,Percents) VALUES ('DD02','Dau DVD Hitachi 3 dia','Bo',40)
-INSERT INTO Product (ProductID,ProductName,Currency,Percents) VALUES ('TL15','Tu lanh Sanyo 150 lit','Cai',25)
-INSERT INTO Product (ProductID,ProductName,Currency,Percents) VALUES ('TL90','Tu lanh Sanyo 90 lit','Cai',20)
-INSERT INTO Product (ProductID,ProductName,Currency,Percents) VALUES ('TV14','Tivi Sony 14 inches','Cai',15)
-INSERT INTO Product (ProductID,ProductName,Currency,Percents) VALUES ('TV21','Tivi Sony 21 inches','Cai',10)
-INSERT INTO Product (ProductID,ProductName,Currency,Percents) VALUES ('TV29','Tivi Sony 29 inches','Cai',10)
-INSERT INTO Product (ProductID,ProductName,Currency,Percents) VALUES ('VD01','Dau VCD Sony 1 dia','Bo',30)
-INSERT INTO Product (ProductID,ProductName,Currency,Percents) VALUES ('VD02','Dau VCD Sony 3 dia','Bo',30)
+INSERT INTO Product (ProductID,ProductName,Currency,ImportPriceItem,ExportPriceItem) VALUES ('DD01','Dau DVD Hitachi 1 dia','Bo',20000,40000)
+INSERT INTO Product (ProductID,ProductName,Currency,ImportPriceItem,ExportPriceItem) VALUES ('DD02','Dau DVD Hitachi 3 dia','Bo',40000,80000)
+INSERT INTO Product (ProductID,ProductName,Currency,ImportPriceItem,ExportPriceItem) VALUES ('TL15','Tu lanh Sanyo 150 lit','Cai',25000,50000)
+INSERT INTO Product (ProductID,ProductName,Currency,ImportPriceItem,ExportPriceItem) VALUES ('TL90','Tu lanh Sanyo 90 lit','Cai',20000,40000)
+INSERT INTO Product (ProductID,ProductName,Currency,ImportPriceItem,ExportPriceItem) VALUES ('TV14','Tivi Sony 14 inches','Cai',15000,30000)
+INSERT INTO Product (ProductID,ProductName,Currency,ImportPriceItem,ExportPriceItem) VALUES ('TV21','Tivi Sony 21 inches','Cai',10000,100000)
+INSERT INTO Product (ProductID,ProductName,Currency,ImportPriceItem,ExportPriceItem) VALUES ('TV29','Tivi Sony 29 inches','Cai',10000,200000)
+INSERT INTO Product (ProductID,ProductName,Currency,ImportPriceItem,ExportPriceItem) VALUES ('VD01','Dau VCD Sony 1 dia','Bo',30000,60000)
+INSERT INTO Product (ProductID,ProductName,Currency,ImportPriceItem,ExportPriceItem) VALUES ('VD02','Dau VCD Sony 3 dia','Bo',30000,40000)
 
 INSERT INTO Orders(ShippmentID,SupplierID,OrderDate) VALUES ('D001','C03','01/15/2002')
 INSERT INTO Orders(ShippmentID,SupplierID,OrderDate) VALUES ('D002','C01','01/30/2002')

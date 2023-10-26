@@ -5,9 +5,10 @@ CREATE TABLE PRODUCT(
 		ProductID  CHAR(4),
 		ProductName  VARCHAR(100),
 		Currency  VARCHAR(10) DEFAULT '',
-		Percents  REAL CONSTRAINT PRK_Product_ProductID PRIMARY KEY(ProductID),
+		ImportPriceItem MONEY,
+		ExportPriceItem MONEY, 
+		CONSTRAINT PRK_Product_ProductID PRIMARY KEY(ProductID),
 		CONSTRAINT UNQ_Product_ProductName UNIQUE(ProductName),
-		CONSTRAINT CHK_Product_Percents CHECK(Percents BETWEEN 0 AND 100)
 );
 CREATE TABLE Supplier(
 		SupplierID  CHAR (3),
@@ -73,6 +74,28 @@ ALTER TABLE DetailBillExport  ADD CONSTRAINT FRK_DetailBillExport_Product_Produc
 ALTER TABLE DetailBillExport  ADD CONSTRAINT FRK_DetailBillExport_ExportBill_ExportBillID FOREIGN KEY(ExportBillID)  REFERENCES ExportBill(ExportBillID)
 ALTER TABLE InStorage  ADD CONSTRAINT FRK_InStorage_Product_ProductID FOREIGN KEY(ProductID)  REFERENCES Product(ProductID)
 GO
+
+---- Stored and trigger
+-- ImportDate After OrderDate
+CREATE TRIGGER TG_ImportBill_Add ON IMPORTBILL 
+FOR INSERT 
+AS 
+	DECLARE  @ImportDate DATETIME ,@OrderDate DATETIME ,@ShippmentID CHAR(4)
+SELECT @ImportDate  = ImportDate ,@ShippmentID  = ShippmentID FROM  IMPORTBILL
+SELECT @OrderDate  = OrderDate FROM ORDERS
+WHERE  ShippmentID = @ShippmentID
+IF @ImportDate < @OrderDate
+	BEGIN 
+		PRINT ' ImportDate After OrderDate '
+		ROLLBACK TRANSACTION
+		END
+SELECT * FROM ORDERS 
+INSERT INTO IMPORTBILL VALUES('N005','D001','2002/01/16')
+SELECT * FROM IMPORTBILL
+--
+
+
+
 INSERT INTO Supplier (SupplierID,SupplierName,Address,Tel) VALUES ('C01','Bui Tien  Truong','Xuan La, Tay Ho, Ha Noi','0989995221')
 INSERT INTO Supplier (SupplierID,SupplierName,Address,Tel) VALUES ('C02','Nguyen  Thi Thu','Quan La, Tay Ho, Ha Noi','0979012300')
 INSERT INTO Supplier (SupplierID,SupplierName,Address,Tel) VALUES ('C03','Ngo  Thanh Tung','Kim Lien, Dong Da','0988098591')
@@ -80,15 +103,15 @@ INSERT INTO Supplier (SupplierID,SupplierName,Address,Tel) VALUES ('C04','Bui Ti
 INSERT INTO Supplier (SupplierID,SupplierName,Address,Tel) VALUES ('C05','Hong  That Cong','Ha Noi','chua co')
 INSERT INTO Supplier (SupplierID,SupplierName,Address,Tel) VALUES ('C07','Bui Duc  Kien','To 11, Cum 2, Xuan La','0437530097')
 
-INSERT INTO Product (ProductID,ProductName,Currency,Percents) VALUES ('DD01','Dau DVD Hitachi 1 dia','Bo',40)
-INSERT INTO Product (ProductID,ProductName,Currency,Percents) VALUES ('DD02','Dau DVD Hitachi 3 dia','Bo',40)
-INSERT INTO Product (ProductID,ProductName,Currency,Percents) VALUES ('TL15','Tu lanh Sanyo 150 lit','Cai',25)
-INSERT INTO Product (ProductID,ProductName,Currency,Percents) VALUES ('TL90','Tu lanh Sanyo 90 lit','Cai',20)
-INSERT INTO Product (ProductID,ProductName,Currency,Percents) VALUES ('TV14','Tivi Sony 14 inches','Cai',15)
-INSERT INTO Product (ProductID,ProductName,Currency,Percents) VALUES ('TV21','Tivi Sony 21 inches','Cai',10)
-INSERT INTO Product (ProductID,ProductName,Currency,Percents) VALUES ('TV29','Tivi Sony 29 inches','Cai',10)
-INSERT INTO Product (ProductID,ProductName,Currency,Percents) VALUES ('VD01','Dau VCD Sony 1 dia','Bo',30)
-INSERT INTO Product (ProductID,ProductName,Currency,Percents) VALUES ('VD02','Dau VCD Sony 3 dia','Bo',30)
+INSERT INTO Product (ProductID,ProductName,Currency,ImportPriceItem,ExportPriceItem) VALUES ('DD01','Dau DVD Hitachi 1 dia','Bo',20000,40000)
+INSERT INTO Product (ProductID,ProductName,Currency,ImportPriceItem,ExportPriceItem) VALUES ('DD02','Dau DVD Hitachi 3 dia','Bo',40000,80000)
+INSERT INTO Product (ProductID,ProductName,Currency,ImportPriceItem,ExportPriceItem) VALUES ('TL15','Tu lanh Sanyo 150 lit','Cai',25000,50000)
+INSERT INTO Product (ProductID,ProductName,Currency,ImportPriceItem,ExportPriceItem) VALUES ('TL90','Tu lanh Sanyo 90 lit','Cai',20000,40000)
+INSERT INTO Product (ProductID,ProductName,Currency,ImportPriceItem,ExportPriceItem) VALUES ('TV14','Tivi Sony 14 inches','Cai',15000,30000)
+INSERT INTO Product (ProductID,ProductName,Currency,ImportPriceItem,ExportPriceItem) VALUES ('TV21','Tivi Sony 21 inches','Cai',10000,100000)
+INSERT INTO Product (ProductID,ProductName,Currency,ImportPriceItem,ExportPriceItem) VALUES ('TV29','Tivi Sony 29 inches','Cai',10000,200000)
+INSERT INTO Product (ProductID,ProductName,Currency,ImportPriceItem,ExportPriceItem) VALUES ('VD01','Dau VCD Sony 1 dia','Bo',30000,60000)
+INSERT INTO Product (ProductID,ProductName,Currency,ImportPriceItem,ExportPriceItem) VALUES ('VD02','Dau VCD Sony 3 dia','Bo',30000,40000)
 
 INSERT INTO Orders(ShippmentID,SupplierID,OrderDate) VALUES ('D001','C03','01/15/2002')
 INSERT INTO Orders(ShippmentID,SupplierID,OrderDate) VALUES ('D002','C01','01/30/2002')
@@ -138,4 +161,117 @@ INSERT INTO InStorage(MonthYear,ProductID,InStorageBefore,TotalAmountImport,Tota
 INSERT INTO InStorage(MonthYear,ProductID,InStorageBefore,TotalAmountImport,TotalAmountExport) VALUES('200202','DD02',8,0,0)
 INSERT INTO InStorage(MonthYear,ProductID,InStorageBefore,TotalAmountImport,TotalAmountExport) VALUES('200202','VD02',20,0,0)
 INSERT INTO InStorage(MonthYear,ProductID,InStorageBefore,TotalAmountImport,TotalAmountExport) VALUES('200202','TV14',5,0,0)
-INSERT INTO InStorage(MonthYear,ProductID,InStorageBefore,TotalAmountImport,TotalAmountExport) VALUES('200202','TV29',12,0,0)﻿
+INSERT INTO InStorage(MonthYear,ProductID,InStorageBefore,TotalAmountImport,TotalAmountExport) VALUES('200202','TV29',12,0,0)
+
+---------------------------------------------------------------PERMISSION-----------------------------------------------------------------------------
+-- Tạo User Người Đại Diện bán hàng (SaleRep) với các quyền sau
+
+-- Sửa , xóa   Order
+-- Sửa , xóa   DetailOrder
+-- Sửa , xóa , thêm [DetailBillExport]
+
+-- Xem [ExportBill]
+-- Xem [InStorage]
+
+------ Tạo Người Đại Diện Bán Hàng ------
+CREATE LOGIN Sale WITH PASSWORD = '123456789';
+
+USE Storage;
+CREATE USER SaleRep FOR LOGIN Sale;
+
+GRANT SELECT ON [dbo].[InStorage] TO SaleRep;
+----------------------------------------
+
+------ KIỂM TRA XEM ĐÃ HOẠT ĐỘNG HAY CHƯA -------
+SELECT permission_name 
+FROM sys.database_permissions 
+WHERE grantee_principal_id = USER_ID('SaleRep');
+
+-- NHỚ kết nối với Sale trước khi sử dụng câu lệnh dứoi
+
+SELECT * FROM  [dbo].[InStorage]
+
+DELETE FROM InStorage WHERE ProductID = 'TV29'
+
+INSERT INTO InStorage(MonthYear,ProductID,InStorageBefore,TotalAmountImport,TotalAmountExport) VALUES('200202','TV29',13,0,0)
+
+-- NẾU KHÔNG DELETE ĐƯỢC THÌ ĐÃ THÀNH CÔNG ( NẾU DEBUG KO ĐƯỢC VUI LÒNG LIÊN HỆ 114)
+
+-------------------- CẤP QUYỀN XEM THÊM SỬA XÓA -----------------------------------
+
+--(NHỚ CHUYỂN LẠI SANG QUYỀN ADMIN TRƯỚC KHI THỰC HIỆN CÁC LỆNH SAU) ---
+
+GRANT INSERT, UPDATE  ON [Storage].[dbo].[DetailOrder] TO DBUser;
+GRANT INSERT, UPDATE  ON [Storage].[dbo].[Orders] TO DBUser;
+GRANT SELECT ON [Storage].[dbo].[ExportBill] TO DBUser;
+GRANT INSERT, UPDATE, DELETE ON [Storage].[dbo].[DetailBillExport] TO DBUser;
+
+--CHECK XEM ĐÃ THÀNH CÔNG HAY CHƯA
+
+SELECT permission_name 
+FROM sys.database_permissions 
+WHERE grantee_principal_id = USER_ID('SaleRep');
+
+-----------------------------------------------------------------------------------------------------
+
+-- Tạo User Người Đại Diện Nhập Hàng (ProductRep) với các quyền sau
+
+-- Sửa , xóa , thêm [DetailBillImport]
+
+-- Xem [PRODUCT]
+-- Xem [SUPPLIER]
+-- Xem [BillImport]
+
+
+------ Tạo Người Đại Diện Nhập Hàng ------
+--(NHỚ CHUYỂN LẠI SANG QUYỀN ADMIN TRƯỚC KHI THỰC HIỆN CÁC LỆNH SAU) ---
+
+
+CREATE LOGIN Import WITH PASSWORD = '123456789';
+
+USE Storage;
+CREATE USER ImportRep FOR LOGIN Import;
+
+GRANT SELECT ON [dbo].[InStorage] TO ImportRep;
+
+GRANT SELECT ON [dbo].[Product] TO ImportRep;
+
+GRANT SELECT ON [dbo].[Supplier] TO ImportRep;
+
+GRANT SELECT ON [dbo].[ExportBill] TO ImportRep;
+
+----------------------------------------
+
+------ KIỂM TRA XEM ĐÃ HOẠT ĐỘNG HAY CHƯA -------
+--(NHỚ CHUYỂN SANG ADMIN)
+
+SELECT permission_name 
+FROM sys.database_permissions 
+WHERE grantee_principal_id = USER_ID('ImportRep');
+
+-- NHỚ kết nối với Sale trước khi sử dụng câu lệnh dứoi
+
+SELECT * FROM  [dbo].[InStorage]
+
+DELETE FROM InStorage WHERE ProductID = 'TV29'
+
+INSERT INTO InStorage(MonthYear,ProductID,InStorageBefore,TotalAmountImport,TotalAmountExport) VALUES('200202','TV29',13,0,0)
+
+-- NẾU KHÔNG DELETE ĐƯỢC THÌ ĐÃ THÀNH CÔNG ( NẾU DEBUG KO ĐƯỢC VUI LÒNG LIÊN HỆ 114)
+
+-------------------- CẤP QUYỀN XEM THÊM SỬA XÓA -----------------------------------
+
+--(NHỚ CHUYỂN LẠI SANG QUYỀN ADMIN TRƯỚC KHI THỰC HIỆN CÁC LỆNH SAU) ---
+
+GRANT INSERT, UPDATE, DELETE ON [Storage].[dbo].[DetailBillImport] TO ImportRep;
+
+--CHECK XEM ĐÃ THÀNH CÔNG HAY CHƯA
+
+SELECT permission_name 
+FROM sys.database_permissions 
+WHERE grantee_principal_id = USER_ID('ImportRep');
+
+
+---------------------------
+
+

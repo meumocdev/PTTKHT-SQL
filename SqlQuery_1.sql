@@ -55,7 +55,8 @@ CREATE TABLE DetailBillExport(
 		ExportBillID  CHAR(4),
 		ProductID  CHAR(4),
 		AmountExport  INT,
-		PriceExport  decimal(18,2), 
+		ExportPriceItem decimal(18,2), 	
+		PriceExport AS AmountExport * ExportPriceItem,
 		CONSTRAINT PRK_DetailBillExport_ExportBillID_ProductID PRIMARY KEY(ExportBillID,ProductID),
 		CONSTRAINT CHK_DetailBillExport_AmountExport_PriceExport CHECK(AmountExport > 0 AND PriceExport > 0)
 );

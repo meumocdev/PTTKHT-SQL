@@ -5,8 +5,8 @@ CREATE TABLE PRODUCT(
 		ProductID  CHAR(4),
 		ProductName  VARCHAR(100),
 		Currency  VARCHAR(10) DEFAULT '',
-		ImportPriceItem MONEY,
-		ExportPriceItem MONEY, 
+		ImportPriceItem decimal(18,2),
+		ExportPriceItem decimal(18,2), 
 		CONSTRAINT PRK_Product_ProductID PRIMARY KEY(ProductID),
 		CONSTRAINT UNQ_Product_ProductName UNIQUE(ProductName),
 );
@@ -14,7 +14,8 @@ CREATE TABLE Supplier(
 		SupplierID  CHAR (3),
 		SupplierName  VARCHAR(100),
 		Address VARCHAR (200),
-		Tel  VARCHAR(20) DEFAULT 'Chua co'CONSTRAINT PRK_Supplier_SupplierID PRIMARY KEY(SupplierID),
+		Tel  VARCHAR(20) DEFAULT 'Chua co'
+		CONSTRAINT PRK_Supplier_SupplierID PRIMARY KEY(SupplierID),
 		CONSTRAINT UNQ_Supplier_SupplierID_SupplierName UNIQUE(SupplierName)
 );
 CREATE TABLE Orders(
@@ -26,32 +27,37 @@ CREATE TABLE Orders(
 CREATE TABLE DetailOrder(
 		ShippmentID  CHAR(4),
 		ProductID  CHAR(4),
-		AmountOrder  INT CONSTRAINT PRK_DetailOrder_ShippmentID_ProductID PRIMARY KEY(ShippmentID,ProductID),
+		AmountOrder  INT 
+		CONSTRAINT PRK_DetailOrder_ShippmentID_ProductID PRIMARY KEY(ShippmentID,ProductID),
 		CONSTRAINT CHK_DetailOrder_AmountOrder CHECK(AmountOrder > 0)
 );
 CREATE TABLE ImportBill(
 		ImportBillID  CHAR(4),
 		ShippmentID  CHAR(4),
-		ImportDate  DATETIME CONSTRAINT PRK_ImportBill_ImportBillID PRIMARY KEY(ImportBillID)
+		ImportDate  DATETIME 
+		CONSTRAINT PRK_ImportBill_ImportBillID PRIMARY KEY(ImportBillID)
 );
 
 CREATE TABLE DetailBillImport(
 		ImportBillID  CHAR(4),
 		ProductID  CHAR(4),
 		AmountImport  INT,
-		PriceImport  MONEY CONSTRAINT PRK_DetailBillImport_ImportBillID_ProductID PRIMARY KEY(ImportBillID,ProductID),
+		PriceImport  decimal(18,2), 
+		CONSTRAINT PRK_DetailBillImport_ImportBillID_ProductID PRIMARY KEY(ImportBillID,ProductID),
 		CONSTRAINT CHK_DetailBillImport_AmountImport CHECK(AmountImport > 0 AND PriceImport > 0)
 );
 CREATE TABLE ExportBill(
 		ExportBillID  CHAR(4),
 		ExportDate  DATETIME,
-		CustomerName  VARCHAR(100)CONSTRAINT PRK_ExportBill_ExportBillID PRIMARY KEY(ExportBillID)
+		CustomerName  VARCHAR(100)
+		CONSTRAINT PRK_ExportBill_ExportBillID PRIMARY KEY(ExportBillID)
 );
 CREATE TABLE DetailBillExport(
 		ExportBillID  CHAR(4),
 		ProductID  CHAR(4),
 		AmountExport  INT,
-		PriceExport  MONEY CONSTRAINT PRK_DetailBillExport_ExportBillID_ProductID PRIMARY KEY(ExportBillID,ProductID),
+		PriceExport  decimal(18,2), 
+		CONSTRAINT PRK_DetailBillExport_ExportBillID_ProductID PRIMARY KEY(ExportBillID,ProductID),
 		CONSTRAINT CHK_DetailBillExport_AmountExport_PriceExport CHECK(AmountExport > 0 AND PriceExport > 0)
 );
 CREATE TABLE InStorage(
@@ -60,7 +66,8 @@ CREATE TABLE InStorage(
 		InStorageBefore  INT DEFAULT 0,
 		TotalAmountImport INT DEFAULT 0,
 		TotalAmountExport  INT DEFAULT 0,
-		InStorageAfter  AS InStorageBefore + TotalAmountImport - TotalAmountExport CONSTRAINT PRK_InStorage_MonthYear_ProductID PRIMARY KEY(MonthYear,ProductID),
+		InStorageAfter  AS InStorageBefore + TotalAmountImport - TotalAmountExport 
+		CONSTRAINT PRK_InStorage_MonthYear_ProductID PRIMARY KEY(MonthYear,ProductID),
 		CONSTRAINT CHK_InStorage_InStorageBefore_TotalAmountImport_TotalAmountExport CHECK(InStorageBefore >= 0 AND TotalAmountImport >= 0 AND TotalAmountExport >= 0)
 );
 

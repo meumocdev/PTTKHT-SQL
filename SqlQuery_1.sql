@@ -49,7 +49,6 @@ CREATE TABLE DetailBillImport(
 CREATE TABLE ExportBill(
 		ExportBillID  CHAR(4),
 		ExportDate  DATETIME,
-		CustomerName  VARCHAR(100)
 		CONSTRAINT PRK_ExportBill_ExportBillID PRIMARY KEY(ExportBillID)
 );
 CREATE TABLE DetailBillExport(

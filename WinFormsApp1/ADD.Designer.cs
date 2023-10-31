@@ -1,4 +1,8 @@
-﻿namespace WinFormsApp1
+﻿using static System.Net.Mime.MediaTypeNames;
+using System.Reflection.Emit;
+using Label = System.Windows.Forms.Label;
+
+namespace WinFormsApp1
 {
     partial class ADD
     {

@@ -151,5 +151,10 @@ namespace WinFormsApp1
         {
             Reset();
         }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

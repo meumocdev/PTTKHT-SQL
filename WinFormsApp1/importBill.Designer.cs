@@ -240,6 +240,7 @@
             label3.Size = new Size(83, 18);
             label3.TabIndex = 2;
             label3.Text = "ImportBillID";
+            label3.Click += label3_Click;
             // 
             // dataGridView1
             // 

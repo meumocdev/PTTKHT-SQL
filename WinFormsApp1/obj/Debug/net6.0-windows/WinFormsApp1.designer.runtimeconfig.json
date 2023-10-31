@@ -12,11 +12,12 @@
       }
     ],
     "additionalProbingPaths": [
-      "C:\\Users\\vyna1\\.dotnet\\store\\|arch|\\|tfm|",
-      "C:\\Users\\vyna1\\.nuget\\packages",
-      "D:\\Share\\NuGetPackages"
+      "C:\\Users\\FPTSHOP\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\FPTSHOP\\.nuget\\packages",
+      "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
     ],
     "configProperties": {
+      "System.Reflection.NullabilityInfoContext.IsSupported": true,
       "Microsoft.NETCore.DotNetHostPolicy.SetAppPaths": true
     }
   }

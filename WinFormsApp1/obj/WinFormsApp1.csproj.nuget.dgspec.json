@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\vyna1\\source\\repos\\PTTKHT-SQL\\WinFormsApp1\\WinFormsApp1.csproj": {}
+    "C:\\Users\\FPTSHOP\\OneDrive\\Documents\\PTTKHT-SQL\\PTTKHT-SQL\\WinFormsApp1\\WinFormsApp1.csproj": {}
   },
   "projects": {
-    "C:\\Users\\vyna1\\source\\repos\\PTTKHT-SQL\\WinFormsApp1\\WinFormsApp1.csproj": {
+    "C:\\Users\\FPTSHOP\\OneDrive\\Documents\\PTTKHT-SQL\\PTTKHT-SQL\\WinFormsApp1\\WinFormsApp1.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\vyna1\\source\\repos\\PTTKHT-SQL\\WinFormsApp1\\WinFormsApp1.csproj",
+        "projectUniqueName": "C:\\Users\\FPTSHOP\\OneDrive\\Documents\\PTTKHT-SQL\\PTTKHT-SQL\\WinFormsApp1\\WinFormsApp1.csproj",
         "projectName": "WinFormsApp1",
-        "projectPath": "C:\\Users\\vyna1\\source\\repos\\PTTKHT-SQL\\WinFormsApp1\\WinFormsApp1.csproj",
-        "packagesPath": "C:\\Users\\vyna1\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\vyna1\\source\\repos\\PTTKHT-SQL\\WinFormsApp1\\obj\\",
+        "projectPath": "C:\\Users\\FPTSHOP\\OneDrive\\Documents\\PTTKHT-SQL\\PTTKHT-SQL\\WinFormsApp1\\WinFormsApp1.csproj",
+        "packagesPath": "C:\\Users\\FPTSHOP\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\FPTSHOP\\OneDrive\\Documents\\PTTKHT-SQL\\PTTKHT-SQL\\WinFormsApp1\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "D:\\Share\\NuGetPackages"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\vyna1\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\FPTSHOP\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -26,7 +26,6 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -44,6 +43,30 @@
       "frameworks": {
         "net6.0-windows7.0": {
           "targetAlias": "net6.0-windows",
+          "dependencies": {
+            "Microsoft.Data.SqlClient": {
+              "target": "Package",
+              "version": "[5.1.1, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[7.0.13, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[7.0.13, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[7.0.13, )"
+            },
+            "System.Data.SqlClient": {
+              "target": "Package",
+              "version": "[4.8.5, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",

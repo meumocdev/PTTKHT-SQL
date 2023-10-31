@@ -1,4 +1,4 @@
-CREATE DATABASE Storage 
+create  DATABASE Storage 
 Go
 Use Storage
 CREATE TABLE PRODUCT(
@@ -31,14 +31,14 @@ CREATE TABLE DetailOrder(
 CREATE TABLE ImportBill(
 		ImportBillID  CHAR(4),
 		ShippmentID  CHAR(4),
-		ImportDate  DATETIME CONSTRAINT PRK_ImportBill_ImportBillID PRIMARY KEY(ImportBillID)
+		ImportDate DATETIME DEFAULT GETDATE() CONSTRAINT PRK_ImportBill_ImportBillID PRIMARY KEY(ImportBillID)
 );
 
 CREATE TABLE DetailBillImport(
 		ImportBillID  CHAR(4),
 		ProductID  CHAR(4),
 		AmountImport  INT,
-		PriceImport  MONEY CONSTRAINT PRK_DetailBillImport_ImportBillID_ProductID PRIMARY KEY(ImportBillID,ProductID),
+		PriceImport  INT CONSTRAINT PRK_DetailBillImport_ImportBillID_ProductID PRIMARY KEY(ImportBillID,ProductID),
 		CONSTRAINT CHK_DetailBillImport_AmountImport CHECK(AmountImport > 0 AND PriceImport > 0)
 );
 CREATE TABLE ExportBill(
@@ -93,7 +93,21 @@ INSERT INTO IMPORTBILL VALUES('N005','D001','2002/01/16')
 SELECT * FROM IMPORTBILL
 --
 
+create proc [dbo].[SP_SuaHocSinh]
+@ImportBillID CHAR(4),
+@ProductID CHAR(4),
+@AmountImport INT,
+@PriceImport INT
+as
+begin
+    update DetailBillImport set
+    
+     ProductID = @ProductID,
+    AmountImport = @AmountImport,
+	PriceImport = @PriceImport
 
+    where ImportBillID  = @ImportBillID 
+end
 
 INSERT INTO Supplier (SupplierID,SupplierName,Address,Tel) VALUES ('C01','Bui Tien  Truong','Xuan La, Tay Ho, Ha Noi','0989995221')
 INSERT INTO Supplier (SupplierID,SupplierName,Address,Tel) VALUES ('C02','Nguyen  Thi Thu','Quan La, Tay Ho, Ha Noi','0979012300')
@@ -161,6 +175,9 @@ INSERT INTO InStorage(MonthYear,ProductID,InStorageBefore,TotalAmountImport,Tota
 INSERT INTO InStorage(MonthYear,ProductID,InStorageBefore,TotalAmountImport,TotalAmountExport) VALUES('200202','VD02',20,0,0)
 INSERT INTO InStorage(MonthYear,ProductID,InStorageBefore,TotalAmountImport,TotalAmountExport) VALUES('200202','TV14',5,0,0)
 INSERT INTO InStorage(MonthYear,ProductID,InStorageBefore,TotalAmountImport,TotalAmountExport) VALUES('200202','TV29',12,0,0)
+INSERT INTO ImportBill(ImportBillID,ShippmentID) VALUES ('N005','D001')
+
+
 
 ---------------------------------------------------------------PERMISSION-----------------------------------------------------------------------------
 -- Tạo User Người Đại Diện bán hàng (SaleRep) với các quyền sau

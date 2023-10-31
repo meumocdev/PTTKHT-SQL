@@ -1,7 +1,9 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -65,9 +67,28 @@ namespace WinFormsApp1
 
         private void button3_Click(object sender, EventArgs e)
         {
-            Sell sll = new Sell();
-            sll.Show();
-            this.Hide();
+            ConnectData c = new ConnectData();
+            c.connect();
+            string query = "Select * From account where username = '" + textBox1.Text +
+                "' and password = '" + textBox4.Text + "'";
+            SqlCommand cmd = new SqlCommand(query, c.conn);
+            // Gán giá trị cho thuộc tính Connection của SqlCommand
+            cmd.Connection = c.conn;
+            SqlDataReader reader = cmd.ExecuteReader();
+            if (reader.Read() == false)
+            {
+                MessageBox.Show("Đăng nhập không thành công");
+                textBox1.Text = "";
+                textBox4.Text = "";
+                textBox1.Focus();
+            }
+            else
+            {
+                Sell sll = new Sell();
+                sll.Show();
+                this.Hide();
+            }
+ 
         }
 
 

@@ -8,11 +8,16 @@
     ".NETCoreApp,Version=v6.0": {
       "WinFormsApp1/1.0.0": {
         "dependencies": {
+<<<<<<< HEAD
           "Microsoft.Data.SqlClient": "5.1.1",
           "Microsoft.EntityFrameworkCore": "7.0.13",
           "Microsoft.EntityFrameworkCore.SqlServer": "7.0.13",
           "Microsoft.EntityFrameworkCore.Tools": "7.0.13",
           "System.Data.SqlClient": "4.8.5",
+=======
+          "System.Data.SqlClient": "4.8.5",
+          "runtime.native.System.Data.SqlClient.sni": "4.7.0",
+>>>>>>> 3bc601ac67cd45ad8e16e95d93be5533ee99a15f
           "Microsoft.Data.Tools.Schema.Sql": "16.0.0.0",
           "Microsoft.Data.Tools.Schema.Sql.UnitTesting": "17.0.0.0",
           "Microsoft.Data.Tools.Schema.Sql.UnitTestingAdapter": "17.0.0.0"
@@ -21,6 +26,7 @@
           "WinFormsApp1.dll": {}
         }
       },
+<<<<<<< HEAD
       "Azure.Core/1.25.0": {
         "dependencies": {
           "Microsoft.Bcl.AsyncInterfaces": "1.1.1",
@@ -431,6 +437,13 @@
             "assemblyVersion": "2.2.0.0",
             "fileVersion": "2.2.1.1"
           }
+=======
+      "Microsoft.NETCore.Platforms/3.1.0": {},
+      "Microsoft.Win32.Registry/4.7.0": {
+        "dependencies": {
+          "System.Security.AccessControl": "4.7.0",
+          "System.Security.Principal.Windows": "4.7.0"
+>>>>>>> 3bc601ac67cd45ad8e16e95d93be5533ee99a15f
         }
       },
       "runtime.native.System.Data.SqlClient.sni/4.7.0": {
@@ -467,6 +480,7 @@
           }
         }
       },
+<<<<<<< HEAD
       "System.CodeDom/4.4.0": {},
       "System.Configuration.ConfigurationManager/6.0.1": {
         "dependencies": {
@@ -484,6 +498,12 @@
         "dependencies": {
           "Microsoft.Win32.Registry": "4.7.0",
           "System.Security.Principal.Windows": "5.0.0",
+=======
+      "System.Data.SqlClient/4.8.5": {
+        "dependencies": {
+          "Microsoft.Win32.Registry": "4.7.0",
+          "System.Security.Principal.Windows": "4.7.0",
+>>>>>>> 3bc601ac67cd45ad8e16e95d93be5533ee99a15f
           "runtime.native.System.Data.SqlClient.sni": "4.7.0"
         },
         "runtime": {
@@ -507,6 +527,7 @@
           }
         }
       },
+<<<<<<< HEAD
       "System.Diagnostics.DiagnosticSource/6.0.0": {
         "dependencies": {
           "System.Runtime.CompilerServices.Unsafe": "6.0.0"
@@ -633,6 +654,15 @@
           "System.Drawing.Common": "6.0.0"
         }
       },
+=======
+      "System.Security.AccessControl/4.7.0": {
+        "dependencies": {
+          "Microsoft.NETCore.Platforms": "3.1.0",
+          "System.Security.Principal.Windows": "4.7.0"
+        }
+      },
+      "System.Security.Principal.Windows/4.7.0": {},
+>>>>>>> 3bc601ac67cd45ad8e16e95d93be5533ee99a15f
       "Microsoft.Data.Tools.Schema.Sql/16.0.0.0": {
         "runtime": {
           "Microsoft.Data.Tools.Schema.Sql.dll": {
@@ -689,6 +719,7 @@
       "serviceable": false,
       "sha512": ""
     },
+<<<<<<< HEAD
     "Azure.Core/1.25.0": {
       "type": "package",
       "serviceable": true,
@@ -933,6 +964,14 @@
       "sha512": "sha512-N4KeF3cpcm1PUHym1RmakkzfkEv3GRMyofVv40uXsQhCQeglr2OHNcUk2WOG51AKpGO8ynGpo9M/kFXSzghwug==",
       "path": "microsoft.sqlserver.server/1.0.0",
       "hashPath": "microsoft.sqlserver.server.1.0.0.nupkg.sha512"
+=======
+    "Microsoft.NETCore.Platforms/3.1.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-z7aeg8oHln2CuNulfhiLYxCVMPEwBl3rzicjvIX+4sUuCwvXw5oXQEtbiU2c0z4qYL5L3Kmx0mMA/+t/SbY67w==",
+      "path": "microsoft.netcore.platforms/3.1.0",
+      "hashPath": "microsoft.netcore.platforms.3.1.0.nupkg.sha512"
+>>>>>>> 3bc601ac67cd45ad8e16e95d93be5533ee99a15f
     },
     "Microsoft.Win32.Registry/4.7.0": {
       "type": "package",
@@ -941,6 +980,7 @@
       "path": "microsoft.win32.registry/4.7.0",
       "hashPath": "microsoft.win32.registry.4.7.0.nupkg.sha512"
     },
+<<<<<<< HEAD
     "Microsoft.Win32.SystemEvents/6.0.0": {
       "type": "package",
       "serviceable": true,
@@ -955,6 +995,8 @@
       "path": "mono.texttemplating/2.2.1",
       "hashPath": "mono.texttemplating.2.2.1.nupkg.sha512"
     },
+=======
+>>>>>>> 3bc601ac67cd45ad8e16e95d93be5533ee99a15f
     "runtime.native.System.Data.SqlClient.sni/4.7.0": {
       "type": "package",
       "serviceable": true,
@@ -983,6 +1025,7 @@
       "path": "runtime.win-x86.runtime.native.system.data.sqlclient.sni/4.4.0",
       "hashPath": "runtime.win-x86.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512"
     },
+<<<<<<< HEAD
     "System.CodeDom/4.4.0": {
       "type": "package",
       "serviceable": true,
@@ -997,6 +1040,8 @@
       "path": "system.configuration.configurationmanager/6.0.1",
       "hashPath": "system.configuration.configurationmanager.6.0.1.nupkg.sha512"
     },
+=======
+>>>>>>> 3bc601ac67cd45ad8e16e95d93be5533ee99a15f
     "System.Data.SqlClient/4.8.5": {
       "type": "package",
       "serviceable": true,
@@ -1004,6 +1049,7 @@
       "path": "system.data.sqlclient/4.8.5",
       "hashPath": "system.data.sqlclient.4.8.5.nupkg.sha512"
     },
+<<<<<<< HEAD
     "System.Diagnostics.DiagnosticSource/6.0.0": {
       "type": "package",
       "serviceable": true,
@@ -1150,6 +1196,21 @@
       "sha512": "sha512-IXoJOXIqc39AIe+CIR7koBtRGMiCt/LPM3lI+PELtDIy9XdyeSrwXFdWV9dzJ2Awl0paLWUaknLxFQ5HpHZUog==",
       "path": "system.windows.extensions/6.0.0",
       "hashPath": "system.windows.extensions.6.0.0.nupkg.sha512"
+=======
+    "System.Security.AccessControl/4.7.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-JECvTt5aFF3WT3gHpfofL2MNNP6v84sxtXxpqhLBCcDRzqsPBmHhQ6shv4DwwN2tRlzsUxtb3G9M3763rbXKDg==",
+      "path": "system.security.accesscontrol/4.7.0",
+      "hashPath": "system.security.accesscontrol.4.7.0.nupkg.sha512"
+    },
+    "System.Security.Principal.Windows/4.7.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-ojD0PX0XhneCsUbAZVKdb7h/70vyYMDYs85lwEI+LngEONe/17A0cFaRFqZU+sOEidcVswYWikYOQ9PPfjlbtQ==",
+      "path": "system.security.principal.windows/4.7.0",
+      "hashPath": "system.security.principal.windows.4.7.0.nupkg.sha512"
+>>>>>>> 3bc601ac67cd45ad8e16e95d93be5533ee99a15f
     },
     "Microsoft.Data.Tools.Schema.Sql/16.0.0.0": {
       "type": "reference",

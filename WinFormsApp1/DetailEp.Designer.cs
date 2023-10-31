@@ -38,19 +38,13 @@
             button5 = new Button();
             button3 = new Button();
             button2 = new Button();
-            button1 = new Button();
             panel2 = new Panel();
-            dateTimePicker1 = new DateTimePicker();
             label3 = new Label();
             comboBox1 = new ComboBox();
-            label4 = new Label();
             button4 = new Button();
             dataGridView1 = new DataGridView();
-            ImportBillID = new DataGridViewTextBoxColumn();
-            Tenhang = new DataGridViewTextBoxColumn();
-            soluong = new DataGridViewTextBoxColumn();
-            Tongtien = new DataGridViewTextBoxColumn();
             label1 = new Label();
+            button1 = new Button();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
@@ -64,7 +58,6 @@
             panel1.Controls.Add(button5);
             panel1.Controls.Add(button3);
             panel1.Controls.Add(button2);
-            panel1.Controls.Add(button1);
             panel1.Controls.Add(panel2);
             panel1.Controls.Add(dataGridView1);
             panel1.Controls.Add(label1);
@@ -80,7 +73,7 @@
             button7.Cursor = Cursors.Hand;
             button7.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point);
             button7.ForeColor = Color.DarkMagenta;
-            button7.Location = new Point(739, 366);
+            button7.Location = new Point(616, 365);
             button7.Margin = new Padding(3, 2, 3, 2);
             button7.Name = "button7";
             button7.Size = new Size(108, 26);
@@ -96,7 +89,7 @@
             button6.Cursor = Cursors.Hand;
             button6.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point);
             button6.ForeColor = Color.DarkMagenta;
-            button6.Location = new Point(616, 366);
+            button6.Location = new Point(616, 312);
             button6.Margin = new Padding(3, 2, 3, 2);
             button6.Name = "button6";
             button6.Size = new Size(108, 26);
@@ -128,7 +121,7 @@
             button3.Cursor = Cursors.Hand;
             button3.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point);
             button3.ForeColor = Color.DarkMagenta;
-            button3.Location = new Point(739, 312);
+            button3.Location = new Point(739, 365);
             button3.Margin = new Padding(3, 2, 3, 2);
             button3.Name = "button3";
             button3.Size = new Size(108, 26);
@@ -153,51 +146,26 @@
             button2.UseVisualStyleBackColor = false;
             button2.Click += button2_Click;
             // 
-            // button1
-            // 
-            button1.BackColor = Color.Lavender;
-            button1.Cursor = Cursors.Hand;
-            button1.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            button1.ForeColor = Color.DarkMagenta;
-            button1.Location = new Point(616, 312);
-            button1.Margin = new Padding(3, 2, 3, 2);
-            button1.Name = "button1";
-            button1.Size = new Size(108, 26);
-            button1.TabIndex = 19;
-            button1.Text = "THÊM";
-            button1.TextAlign = ContentAlignment.TopCenter;
-            button1.UseVisualStyleBackColor = false;
-            button1.Click += button1_Click;
-            // 
             // panel2
             // 
             panel2.BackColor = Color.LightCyan;
             panel2.BorderStyle = BorderStyle.FixedSingle;
-            panel2.Controls.Add(dateTimePicker1);
+            panel2.Controls.Add(button1);
             panel2.Controls.Add(label3);
             panel2.Controls.Add(comboBox1);
-            panel2.Controls.Add(label4);
             panel2.Controls.Add(button4);
-            panel2.Location = new Point(88, 312);
+            panel2.Location = new Point(88, 301);
             panel2.Margin = new Padding(3, 2, 3, 2);
             panel2.Name = "panel2";
-            panel2.Size = new Size(506, 132);
+            panel2.Size = new Size(506, 117);
             panel2.TabIndex = 18;
-            // 
-            // dateTimePicker1
-            // 
-            dateTimePicker1.Location = new Point(122, 20);
-            dateTimePicker1.Margin = new Padding(4);
-            dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(238, 23);
-            dateTimePicker1.TabIndex = 18;
             // 
             // label3
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point);
             label3.ForeColor = Color.DarkMagenta;
-            label3.Location = new Point(18, 62);
+            label3.Location = new Point(17, 51);
             label3.Name = "label3";
             label3.Size = new Size(73, 15);
             label3.TabIndex = 2;
@@ -208,24 +176,13 @@
             comboBox1.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point);
             comboBox1.ForeColor = Color.DarkMagenta;
             comboBox1.FormattingEnabled = true;
-            comboBox1.Items.AddRange(new object[] { "DD01", "DD02", "TL15", "TL90", "TV14", "TV21", "TV29", "VD01", "VD02" });
-            comboBox1.Location = new Point(122, 62);
+            comboBox1.Location = new Point(116, 48);
             comboBox1.Margin = new Padding(3, 2, 3, 2);
             comboBox1.Name = "comboBox1";
             comboBox1.Size = new Size(238, 23);
             comboBox1.TabIndex = 3;
             comboBox1.Text = "nhập mã";
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            label4.ForeColor = Color.DarkMagenta;
-            label4.Location = new Point(18, 20);
-            label4.Name = "label4";
-            label4.Size = new Size(59, 15);
-            label4.TabIndex = 4;
-            label4.Text = "Ngày bán";
+            comboBox1.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
             // 
             // button4
             // 
@@ -233,7 +190,7 @@
             button4.Cursor = Cursors.Hand;
             button4.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point);
             button4.ForeColor = Color.DarkMagenta;
-            button4.Location = new Point(385, 40);
+            button4.Location = new Point(381, 19);
             button4.Margin = new Padding(3, 2, 3, 2);
             button4.Name = "button4";
             button4.Size = new Size(81, 26);
@@ -241,6 +198,7 @@
             button4.Text = "TÌM KIẾM";
             button4.TextAlign = ContentAlignment.TopCenter;
             button4.UseVisualStyleBackColor = false;
+            button4.Click += button4_Click;
             // 
             // dataGridView1
             // 
@@ -256,7 +214,6 @@
             dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
             dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { ImportBillID, Tenhang, soluong, Tongtien });
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = SystemColors.Window;
             dataGridViewCellStyle2.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point);
@@ -289,37 +246,6 @@
             dataGridView1.TabIndex = 11;
             dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             // 
-            // ImportBillID
-            // 
-            ImportBillID.HeaderText = "ImportBillID";
-            ImportBillID.MinimumWidth = 6;
-            ImportBillID.Name = "ImportBillID";
-            ImportBillID.Width = 110;
-            // 
-            // Tenhang
-            // 
-            Tenhang.DataPropertyName = "Tenhang";
-            Tenhang.HeaderText = "ProductID";
-            Tenhang.MinimumWidth = 6;
-            Tenhang.Name = "Tenhang";
-            Tenhang.Width = 125;
-            // 
-            // soluong
-            // 
-            soluong.DataPropertyName = "soluong";
-            soluong.HeaderText = "AmountImport";
-            soluong.MinimumWidth = 6;
-            soluong.Name = "soluong";
-            soluong.Width = 125;
-            // 
-            // Tongtien
-            // 
-            Tongtien.DataPropertyName = "Tongtien";
-            Tongtien.HeaderText = "PriceImport";
-            Tongtien.MinimumWidth = 6;
-            Tongtien.Name = "Tongtien";
-            Tongtien.Width = 125;
-            // 
             // label1
             // 
             label1.AutoSize = true;
@@ -327,13 +253,29 @@
             label1.Font = new Font("Microsoft Sans Serif", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
             label1.ForeColor = Color.DarkMagenta;
             label1.ImageAlign = ContentAlignment.TopCenter;
-            label1.Location = new Point(335, 22);
+            label1.Location = new Point(360, 20);
             label1.Name = "label1";
-            label1.Size = new Size(238, 24);
+            label1.Size = new Size(156, 24);
             label1.TabIndex = 0;
-            label1.Text = "CHI TIẾT ĐƠN BÁN HÀNG";
+            label1.Text = "ĐƠN BÁN HÀNG";
             label1.TextAlign = ContentAlignment.TopCenter;
             label1.Click += label1_Click;
+            // 
+            // button1
+            // 
+            button1.BackColor = Color.Lavender;
+            button1.Cursor = Cursors.Hand;
+            button1.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            button1.ForeColor = Color.DarkMagenta;
+            button1.Location = new Point(381, 76);
+            button1.Margin = new Padding(3, 2, 3, 2);
+            button1.Name = "button1";
+            button1.Size = new Size(81, 26);
+            button1.TabIndex = 18;
+            button1.Text = "Làm mới";
+            button1.TextAlign = ContentAlignment.TopCenter;
+            button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click_1;
             // 
             // DetailEp
             // 
@@ -348,6 +290,7 @@
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Form2";
             FormClosing += DetailEp_FormClosing;
+            Load += DetailEp_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             panel2.ResumeLayout(false);
@@ -362,20 +305,14 @@
         private Panel panel2;
         private Label label3;
         private ComboBox comboBox1;
-        private Label label4;
         private DataGridView dataGridView1;
         private Label label1;
-        private DataGridViewTextBoxColumn ImportBillID;
-        private DataGridViewTextBoxColumn Tenhang;
-        private DataGridViewTextBoxColumn soluong;
-        private DataGridViewTextBoxColumn Tongtien;
-        private DateTimePicker dateTimePicker1;
         private Button button2;
-        private Button button1;
         private Button button4;
         private Button button7;
         private Button button6;
         private Button button5;
         private Button button3;
+        private Button button1;
     }
 }

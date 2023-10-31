@@ -5,15 +5,17 @@ CREATE TABLE PRODUCT(
 		ProductID  CHAR(4),
 		ProductName  VARCHAR(100),
 		Currency  VARCHAR(10) DEFAULT '',
-		Percents  REAL CONSTRAINT PRK_Product_ProductID PRIMARY KEY(ProductID),
+		ImportPriceItem decimal(18,2),
+		ExportPriceItem decimal(18,2), 
+		CONSTRAINT PRK_Product_ProductID PRIMARY KEY(ProductID),
 		CONSTRAINT UNQ_Product_ProductName UNIQUE(ProductName),
-		CONSTRAINT CHK_Product_Percents CHECK(Percents BETWEEN 0 AND 100)
 );
 CREATE TABLE Supplier(
 		SupplierID  CHAR (3),
 		SupplierName  VARCHAR(100),
 		Address VARCHAR (200),
-		Tel  VARCHAR(20) DEFAULT 'Chua co'CONSTRAINT PRK_Supplier_SupplierID PRIMARY KEY(SupplierID),
+		Tel  VARCHAR(20) DEFAULT 'Chua co'
+		CONSTRAINT PRK_Supplier_SupplierID PRIMARY KEY(SupplierID),
 		CONSTRAINT UNQ_Supplier_SupplierID_SupplierName UNIQUE(SupplierName)
 );
 CREATE TABLE Orders(
@@ -25,32 +27,45 @@ CREATE TABLE Orders(
 CREATE TABLE DetailOrder(
 		ShippmentID  CHAR(4),
 		ProductID  CHAR(4),
-		AmountOrder  INT CONSTRAINT PRK_DetailOrder_ShippmentID_ProductID PRIMARY KEY(ShippmentID,ProductID),
+		AmountOrder  INT 
+		CONSTRAINT PRK_DetailOrder_ShippmentID_ProductID PRIMARY KEY(ShippmentID,ProductID),
 		CONSTRAINT CHK_DetailOrder_AmountOrder CHECK(AmountOrder > 0)
 );
 CREATE TABLE ImportBill(
 		ImportBillID  CHAR(4),
 		ShippmentID  CHAR(4),
+<<<<<<< HEAD
 		ImportDate DATETIME DEFAULT GETDATE() CONSTRAINT PRK_ImportBill_ImportBillID PRIMARY KEY(ImportBillID)
+=======
+		ImportDate  DATETIME 
+		CONSTRAINT PRK_ImportBill_ImportBillID PRIMARY KEY(ImportBillID)
+>>>>>>> 3bc601ac67cd45ad8e16e95d93be5533ee99a15f
 );
 
 CREATE TABLE DetailBillImport(
 		ImportBillID  CHAR(4),
 		ProductID  CHAR(4),
 		AmountImport  INT,
+<<<<<<< HEAD
 		PriceImport  INT CONSTRAINT PRK_DetailBillImport_ImportBillID_ProductID PRIMARY KEY(ImportBillID,ProductID),
+=======
+		PriceImport  decimal(18,2), 
+		CONSTRAINT PRK_DetailBillImport_ImportBillID_ProductID PRIMARY KEY(ImportBillID,ProductID),
+>>>>>>> 3bc601ac67cd45ad8e16e95d93be5533ee99a15f
 		CONSTRAINT CHK_DetailBillImport_AmountImport CHECK(AmountImport > 0 AND PriceImport > 0)
 );
 CREATE TABLE ExportBill(
 		ExportBillID  CHAR(4),
 		ExportDate  DATETIME,
-		CustomerName  VARCHAR(100)CONSTRAINT PRK_ExportBill_ExportBillID PRIMARY KEY(ExportBillID)
+		CONSTRAINT PRK_ExportBill_ExportBillID PRIMARY KEY(ExportBillID)
 );
 CREATE TABLE DetailBillExport(
 		ExportBillID  CHAR(4),
 		ProductID  CHAR(4),
 		AmountExport  INT,
-		PriceExport  MONEY CONSTRAINT PRK_DetailBillExport_ExportBillID_ProductID PRIMARY KEY(ExportBillID,ProductID),
+		ExportPriceItem decimal(18,2), 	
+		PriceExport AS AmountExport * ExportPriceItem,
+		CONSTRAINT PRK_DetailBillExport_ExportBillID_ProductID PRIMARY KEY(ExportBillID,ProductID),
 		CONSTRAINT CHK_DetailBillExport_AmountExport_PriceExport CHECK(AmountExport > 0 AND PriceExport > 0)
 );
 CREATE TABLE InStorage(
@@ -59,7 +74,8 @@ CREATE TABLE InStorage(
 		InStorageBefore  INT DEFAULT 0,
 		TotalAmountImport INT DEFAULT 0,
 		TotalAmountExport  INT DEFAULT 0,
-		InStorageAfter  AS InStorageBefore + TotalAmountImport - TotalAmountExport CONSTRAINT PRK_InStorage_MonthYear_ProductID PRIMARY KEY(MonthYear,ProductID),
+		InStorageAfter  AS InStorageBefore + TotalAmountImport - TotalAmountExport 
+		CONSTRAINT PRK_InStorage_MonthYear_ProductID PRIMARY KEY(MonthYear,ProductID),
 		CONSTRAINT CHK_InStorage_InStorageBefore_TotalAmountImport_TotalAmountExport CHECK(InStorageBefore >= 0 AND TotalAmountImport >= 0 AND TotalAmountExport >= 0)
 );
 
@@ -116,15 +132,15 @@ INSERT INTO Supplier (SupplierID,SupplierName,Address,Tel) VALUES ('C04','Bui Ti
 INSERT INTO Supplier (SupplierID,SupplierName,Address,Tel) VALUES ('C05','Hong  That Cong','Ha Noi','chua co')
 INSERT INTO Supplier (SupplierID,SupplierName,Address,Tel) VALUES ('C07','Bui Duc  Kien','To 11, Cum 2, Xuan La','0437530097')
 
-INSERT INTO Product (ProductID,ProductName,Currency,Percents) VALUES ('DD01','Dau DVD Hitachi 1 dia','Bo',40)
-INSERT INTO Product (ProductID,ProductName,Currency,Percents) VALUES ('DD02','Dau DVD Hitachi 3 dia','Bo',40)
-INSERT INTO Product (ProductID,ProductName,Currency,Percents) VALUES ('TL15','Tu lanh Sanyo 150 lit','Cai',25)
-INSERT INTO Product (ProductID,ProductName,Currency,Percents) VALUES ('TL90','Tu lanh Sanyo 90 lit','Cai',20)
-INSERT INTO Product (ProductID,ProductName,Currency,Percents) VALUES ('TV14','Tivi Sony 14 inches','Cai',15)
-INSERT INTO Product (ProductID,ProductName,Currency,Percents) VALUES ('TV21','Tivi Sony 21 inches','Cai',10)
-INSERT INTO Product (ProductID,ProductName,Currency,Percents) VALUES ('TV29','Tivi Sony 29 inches','Cai',10)
-INSERT INTO Product (ProductID,ProductName,Currency,Percents) VALUES ('VD01','Dau VCD Sony 1 dia','Bo',30)
-INSERT INTO Product (ProductID,ProductName,Currency,Percents) VALUES ('VD02','Dau VCD Sony 3 dia','Bo',30)
+INSERT INTO Product (ProductID,ProductName,Currency,ImportPriceItem,ExportPriceItem) VALUES ('DD01','Dau DVD Hitachi 1 dia','Bo',20000,40000)
+INSERT INTO Product (ProductID,ProductName,Currency,ImportPriceItem,ExportPriceItem) VALUES ('DD02','Dau DVD Hitachi 3 dia','Bo',40000,80000)
+INSERT INTO Product (ProductID,ProductName,Currency,ImportPriceItem,ExportPriceItem) VALUES ('TL15','Tu lanh Sanyo 150 lit','Cai',25000,50000)
+INSERT INTO Product (ProductID,ProductName,Currency,ImportPriceItem,ExportPriceItem) VALUES ('TL90','Tu lanh Sanyo 90 lit','Cai',20000,40000)
+INSERT INTO Product (ProductID,ProductName,Currency,ImportPriceItem,ExportPriceItem) VALUES ('TV14','Tivi Sony 14 inches','Cai',15000,30000)
+INSERT INTO Product (ProductID,ProductName,Currency,ImportPriceItem,ExportPriceItem) VALUES ('TV21','Tivi Sony 21 inches','Cai',10000,100000)
+INSERT INTO Product (ProductID,ProductName,Currency,ImportPriceItem,ExportPriceItem) VALUES ('TV29','Tivi Sony 29 inches','Cai',10000,200000)
+INSERT INTO Product (ProductID,ProductName,Currency,ImportPriceItem,ExportPriceItem) VALUES ('VD01','Dau VCD Sony 1 dia','Bo',30000,60000)
+INSERT INTO Product (ProductID,ProductName,Currency,ImportPriceItem,ExportPriceItem) VALUES ('VD02','Dau VCD Sony 3 dia','Bo',30000,40000)
 
 INSERT INTO Orders(ShippmentID,SupplierID,OrderDate) VALUES ('D001','C03','01/15/2002')
 INSERT INTO Orders(ShippmentID,SupplierID,OrderDate) VALUES ('D002','C01','01/30/2002')

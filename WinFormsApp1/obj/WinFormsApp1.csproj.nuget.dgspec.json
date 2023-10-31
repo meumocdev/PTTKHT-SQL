@@ -44,6 +44,7 @@
         "net6.0-windows7.0": {
           "targetAlias": "net6.0-windows",
           "dependencies": {
+<<<<<<< HEAD
             "Microsoft.Data.SqlClient": {
               "target": "Package",
               "version": "[5.1.1, )"
@@ -65,6 +66,15 @@
             "System.Data.SqlClient": {
               "target": "Package",
               "version": "[4.8.5, )"
+=======
+            "System.Data.SqlClient": {
+              "target": "Package",
+              "version": "[4.8.5, )"
+            },
+            "runtime.native.System.Data.SqlClient.sni": {
+              "target": "Package",
+              "version": "[4.7.0, )"
+>>>>>>> 3bc601ac67cd45ad8e16e95d93be5533ee99a15f
             }
           },
           "imports": [

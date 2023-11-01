@@ -12,9 +12,7 @@ namespace WinFormsApp1
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
 
-            Application.Run(new ADD());
-
-            Application.Run(new DetailEp());
+            Application.Run(new Sell());
 
         }
     }

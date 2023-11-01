@@ -39,12 +39,12 @@
             button3 = new Button();
             button2 = new Button();
             panel2 = new Panel();
+            button1 = new Button();
             label3 = new Label();
             comboBox1 = new ComboBox();
             button4 = new Button();
             dataGridView1 = new DataGridView();
             label1 = new Label();
-            button1 = new Button();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
@@ -129,6 +129,7 @@
             button3.Text = "SỬA";
             button3.TextAlign = ContentAlignment.TopCenter;
             button3.UseVisualStyleBackColor = false;
+            button3.Click += button3_Click;
             // 
             // button2
             // 
@@ -159,6 +160,22 @@
             panel2.Name = "panel2";
             panel2.Size = new Size(506, 117);
             panel2.TabIndex = 18;
+            // 
+            // button1
+            // 
+            button1.BackColor = Color.Lavender;
+            button1.Cursor = Cursors.Hand;
+            button1.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            button1.ForeColor = Color.DarkMagenta;
+            button1.Location = new Point(381, 76);
+            button1.Margin = new Padding(3, 2, 3, 2);
+            button1.Name = "button1";
+            button1.Size = new Size(81, 26);
+            button1.TabIndex = 18;
+            button1.Text = "Làm mới";
+            button1.TextAlign = ContentAlignment.TopCenter;
+            button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click_1;
             // 
             // label3
             // 
@@ -260,22 +277,6 @@
             label1.Text = "ĐƠN BÁN HÀNG";
             label1.TextAlign = ContentAlignment.TopCenter;
             label1.Click += label1_Click;
-            // 
-            // button1
-            // 
-            button1.BackColor = Color.Lavender;
-            button1.Cursor = Cursors.Hand;
-            button1.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            button1.ForeColor = Color.DarkMagenta;
-            button1.Location = new Point(381, 76);
-            button1.Margin = new Padding(3, 2, 3, 2);
-            button1.Name = "button1";
-            button1.Size = new Size(81, 26);
-            button1.TabIndex = 18;
-            button1.Text = "Làm mới";
-            button1.TextAlign = ContentAlignment.TopCenter;
-            button1.UseVisualStyleBackColor = false;
-            button1.Click += button1_Click_1;
             // 
             // DetailEp
             // 

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
@@ -55,9 +56,11 @@
             label7 = new Label();
             dataGridView1 = new DataGridView();
             label1 = new Label();
+            bindingSource1 = new BindingSource(components);
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)bindingSource1).BeginInit();
             SuspendLayout();
             // 
             // panel1
@@ -318,6 +321,7 @@
             textBox2.Name = "textBox2";
             textBox2.Size = new Size(238, 21);
             textBox2.TabIndex = 8;
+            textBox2.TextChanged += textBox2_TextChanged;
             // 
             // label6
             // 
@@ -422,6 +426,7 @@
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)bindingSource1).EndInit();
             ResumeLayout(false);
         }
 
@@ -450,5 +455,6 @@
         private TextBox textBox3;
         private Label label2;
         private DateTimePicker dateTimePicker1;
+        private BindingSource bindingSource1;
     }
 }

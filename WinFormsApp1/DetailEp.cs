@@ -47,14 +47,18 @@ namespace WinFormsApp1
                     {
                         c.connect();
                         string sql = "DELETE FROM DetailBillExport WHERE ExportBillID = @ExportBillID";
+                        string sql2 = "DELETE FROM ExportBill WHERE ExportBillID = @ExportBillID";
                         SqlCommand cmd = new SqlCommand(sql, c.conn);
+                        SqlCommand cmd12 = new SqlCommand(sql2, c.conn);
                         cmd.Parameters.AddWithValue("@ExportBillID", exportBillID);
+                        cmd12.Parameters.AddWithValue("@ExportBillID", exportBillID);
                         int affectedRows = cmd.ExecuteNonQuery();
-                        if (affectedRows > 0)
+                        int affectedRows2 = cmd12.ExecuteNonQuery();
+                        if (affectedRows > 0 && affectedRows2 > 0)
                         {
                             MessageBox.Show("Xóa dữ liệu thành công!");
                             DataSet data = new DataSet();
-                            string query = "Select * From DetailBillExport";
+                            string query = "SELECT D.ExportBillID, E.ExportDate, SUM(D.PriceExport) AS TotalPriceExport FROM DetailBillExport AS D LEFT JOIN ExportBill AS E ON D.ExportBillID = E.ExportBillID GROUP BY D.ExportBillID, E.ExportDate";
                             SqlCommand cmd2 = new SqlCommand(query, c.conn);
                             cmd2.Connection = c.conn;
                             SqlDataAdapter adp = new SqlDataAdapter(cmd2);
@@ -130,19 +134,15 @@ namespace WinFormsApp1
         {
             c.connect();
             DataSet data = new DataSet();
-            string query = "SELECT ExportBillID, ExportDate, SUM (price) AS total_price FROM ExportBill GROUP BY ExportBillID, ExportDate";
-            // Tạo một đối tượng SqlConnection
-            // Tạo một đối tượng SqlCommand
+            string query = "SELECT D.ExportBillID, E.ExportDate, SUM(D.PriceExport) AS TotalPriceExport FROM DetailBillExport AS D LEFT JOIN ExportBill AS E ON D.ExportBillID = E.ExportBillID GROUP BY D.ExportBillID, E.ExportDate";
             SqlCommand cmd = new SqlCommand(query, c.conn);
-            // Gán giá trị cho thuộc tính Connection của SqlCommand
             cmd.Connection = c.conn;
-            // Tạo một đối tượng SqlDataAdapter bằng cách truyền vào đối tượng SqlCommand
             SqlDataAdapter adp = new SqlDataAdapter(cmd);
             adp.Fill(data);
             dataGridView1.DataSource = data.Tables[0];
 
             DataTable data2 = new DataTable();
-            string query2 = "SELECT ExportBillID From ExportBill";
+            string query2 = "SELECT DISTINCT ExportBillID From ExportBill";
             SqlCommand cmd2 = new SqlCommand(query2, c.conn);
             cmd2.Connection = c.conn;
             SqlDataAdapter adp2 = new SqlDataAdapter(cmd2);
@@ -153,22 +153,18 @@ namespace WinFormsApp1
 
         private void button4_Click(object sender, EventArgs e)
         {
-            // Lấy giá trị của comboBox1
             string exportBillID = comboBox1.Text;
-            // Kiểm tra giá trị có rỗng hay không
             if (string.IsNullOrEmpty(exportBillID))
             {
-                // Hiển thị thông báo yêu cầu nhập giá trị
                 MessageBox.Show("Vui lòng chọn hoặc nhập mã hóa đơn xuất!");
                 return;
             }
-            // Khởi tạo đối tượng SqlConnection
             using (SqlConnection conn = new SqlConnection())
             {
                 try
                 {
                     c.connect();
-                    string sql = "SELECT * FROM ExportBill WHERE ExportBillID = @ExportBillID";
+                    string sql = "SELECT * FROM DetailBillExport WHERE ExportBillID = @ExportBillID";
                     SqlCommand cmd2 = new SqlCommand(sql, c.conn);
                     cmd2.Parameters.AddWithValue("@ExportBillID", exportBillID);
                     SqlDataReader reader = cmd2.ExecuteReader();
@@ -200,16 +196,30 @@ namespace WinFormsApp1
         {
             c.connect();
             DataSet data = new DataSet();
-            string query = "SELECT ExportBillID, ExportDate, SUM (price) AS total_price FROM ExportBill GROUP BY ExportBillID, ExportDate";
-            // Tạo một đối tượng SqlConnection
-            // Tạo một đối tượng SqlCommand
+            string query = "SELECT D.ExportBillID, E.ExportDate, SUM(D.PriceExport) AS TotalPriceExport FROM DetailBillExport AS D LEFT JOIN ExportBill AS E ON D.ExportBillID = E.ExportBillID GROUP BY D.ExportBillID, E.ExportDate";
             SqlCommand cmd = new SqlCommand(query, c.conn);
-            // Gán giá trị cho thuộc tính Connection của SqlCommand
             cmd.Connection = c.conn;
-            // Tạo một đối tượng SqlDataAdapter bằng cách truyền vào đối tượng SqlCommand
             SqlDataAdapter adp = new SqlDataAdapter(cmd);
             adp.Fill(data);
             dataGridView1.DataSource = data.Tables[0];
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            c.connect();
+            DataTable data4 = new DataTable();
+            string qt = dataGridView1.CurrentRow.Cells["AmountExport"].Value.ToString();
+            string id = dataGridView1.CurrentRow.Cells["ExportBillID"].Value.ToString();
+            string pr = dataGridView1.CurrentRow.Cells["ProductID"].Value.ToString();
+            string query4 = "UPDATE DetailBillExport SET AmountExport = @qt WHERE ExportBillID = @id AND ProductID = @pr";
+            SqlCommand cmd4 = new SqlCommand(query4, c.conn);
+            cmd4.Parameters.AddWithValue("@qt", qt);
+            cmd4.Parameters.AddWithValue("@id", id);
+            cmd4.Parameters.AddWithValue("@pr", pr);
+            cmd4.Connection = c.conn;
+            SqlDataAdapter adp4 = new SqlDataAdapter(cmd4);
+            cmd4.ExecuteNonQuery();
+            dataGridView1.Refresh();
         }
     }
 }

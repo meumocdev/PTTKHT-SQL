@@ -14,7 +14,7 @@ namespace WinFormsApp1
         public SqlCommand cmd;
         public void connect()
         {
-            string connectString = @"Data Source=localhost;Initial Catalog=Storage;Integrated Security=True";
+            string connectString = @"Data Source=localhost;Initial Catalog=Storage1;Integrated Security=True";
             conn = new SqlConnection(connectString);
             conn.Open();
   

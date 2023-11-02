@@ -14,16 +14,16 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace WinFormsApp1
 {
-    public partial class ADD : Form
+    public partial class DetailOrder : Form
     {
-        public ADD()
+        public DetailOrder()
         {
             InitializeComponent();
             load();
 
         }
 
-        SqlConnection con = new SqlConnection(@"Data Source=LAPTOP-S7G583VS\SQLEXPRESS;Initial Catalog=Storage;Integrated Security=True");
+        SqlConnection con = new SqlConnection(@"Data Source=localhost;Initial Catalog=Storage1;Integrated Security=True");
         private void openCon()
         {
             if (con.State != ConnectionState.Open)
@@ -149,7 +149,7 @@ namespace WinFormsApp1
         private void button7_Click(object sender, EventArgs e)
         {
 
-            string querydetail = "INSERT INTO DetailOrder(ShippmentID,ProductID,AmountOrder) VALUES('" + ShippmentID.Text + "','" + productid.Text + "'," + Convert.ToInt32(AmountOrder.Text) + ")";
+            string querydetail = "INSERT INTO DetailOrder(ShippmentID,SupplierID,ProductID,AmountOrder) VALUES('" + ShippmentID.Text + "','" + SupplierID.Text + "','" + productid.Text + "'," + Convert.ToInt32(AmountOrder.Text) + ")";
             Exe(querydetail);
             loadOrderDetail(ShippmentID.Text);
 
@@ -181,6 +181,7 @@ namespace WinFormsApp1
         private void Reset()
         {
             ShippmentID.Text = "ShippmentID";
+            SupplierID.Text = "SupplierID";
             productid.Text = "ProductID";
             AmountOrder.Text = "";
             load();
@@ -191,6 +192,7 @@ namespace WinFormsApp1
             DataGridViewRow row = new DataGridViewRow();
             row = dataGridView1.Rows[e.RowIndex];
             ShippmentID.Text = Convert.ToString(row.Cells["ShippmentID"].Value);
+            ShippmentID.Text = Convert.ToString(row.Cells["SupplierID"].Value);
             productid.Text = Convert.ToString(row.Cells["ProductID"].Value);
             AmountOrder.Text = Convert.ToString(row.Cells["AmountOrder"].Value);
         }
@@ -202,15 +204,14 @@ namespace WinFormsApp1
 
         private void button4_Click(object sender, EventArgs e)
         {
-            string query = "UPDATE DetailOrder SET AmountOrder = " + Convert.ToInt32(AmountOrder.Text) + "  WHERE ShippmentID = '" + ShippmentID.Text + "' AND ProductID = '" + productid.Text + "'";
+            string query = "UPDATE DetailOrder SET AmountOrder = " + Convert.ToInt32(AmountOrder.Text) + "  WHERE ShippmentID = '" + ShippmentID.Text + " AND SupplierID = '" + SupplierID.Text + " AND ProductID = '" + productid.Text + "'";
             Exe(query);
             load();
         }
 
         private void button5_Click_1(object sender, EventArgs e)
         {
-
-            string query = "DELETE DetailOrder  WHERE ShippmentID = '" + ShippmentID.Text + "' AND ProductID = '" + productid.Text + "'";
+            string query = "DELETE DetailOrder  WHERE WHERE ShippmentID = '" + ShippmentID.Text + "' AND SupplierID = '" + SupplierID.Text + "' AND ProductID = '" + productid.Text + "'";
             Exe(query);
             load();
         }
@@ -222,6 +223,16 @@ namespace WinFormsApp1
         }
 
         private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void ShippmentID_TextChanged(object sender, EventArgs e)
         {
 
         }

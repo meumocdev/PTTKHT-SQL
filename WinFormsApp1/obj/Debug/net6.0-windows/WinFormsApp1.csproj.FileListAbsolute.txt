@@ -143,7 +143,6 @@ D:\sour\WinFormsApp1\bin\Debug\net6.0-windows\Microsoft.Data.Tools.Utilities.dll
 D:\sour\WinFormsApp1\bin\Debug\net6.0-windows\Microsoft.SqlServer.TransactSql.ScriptDom.dll
 D:\sour\WinFormsApp1\bin\Debug\net6.0-windows\Microsoft.SqlServer.Types.dll
 D:\sour\WinFormsApp1\obj\Debug\net6.0-windows\WinFormsApp1.csproj.AssemblyReference.cache
-D:\sour\WinFormsApp1\obj\Debug\net6.0-windows\WinFormsApp1.ADD.resources
 D:\sour\WinFormsApp1\obj\Debug\net6.0-windows\WinFormsApp1.Depot.resources
 D:\sour\WinFormsApp1\obj\Debug\net6.0-windows\WinFormsApp1.DetailEp.resources
 D:\sour\WinFormsApp1\obj\Debug\net6.0-windows\WinFormsApp1.DetailIp.resources
@@ -162,3 +161,5 @@ D:\sour\WinFormsApp1\obj\Debug\net6.0-windows\refint\WinFormsApp1.dll
 D:\sour\WinFormsApp1\obj\Debug\net6.0-windows\WinFormsApp1.pdb
 D:\sour\WinFormsApp1\obj\Debug\net6.0-windows\WinFormsApp1.genruntimeconfig.cache
 D:\sour\WinFormsApp1\obj\Debug\net6.0-windows\ref\WinFormsApp1.dll
+D:\sour\WinFormsApp1\obj\Debug\net6.0-windows\WinFormsApp1.DetailOrder.resources
+D:\sour\WinFormsApp1\obj\Debug\net6.0-windows\WinFormsApp1.Menu.resources

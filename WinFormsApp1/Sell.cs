@@ -43,7 +43,7 @@ namespace WinFormsApp1
 
         private void button6_Click(object sender, EventArgs e)
         {
-            Depot Dp = new Depot();
+            Menu Dp = new Menu();
             Dp.Show();
             this.Hide();
         }

@@ -34,8 +34,8 @@
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
             panel1 = new Panel();
+            button7 = new Button();
             dateTimePicker1 = new DateTimePicker();
-            label8 = new Label();
             button2 = new Button();
             button5 = new Button();
             panel2 = new Panel();
@@ -66,8 +66,8 @@
             // panel1
             // 
             panel1.BackColor = Color.LightCyan;
+            panel1.Controls.Add(button7);
             panel1.Controls.Add(dateTimePicker1);
-            panel1.Controls.Add(label8);
             panel1.Controls.Add(button2);
             panel1.Controls.Add(button5);
             panel1.Controls.Add(panel2);
@@ -80,6 +80,22 @@
             panel1.Size = new Size(953, 518);
             panel1.TabIndex = 1;
             // 
+            // button7
+            // 
+            button7.BackColor = Color.Lavender;
+            button7.Cursor = Cursors.Hand;
+            button7.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            button7.ForeColor = Color.DarkMagenta;
+            button7.Location = new Point(588, 426);
+            button7.Margin = new Padding(3, 2, 3, 2);
+            button7.Name = "button7";
+            button7.Size = new Size(123, 40);
+            button7.TabIndex = 27;
+            button7.Text = "UPDATE";
+            button7.TextAlign = ContentAlignment.TopCenter;
+            button7.UseVisualStyleBackColor = false;
+            button7.Click += button7_Click;
+            // 
             // dateTimePicker1
             // 
             dateTimePicker1.Location = new Point(658, 12);
@@ -88,31 +104,18 @@
             dateTimePicker1.TabIndex = 26;
             dateTimePicker1.ValueChanged += dateTimePicker1_ValueChanged;
             // 
-            // label8
-            // 
-            label8.AutoSize = true;
-            label8.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label8.ForeColor = Color.DarkMagenta;
-            label8.ImageAlign = ContentAlignment.TopCenter;
-            label8.Location = new Point(134, 49);
-            label8.Name = "label8";
-            label8.Size = new Size(95, 20);
-            label8.TabIndex = 25;
-            label8.Text = "THÔNG TIN";
-            label8.TextAlign = ContentAlignment.TopCenter;
-            // 
             // button2
             // 
             button2.BackColor = Color.Lavender;
             button2.Cursor = Cursors.Hand;
             button2.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point);
             button2.ForeColor = Color.DarkMagenta;
-            button2.Location = new Point(689, 426);
+            button2.Location = new Point(770, 426);
             button2.Margin = new Padding(3, 2, 3, 2);
             button2.Name = "button2";
             button2.Size = new Size(123, 40);
             button2.TabIndex = 24;
-            button2.Text = "HỦY ĐƠN";
+            button2.Text = "CANCEL";
             button2.TextAlign = ContentAlignment.TopCenter;
             button2.UseVisualStyleBackColor = false;
             button2.Click += button2_Click;
@@ -123,12 +126,12 @@
             button5.Cursor = Cursors.Hand;
             button5.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point);
             button5.ForeColor = Color.DarkMagenta;
-            button5.Location = new Point(468, 426);
+            button5.Location = new Point(416, 426);
             button5.Margin = new Padding(3, 2, 3, 2);
             button5.Name = "button5";
             button5.Size = new Size(123, 40);
             button5.TabIndex = 23;
-            button5.Text = "IN HÓA ĐƠN";
+            button5.Text = "PRINT ";
             button5.TextAlign = ContentAlignment.TopCenter;
             button5.UseVisualStyleBackColor = false;
             button5.Click += button5_Click;
@@ -175,9 +178,9 @@
             label2.ForeColor = Color.DarkMagenta;
             label2.Location = new Point(10, 28);
             label2.Name = "label2";
-            label2.Size = new Size(80, 15);
+            label2.Size = new Size(71, 15);
             label2.TabIndex = 29;
-            label2.Text = "Mã đơn hàng";
+            label2.Text = "ExportBillID";
             // 
             // button4
             // 
@@ -190,7 +193,7 @@
             button4.Name = "button4";
             button4.Size = new Size(84, 32);
             button4.TabIndex = 28;
-            button4.Text = "LÀM MỚI";
+            button4.Text = "RESET";
             button4.TextAlign = ContentAlignment.TopCenter;
             button4.UseVisualStyleBackColor = false;
             button4.Click += button4_Click_1;
@@ -206,7 +209,7 @@
             button1.Name = "button1";
             button1.Size = new Size(84, 32);
             button1.TabIndex = 27;
-            button1.Text = "THÊM";
+            button1.Text = "ADD";
             button1.TextAlign = ContentAlignment.TopCenter;
             button1.UseVisualStyleBackColor = false;
             button1.Click += button1_Click;
@@ -222,7 +225,7 @@
             button6.Name = "button6";
             button6.Size = new Size(84, 32);
             button6.TabIndex = 26;
-            button6.Text = "KHO";
+            button6.Text = "MENU";
             button6.TextAlign = ContentAlignment.TopCenter;
             button6.UseVisualStyleBackColor = false;
             button6.Click += button6_Click;
@@ -238,7 +241,7 @@
             button3.Name = "button3";
             button3.Size = new Size(92, 32);
             button3.TabIndex = 25;
-            button3.Text = "ĐƠN HÀNG";
+            button3.Text = "DETAILEP";
             button3.TextAlign = ContentAlignment.TopCenter;
             button3.UseVisualStyleBackColor = false;
             button3.Click += button3_Click;
@@ -263,9 +266,9 @@
             label3.ForeColor = Color.DarkMagenta;
             label3.Location = new Point(10, 71);
             label3.Name = "label3";
-            label3.Size = new Size(56, 15);
+            label3.Size = new Size(61, 15);
             label3.TabIndex = 2;
-            label3.Text = "Mã hàng";
+            label3.Text = "ProductID";
             // 
             // comboBox1
             // 
@@ -287,9 +290,9 @@
             label4.ForeColor = Color.DarkMagenta;
             label4.Location = new Point(10, 161);
             label4.Name = "label4";
-            label4.Size = new Size(56, 15);
+            label4.Size = new Size(84, 15);
             label4.TabIndex = 4;
-            label4.Text = "Số lượng";
+            label4.Text = "AmountExport";
             // 
             // textBox1
             // 
@@ -308,9 +311,9 @@
             label5.ForeColor = Color.DarkMagenta;
             label5.Location = new Point(10, 199);
             label5.Name = "label5";
-            label5.Size = new Size(50, 15);
+            label5.Size = new Size(94, 15);
             label5.TabIndex = 7;
-            label5.Text = "Đơn giá";
+            label5.Text = "ExportPriceItem";
             // 
             // textBox2
             // 
@@ -331,9 +334,9 @@
             label6.ForeColor = Color.DarkMagenta;
             label6.Location = new Point(10, 113);
             label6.Name = "label6";
-            label6.Size = new Size(86, 15);
+            label6.Size = new Size(83, 15);
             label6.TabIndex = 9;
-            label6.Text = "Tên sản phẩm";
+            label6.Text = "ProductName";
             // 
             // label7
             // 
@@ -343,9 +346,9 @@
             label7.ImageAlign = ContentAlignment.TopCenter;
             label7.Location = new Point(579, 49);
             label7.Name = "label7";
-            label7.Size = new Size(153, 20);
+            label7.Size = new Size(66, 20);
             label7.TabIndex = 12;
-            label7.Text = "CHI TIẾT HÓA ĐƠN";
+            label7.Text = "DETAIL";
             label7.TextAlign = ContentAlignment.TopCenter;
             // 
             // dataGridView1
@@ -404,9 +407,9 @@
             label1.ImageAlign = ContentAlignment.TopCenter;
             label1.Location = new Point(368, 9);
             label1.Name = "label1";
-            label1.Size = new Size(109, 24);
+            label1.Size = new Size(55, 24);
             label1.TabIndex = 0;
-            label1.Text = "BÁN HÀNG";
+            label1.Text = "SELL";
             label1.TextAlign = ContentAlignment.TopCenter;
             label1.Click += label1_Click;
             // 
@@ -433,7 +436,6 @@
         #endregion
 
         private Panel panel1;
-        private Label label8;
         private Button button2;
         private Button button5;
         private Panel panel2;
@@ -456,5 +458,6 @@
         private Label label2;
         private DateTimePicker dateTimePicker1;
         private BindingSource bindingSource1;
+        private Button button7;
     }
 }

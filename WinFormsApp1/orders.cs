@@ -19,7 +19,7 @@ namespace WinFormsApp1
             load();
         }
 
-        SqlConnection con = new SqlConnection(@"Data Source=LAPTOP-S7G583VS\SQLEXPRESS;Initial Catalog=Storage;Integrated Security=True");
+        SqlConnection con = new SqlConnection(@"Data Source=localhost;Initial Catalog=Storage1;Integrated Security=True");
         private void openCon()
         {
             if (con.State != ConnectionState.Open)

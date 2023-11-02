@@ -78,7 +78,7 @@
             button7.Name = "button7";
             button7.Size = new Size(108, 26);
             button7.TabIndex = 24;
-            button7.Text = "KHO";
+            button7.Text = "MENU";
             button7.TextAlign = ContentAlignment.TopCenter;
             button7.UseVisualStyleBackColor = false;
             button7.Click += button7_Click;
@@ -94,7 +94,7 @@
             button6.Name = "button6";
             button6.Size = new Size(108, 26);
             button6.TabIndex = 23;
-            button6.Text = "BÁN HÀNG";
+            button6.Text = "SELL";
             button6.TextAlign = ContentAlignment.TopCenter;
             button6.UseVisualStyleBackColor = false;
             button6.Click += button6_Click;
@@ -110,7 +110,7 @@
             button5.Name = "button5";
             button5.Size = new Size(108, 26);
             button5.TabIndex = 22;
-            button5.Text = "THOÁT";
+            button5.Text = "EXIT";
             button5.TextAlign = ContentAlignment.TopCenter;
             button5.UseVisualStyleBackColor = false;
             button5.Click += button5_Click;
@@ -126,7 +126,7 @@
             button3.Name = "button3";
             button3.Size = new Size(108, 26);
             button3.TabIndex = 21;
-            button3.Text = "SỬA";
+            button3.Text = "UPDATE";
             button3.TextAlign = ContentAlignment.TopCenter;
             button3.UseVisualStyleBackColor = false;
             button3.Click += button3_Click;
@@ -142,7 +142,7 @@
             button2.Name = "button2";
             button2.Size = new Size(108, 26);
             button2.TabIndex = 20;
-            button2.Text = "XÓA";
+            button2.Text = "DELETE";
             button2.TextAlign = ContentAlignment.TopCenter;
             button2.UseVisualStyleBackColor = false;
             button2.Click += button2_Click;
@@ -172,7 +172,7 @@
             button1.Name = "button1";
             button1.Size = new Size(81, 26);
             button1.TabIndex = 18;
-            button1.Text = "Làm mới";
+            button1.Text = "Reset";
             button1.TextAlign = ContentAlignment.TopCenter;
             button1.UseVisualStyleBackColor = false;
             button1.Click += button1_Click_1;
@@ -184,9 +184,9 @@
             label3.ForeColor = Color.DarkMagenta;
             label3.Location = new Point(17, 51);
             label3.Name = "label3";
-            label3.Size = new Size(73, 15);
+            label3.Size = new Size(71, 15);
             label3.TabIndex = 2;
-            label3.Text = "Mã đơn bán";
+            label3.Text = "ExportBillID";
             // 
             // comboBox1
             // 
@@ -198,7 +198,7 @@
             comboBox1.Name = "comboBox1";
             comboBox1.Size = new Size(238, 23);
             comboBox1.TabIndex = 3;
-            comboBox1.Text = "nhập mã";
+            comboBox1.Text = "Enter ID";
             comboBox1.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
             // 
             // button4
@@ -212,7 +212,7 @@
             button4.Name = "button4";
             button4.Size = new Size(81, 26);
             button4.TabIndex = 17;
-            button4.Text = "TÌM KIẾM";
+            button4.Text = "Search";
             button4.TextAlign = ContentAlignment.TopCenter;
             button4.UseVisualStyleBackColor = false;
             button4.Click += button4_Click;
@@ -272,9 +272,9 @@
             label1.ImageAlign = ContentAlignment.TopCenter;
             label1.Location = new Point(360, 20);
             label1.Name = "label1";
-            label1.Size = new Size(156, 24);
+            label1.Size = new Size(159, 24);
             label1.TabIndex = 0;
-            label1.Text = "ĐƠN BÁN HÀNG";
+            label1.Text = "DETAIL EXPORT";
             label1.TextAlign = ContentAlignment.TopCenter;
             label1.Click += label1_Click;
             // 

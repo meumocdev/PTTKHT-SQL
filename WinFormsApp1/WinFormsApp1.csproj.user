@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Compile Update="ADD.cs">
+    <Compile Update="DetailOrder.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Depot.cs">
@@ -13,7 +13,10 @@
     <Compile Update="DetailIp.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="importBill.cs">
+    <Compile Update="Menu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="ImportBill.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Login.cs">

@@ -58,7 +58,6 @@ namespace WinFormsApp1
             {
                 textBox4.PasswordChar = '\0';
             }
-            // Nếu không, che khuất chúng bằng ký tự *
             else
             {
                 textBox4.PasswordChar = '*';
@@ -72,7 +71,6 @@ namespace WinFormsApp1
             string query = "Select * From account where username = '" + textBox1.Text +
                 "' and password = '" + textBox4.Text + "'";
             SqlCommand cmd = new SqlCommand(query, c.conn);
-            // Gán giá trị cho thuộc tính Connection của SqlCommand
             cmd.Connection = c.conn;
             SqlDataReader reader = cmd.ExecuteReader();
             if (reader.Read() == false)
@@ -84,8 +82,8 @@ namespace WinFormsApp1
             }
             else
             {
-                Sell sll = new Sell();
-                sll.Show();
+                Menu mn = new Menu();
+                mn.Show();
                 this.Hide();
             }
  
@@ -96,7 +94,6 @@ namespace WinFormsApp1
         private void button2_Leave(object sender, EventArgs e)
         {
             DialogResult result = MessageBox.Show("Bạn có chắc muốn thoát không?", "Xác nhận thoát", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            // Nếu người dùng chọn Yes, thoát ứng dụng
             if (result == DialogResult.Yes)
             {
                 Application.Exit();
@@ -105,27 +102,18 @@ namespace WinFormsApp1
         int tat = 0;
         private void button2_Click(object sender, EventArgs e)
         {
-            // Gán biến tat bằng 1
             tat = 1;
-
-            // Hiển thị hộp thoại xác nhận
             DialogResult dialog;
             dialog = MessageBox.Show("Bạn có muốn thoát hay không", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
-            // Nếu người dùng chọn Yes thì thoát chương trình
             if (dialog == DialogResult.Yes)
                 Application.Exit();
         }
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
-            // Nếu biến tat bằng 0, tức là người dùng không nhấn nút thoát mà nhấn nút X trên thanh tiêu đề
             if (tat == 0)
             {
-                // Hiển thị hộp thoại xác nhận
                 DialogResult DR = MessageBox.Show("Bạn có muốn FormClosing không", "Thông Báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
-                // Nếu người dùng chọn No thì hủy việc đóng form
                 if (DR == DialogResult.No)
                     e.Cancel = true;
             }

@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Net.Mime.MediaTypeNames;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace WinFormsApp1
 {
@@ -17,82 +18,13 @@ namespace WinFormsApp1
         public Depot()
         {
             InitializeComponent();
-            load();
         }
-        SqlConnection con = new SqlConnection(@"Data Source=LAPTOP-S7G583VS\SQLEXPRESS;Initial Catalog=Storage;Integrated Security=True");
-        private void openCon()
-        {
-            if (con.State != ConnectionState.Open)
-            {
-                con.Open();
-            }
+        ConnectData c = new ConnectData();
 
-        }
-        private void closeCon()
-        {
-            if (con.State != ConnectionState.Closed)
-            {
-                con.Close();
-            }
-        }
-        private Boolean Exe(string cmd)
-        {
-            openCon();
-            Boolean check;
-            try
-            {
-                SqlCommand sqlCommand = new SqlCommand(cmd, con);
-
-                sqlCommand.ExecuteNonQuery();
-                check = true;
-
-            }
-            catch (Exception ex)
-            {
-                check = false;
-            }
-            closeCon();
-            return check;
-        }
-        private DataTable Red(string cmd)
-        {
-            openCon();
-            DataTable dt = new DataTable();
-            try
-            {
-                SqlCommand sqlCommand = new SqlCommand(cmd, con);
-                SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(sqlCommand);
-                sqlDataAdapter.Fill(dt);
-            }
-            catch (Exception ex)
-            {
-                dt = null;
-                throw;
-
-            }
-            closeCon();
-            return dt;
-
-        }
-
-        private void load()
-        {
-            DataTable dt = Red("Select * from PRODUCT");
-            if (dt != null)
-            {
-                dataGridView1.DataSource = dt;
-            }
-        }
-        private void button5_Click(object sender, EventArgs e)
-        {
-            Sell sl = new Sell();
-            sl.Show();
-            this.Hide();
-        }
 
         private void button4_Click(object sender, EventArgs e)
         {
-            ADD ad = new ADD();
+            Menu ad = new Menu();
             ad.Show();
             this.Hide();
         }
@@ -119,25 +51,112 @@ namespace WinFormsApp1
 
         private void button2_Click(object sender, EventArgs e)
         {
-            string query = "INSERT INTO Product (ProductID,ProductName,Currency,Percents) VALUES ('" + textId.Text + "','" + textName.Text + "','" + texrdonvi.Text + "'," + Convert.ToInt32(textphantram.Text) + ")";
-            Exe(query);
-            load();
-            Reset();
-        }
-        void Reset()
-        {
-            textId.Clear();
-
-            textId.Focus();
-
-            textName.Clear();
-
-            textphantram.Clear();
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Depot_Load(object sender, EventArgs e)
+        {
+
+            c.connect();
+            DataTable data = new DataTable();
+            string query = "SELECT DISTINCT ProductID From InStorage";
+            SqlCommand cmd = new SqlCommand(query, c.conn);
+            cmd.Connection = c.conn;
+            SqlDataAdapter adp = new SqlDataAdapter(cmd);
+            adp.Fill(data);
+            comboBox1.DataSource = data;
+            comboBox1.ValueMember = "ProductID";
+
+            DataTable data2 = new DataTable();
+            string query2 = "SELECT ID,ProductID,InStorageAfter FROM InStorage";
+            SqlCommand cmd2 = new SqlCommand(query2, c.conn);
+            cmd2.Connection = c.conn;
+            SqlDataAdapter adp2 = new SqlDataAdapter(cmd2);
+            adp2.Fill(data2);
+            dataGridView1.DataSource = data2;
+
+        }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            string productID = comboBox1.Text;
+            if (string.IsNullOrEmpty(productID))
+            {
+                MessageBox.Show("Vui lòng chọn hoặc nhập mã hóa đơn xuất!");
+                return;
+            }
+            using (SqlConnection conn = new SqlConnection())
+            {
+                try
+                {
+                    c.connect();
+                    string sql = "SELECT * FROM InStorage WHERE ProductID = @ProductID";
+                    SqlCommand cmd2 = new SqlCommand(sql, c.conn);
+                    cmd2.Parameters.AddWithValue("@ProductID", productID);
+                    SqlDataReader reader = cmd2.ExecuteReader();
+                    if (reader.HasRows)
+                    {
+                        DataTable dt = new DataTable();
+                        dt.Load(reader);
+                        dataGridView1.DataSource = dt;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Không có dữ liệu nào trùng khớp với mã hóa đơn xuất!");
+                    }
+                    // conn.Close();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+
+        }
+        int tat = 0;
+        private void Depot_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (tat == 0)
+            {
+                DialogResult DR = MessageBox.Show("Bạn có muốn thoát không", "Thông Báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (DR == DialogResult.No)
+                    e.Cancel = true;
+            }
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            c.connect();
+            DataTable data = new DataTable();
+            string query = "SELECT DISTINCT ProductID From InStorage";
+            SqlCommand cmd = new SqlCommand(query, c.conn);
+            cmd.Connection = c.conn;
+            SqlDataAdapter adp = new SqlDataAdapter(cmd);
+            adp.Fill(data);
+            comboBox1.DataSource = data;
+            comboBox1.ValueMember = "ProductID";
+
+            DataTable data2 = new DataTable();
+            string query2 = "SELECT ID,ProductID,InStorageAfter FROM InStorage";
+            SqlCommand cmd2 = new SqlCommand(query2, c.conn);
+            cmd2.Connection = c.conn;
+            SqlDataAdapter adp2 = new SqlDataAdapter(cmd2);
+            adp2.Fill(data2);
+            dataGridView1.DataSource = data2;
         }
     }
 }

@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace WinFormsApp1
 {
@@ -137,6 +138,29 @@ namespace WinFormsApp1
         {
             string rowFilter = string.Format("{0} like '{1}'", "SupplierID", "*" + textBox1.Text + "*");
             (dataGridView1.DataSource as DataTable).DefaultView.RowFilter = rowFilter;
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            Menu chg = new Menu();
+            chg.Show();
+            this.Hide();
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            Menu chg = new Menu();
+            chg.Show();
+            this.Hide();
+        }
+        int tat = 0;
+        private void button5_Click(object sender, EventArgs e)
+        {
+            tat = 1;
+            DialogResult dialog;
+            dialog = MessageBox.Show("Bạn có muốn thoát hay không", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (dialog == DialogResult.Yes)
+                Application.Exit();
         }
     }
 }

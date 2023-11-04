@@ -32,6 +32,7 @@ namespace WinFormsApp1
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
@@ -58,9 +59,11 @@ namespace WinFormsApp1
             label1 = new Label();
             button6 = new Button();
             button3 = new Button();
+            bindingSource1 = new BindingSource(components);
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)bindingSource1).BeginInit();
             SuspendLayout();
             // 
             // panel1
@@ -425,6 +428,7 @@ namespace WinFormsApp1
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)bindingSource1).EndInit();
             ResumeLayout(false);
         }
 
@@ -452,6 +456,7 @@ namespace WinFormsApp1
         private TextBox textBox1;
         private TextBox ShippmentID;
         private ComboBox SupplierID;
+        private BindingSource bindingSource1;
     }
 }
 

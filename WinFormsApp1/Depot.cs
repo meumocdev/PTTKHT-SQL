@@ -158,5 +158,10 @@ namespace WinFormsApp1
             adp2.Fill(data2);
             dataGridView1.DataSource = data2;
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

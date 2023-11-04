@@ -115,7 +115,7 @@
             button2.Name = "button2";
             button2.Size = new Size(123, 40);
             button2.TabIndex = 24;
-            button2.Text = "CANCEL";
+            button2.Text = "DELETE";
             button2.TextAlign = ContentAlignment.TopCenter;
             button2.UseVisualStyleBackColor = false;
             button2.Click += button2_Click;

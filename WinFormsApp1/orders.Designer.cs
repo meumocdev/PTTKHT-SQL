@@ -43,7 +43,6 @@
             button3 = new Button();
             label2 = new Label();
             suppliID = new ComboBox();
-            button2 = new Button();
             ShippmentID = new TextBox();
             label10 = new Label();
             dataGridView1 = new DataGridView();
@@ -102,9 +101,10 @@
             button7.Name = "button7";
             button7.Size = new Size(108, 26);
             button7.TabIndex = 24;
-            button7.Text = "INSTORAGE PAGE";
+            button7.Text = "DEPOT";
             button7.TextAlign = ContentAlignment.TopCenter;
             button7.UseVisualStyleBackColor = false;
+            button7.Click += button7_Click;
             // 
             // button6
             // 
@@ -117,9 +117,10 @@
             button6.Name = "button6";
             button6.Size = new Size(108, 26);
             button6.TabIndex = 23;
-            button6.Text = "SALE PAGE";
+            button6.Text = "MENU";
             button6.TextAlign = ContentAlignment.TopCenter;
             button6.UseVisualStyleBackColor = false;
+            button6.Click += button6_Click;
             // 
             // button5
             // 
@@ -135,6 +136,7 @@
             button5.Text = "EXIT";
             button5.TextAlign = ContentAlignment.TopCenter;
             button5.UseVisualStyleBackColor = false;
+            button5.Click += button5_Click;
             // 
             // panel2
             // 
@@ -144,7 +146,6 @@
             panel2.Controls.Add(button3);
             panel2.Controls.Add(label2);
             panel2.Controls.Add(suppliID);
-            panel2.Controls.Add(button2);
             panel2.Controls.Add(ShippmentID);
             panel2.Controls.Add(label10);
             panel2.Location = new Point(88, 300);
@@ -160,7 +161,7 @@
             button4.Cursor = Cursors.Hand;
             button4.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point);
             button4.ForeColor = Color.DarkMagenta;
-            button4.Location = new Point(365, 57);
+            button4.Location = new Point(365, 19);
             button4.Margin = new Padding(3, 2, 3, 2);
             button4.Name = "button4";
             button4.Size = new Size(72, 26);
@@ -176,7 +177,7 @@
             button3.Cursor = Cursors.Hand;
             button3.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point);
             button3.ForeColor = Color.DarkMagenta;
-            button3.Location = new Point(365, 100);
+            button3.Location = new Point(365, 62);
             button3.Margin = new Padding(3, 2, 3, 2);
             button3.Name = "button3";
             button3.Size = new Size(72, 23);
@@ -209,22 +210,6 @@
             suppliID.Name = "suppliID";
             suppliID.Size = new Size(232, 23);
             suppliID.TabIndex = 34;
-            // 
-            // button2
-            // 
-            button2.BackColor = Color.Lavender;
-            button2.Cursor = Cursors.Hand;
-            button2.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            button2.ForeColor = Color.DarkMagenta;
-            button2.Location = new Point(365, 16);
-            button2.Margin = new Padding(3, 2, 3, 2);
-            button2.Name = "button2";
-            button2.Size = new Size(72, 23);
-            button2.TabIndex = 20;
-            button2.Text = "UPDATE";
-            button2.TextAlign = ContentAlignment.TopCenter;
-            button2.UseVisualStyleBackColor = false;
-            button2.Click += button2_Click;
             // 
             // ShippmentID
             // 
@@ -313,7 +298,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(936, 459);
             Controls.Add(panel1);
-            Margin = new Padding(4, 4, 4, 4);
+            Margin = new Padding(4);
             MaximizeBox = false;
             MinimizeBox = false;
             Name = "orders";
@@ -333,7 +318,6 @@
         private Panel panel2;
         private DataGridView dataGridView1;
         private Label label1;
-        private Button button2;
         private Button button7;
         private Button button6;
         private Button button5;

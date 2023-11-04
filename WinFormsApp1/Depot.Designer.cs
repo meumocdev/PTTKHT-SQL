@@ -28,19 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
             panel1 = new Panel();
             panel2 = new Panel();
+            button1 = new Button();
             button2 = new Button();
             button4 = new Button();
             comboBox1 = new ComboBox();
             label4 = new Label();
             dataGridView1 = new DataGridView();
             label1 = new Label();
-            button1 = new Button();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
@@ -72,6 +72,22 @@
             panel2.Name = "panel2";
             panel2.Size = new Size(843, 126);
             panel2.TabIndex = 25;
+            // 
+            // button1
+            // 
+            button1.BackColor = Color.Lavender;
+            button1.Cursor = Cursors.Hand;
+            button1.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            button1.ForeColor = Color.DarkMagenta;
+            button1.Location = new Point(370, 71);
+            button1.Margin = new Padding(3, 2, 3, 2);
+            button1.Name = "button1";
+            button1.Size = new Size(107, 28);
+            button1.TabIndex = 31;
+            button1.Text = "RESET";
+            button1.TextAlign = ContentAlignment.TopCenter;
+            button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click_1;
             // 
             // button2
             // 
@@ -134,42 +150,42 @@
             dataGridView1.BackgroundColor = Color.Lavender;
             dataGridView1.BorderStyle = BorderStyle.Fixed3D;
             dataGridView1.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = SystemColors.Window;
-            dataGridViewCellStyle5.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle5.ForeColor = Color.DarkMagenta;
-            dataGridViewCellStyle5.SelectionBackColor = Color.Lavender;
-            dataGridViewCellStyle5.SelectionForeColor = Color.DarkMagenta;
-            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.True;
-            dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = SystemColors.Window;
+            dataGridViewCellStyle1.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = Color.DarkMagenta;
+            dataGridViewCellStyle1.SelectionBackColor = Color.Lavender;
+            dataGridViewCellStyle1.SelectionForeColor = Color.DarkMagenta;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = SystemColors.Window;
-            dataGridViewCellStyle6.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle6.ForeColor = Color.DarkMagenta;
-            dataGridViewCellStyle6.SelectionBackColor = Color.Lavender;
-            dataGridViewCellStyle6.SelectionForeColor = Color.DarkMagenta;
-            dataGridViewCellStyle6.WrapMode = DataGridViewTriState.False;
-            dataGridView1.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = SystemColors.Window;
+            dataGridViewCellStyle2.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = Color.DarkMagenta;
+            dataGridViewCellStyle2.SelectionBackColor = Color.Lavender;
+            dataGridViewCellStyle2.SelectionForeColor = Color.DarkMagenta;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
+            dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
             dataGridView1.GridColor = Color.Thistle;
             dataGridView1.Location = new Point(38, 68);
             dataGridView1.Margin = new Padding(3, 2, 3, 2);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle7.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = SystemColors.Control;
-            dataGridViewCellStyle7.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle7.ForeColor = Color.DarkMagenta;
-            dataGridViewCellStyle7.SelectionBackColor = Color.Lavender;
-            dataGridViewCellStyle7.SelectionForeColor = Color.DarkMagenta;
-            dataGridViewCellStyle7.WrapMode = DataGridViewTriState.True;
-            dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = SystemColors.Control;
+            dataGridViewCellStyle3.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle3.ForeColor = Color.DarkMagenta;
+            dataGridViewCellStyle3.SelectionBackColor = Color.Lavender;
+            dataGridViewCellStyle3.SelectionForeColor = Color.DarkMagenta;
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
+            dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             dataGridView1.RowHeadersWidth = 51;
-            dataGridViewCellStyle8.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle8.ForeColor = Color.DarkMagenta;
-            dataGridViewCellStyle8.SelectionBackColor = Color.Lavender;
-            dataGridViewCellStyle8.SelectionForeColor = Color.DarkMagenta;
-            dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle4.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle4.ForeColor = Color.DarkMagenta;
+            dataGridViewCellStyle4.SelectionBackColor = Color.Lavender;
+            dataGridViewCellStyle4.SelectionForeColor = Color.DarkMagenta;
+            dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle4;
             dataGridView1.RowTemplate.Height = 24;
             dataGridView1.Size = new Size(843, 251);
             dataGridView1.TabIndex = 11;
@@ -187,22 +203,7 @@
             label1.TabIndex = 0;
             label1.Text = "DEPOT";
             label1.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // button1
-            // 
-            button1.BackColor = Color.Lavender;
-            button1.Cursor = Cursors.Hand;
-            button1.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            button1.ForeColor = Color.DarkMagenta;
-            button1.Location = new Point(370, 71);
-            button1.Margin = new Padding(3, 2, 3, 2);
-            button1.Name = "button1";
-            button1.Size = new Size(107, 28);
-            button1.TabIndex = 31;
-            button1.Text = "RESET";
-            button1.TextAlign = ContentAlignment.TopCenter;
-            button1.UseVisualStyleBackColor = false;
-            button1.Click += button1_Click_1;
+            label1.Click += label1_Click;
             // 
             // Depot
             // 

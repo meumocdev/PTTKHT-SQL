@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
 using static System.Net.Mime.MediaTypeNames;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
@@ -22,6 +23,7 @@ namespace WinFormsApp1
             load();
 
         }
+        string supplierID;
 
         SqlConnection con = new SqlConnection(@"Data Source=localhost;Initial Catalog=Storage1;Integrated Security=True");
         private void openCon()
@@ -90,7 +92,8 @@ namespace WinFormsApp1
 
         private void loadOrderDetail(string ma)
         {
-            DataTable dt = Red("Select * from DetailOrder where DetailOrder.ShippmentID='" + ma + "'");
+            // Sử dụng biến toàn cục supplierID trong câu lệnh SQL
+            DataTable dt = Red("Select * from DetailOrder where DetailOrder.ShippmentID='" + ma + "' AND DetailOrder.SupplierID='" + supplierID + "'");
             if (dt != null)
             {
                 dataGridView1.DataSource = dt;
@@ -148,11 +151,10 @@ namespace WinFormsApp1
 
         private void button7_Click(object sender, EventArgs e)
         {
-
+            supplierID = SupplierID.Text;
             string querydetail = "INSERT INTO DetailOrder(ShippmentID,SupplierID,ProductID,AmountOrder) VALUES('" + ShippmentID.Text + "','" + SupplierID.Text + "','" + productid.Text + "'," + Convert.ToInt32(AmountOrder.Text) + ")";
             Exe(querydetail);
             loadOrderDetail(ShippmentID.Text);
-
         }
 
         private void comboBox1_SelectedIndexChanged_1(object sender, EventArgs e)
@@ -192,11 +194,10 @@ namespace WinFormsApp1
             DataGridViewRow row = new DataGridViewRow();
             row = dataGridView1.Rows[e.RowIndex];
             ShippmentID.Text = Convert.ToString(row.Cells["ShippmentID"].Value);
-            ShippmentID.Text = Convert.ToString(row.Cells["SupplierID"].Value);
+            SupplierID.Text = Convert.ToString(row.Cells["SupplierID"].Value);
             productid.Text = Convert.ToString(row.Cells["ProductID"].Value);
             AmountOrder.Text = Convert.ToString(row.Cells["AmountOrder"].Value);
         }
-
         private void button1_Click(object sender, EventArgs e)
         {
             Reset();
@@ -204,21 +205,21 @@ namespace WinFormsApp1
 
         private void button4_Click(object sender, EventArgs e)
         {
-            string query = "UPDATE DetailOrder SET AmountOrder = " + Convert.ToInt32(AmountOrder.Text) + "  WHERE ShippmentID = '" + ShippmentID.Text + " AND SupplierID = '" + SupplierID.Text + " AND ProductID = '" + productid.Text + "'";
+            string query = "UPDATE DetailOrder SET AmountOrder = " + Convert.ToInt32(AmountOrder.Text) + "  WHERE ShippmentID = '" + ShippmentID.Text + "' AND SupplierID = '" + SupplierID.Text + "' AND ProductID = '" + productid.Text + "'";
             Exe(query);
             load();
         }
-
+        ConnectData c = new ConnectData();
         private void button5_Click_1(object sender, EventArgs e)
         {
-            string query = "DELETE DetailOrder  WHERE WHERE ShippmentID = '" + ShippmentID.Text + "' AND SupplierID = '" + SupplierID.Text + "' AND ProductID = '" + productid.Text + "'";
+            string query = "DELETE FROM DetailOrder WHERE ShippmentID = '" + ShippmentID.Text + "' AND SupplierID = '" + SupplierID.Text + "' AND ProductID = '" + productid.Text + "'";
             Exe(query);
             load();
         }
 
         private void textBox1_TextChanged_1(object sender, EventArgs e)
         {
-            string rowFilter = string.Format("{0} like '{1}'", "ProductID", "*" + textBox1.Text + "*");
+            string rowFilter = string.Format("{0} like '{1}'", "ShippmentID", "*" + textBox1.Text + "*");
             (dataGridView1.DataSource as DataTable).DefaultView.RowFilter = rowFilter;
         }
 

@@ -15,15 +15,14 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace WinFormsApp1
 {
-    public partial class DetailOrder : Form
+    public partial class DetailImport : Form
     {
-        public DetailOrder()
+        public DetailImport()
         {
             InitializeComponent();
-            load();
+            // load();
 
         }
-        string supplierID;
 
         SqlConnection con = new SqlConnection(@"Data Source=localhost;Initial Catalog=Storage1;Integrated Security=True");
         private void openCon()
@@ -83,7 +82,7 @@ namespace WinFormsApp1
 
         private void load()
         {
-            DataTable dt = Red("Select * from DetailOrder");
+            DataTable dt = Red("Select * from DetailImport");
             if (dt != null)
             {
                 dataGridView1.DataSource = dt;
@@ -93,7 +92,7 @@ namespace WinFormsApp1
         private void loadOrderDetail(string ma)
         {
             // Sử dụng biến toàn cục supplierID trong câu lệnh SQL
-            DataTable dt = Red("Select * from DetailOrder where DetailOrder.ShippmentID='" + ma + "' AND DetailOrder.SupplierID='" + supplierID + "'");
+            DataTable dt = Red("Select * from DetailImport");
             if (dt != null)
             {
                 dataGridView1.DataSource = dt;
@@ -104,15 +103,22 @@ namespace WinFormsApp1
 
 
         //mở kết nối với database
-
+        int tat = 0;
         private void label2_Click(object sender, EventArgs e)
         {
-
+/*            if (tat == 0)
+            {
+                DialogResult DR = MessageBox.Show("Bạn có muốn FormClosing không", "Thông Báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (DR == DialogResult.No)
+                    e.Cancel = true;
+            }*/
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            Double ImportPriceItem = Convert.ToDouble(((DataRowView)productid.SelectedItem)["ImportPriceItem"]);
+            string ImportPriceItemString = ImportPriceItem.ToString("F2");
+            importPriceItem.Text = ImportPriceItemString;
         }
 
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
@@ -132,13 +138,28 @@ namespace WinFormsApp1
 
         private void button3_Click(object sender, EventArgs e)
         {
-            DetailIp Detail = new DetailIp();
+            AddPr Detail = new AddPr();
             Detail.Show();
             this.Hide();
         }
 
         private void ADD_Load(object sender, EventArgs e)
         {
+            string sql = "Select * From PRODUCT";
+            string sql2 = "Select * From Supplier";
+            DataTable dt2 = new DataTable();
+            DataTable dt3 = new DataTable();
+            SqlDataAdapter da2 = new SqlDataAdapter(sql, con);
+            SqlDataAdapter da3 = new SqlDataAdapter(sql2, con);
+            da2.Fill(dt2);
+            da3.Fill(dt3);
+            productid.DataSource = dt2;
+            productid.DisplayMember = "ProductID";
+            productid.ValueMember = "ProductID";
+            SupplierID.DataSource = dt3;
+            SupplierID.DisplayMember = "SupplierID";
+            SupplierID.ValueMember = "SupplierID";
+
 
         }
 
@@ -151,10 +172,36 @@ namespace WinFormsApp1
 
         private void button7_Click(object sender, EventArgs e)
         {
-            supplierID = SupplierID.Text;
-            string querydetail = "INSERT INTO DetailOrder(ShippmentID,SupplierID,ProductID,AmountOrder) VALUES('" + ShippmentID.Text + "','" + SupplierID.Text + "','" + productid.Text + "'," + Convert.ToInt32(AmountOrder.Text) + ")";
-            Exe(querydetail);
+            c.connect();
+            DataTable data = new DataTable();
+            string query = "INSERT INTO DetailImport(ShippmentID,SupplierID,ProductID,AmountOrder, ImportPriceItem, PriceOrder) VALUES (@ShippmentID, @SupplierID,@ProductID, @AmountOrder, @ImportPriceItem)";
+            string exportBillID = ShippmentID.Text;
+            SqlCommand cmd = new SqlCommand(query, c.conn);
+            cmd.Connection = c.conn;
+            SqlDataAdapter adp = new SqlDataAdapter(cmd);
+
+            cmd.CommandText = "Insert_DetailImport";
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@ShippmentID", exportBillID);
+            cmd.Parameters.AddWithValue("@SupplierID", SupplierID.SelectedValue);
+            cmd.Parameters.AddWithValue("@ProductID", productid.SelectedValue);
+            cmd.Parameters.AddWithValue("@AmountOrder", int.Parse(AmountOrder.Text));
+            cmd.Parameters.AddWithValue("@ImportPriceItem", decimal.Parse(importPriceItem.Text));
+            cmd.ExecuteNonQuery();
             loadOrderDetail(ShippmentID.Text);
+
+            DataTable data2 = new DataTable();
+            string query2 = "SELECT * FROM DetailImport";
+            SqlCommand cmd2 = new SqlCommand(query2, c.conn);
+            cmd2.Connection = c.conn;
+            SqlDataAdapter adp2 = new SqlDataAdapter(cmd2);
+            adp2.Fill(data2);
+            dataGridView1.DataSource = data2;
+
+            BindingSource bs = new BindingSource();
+            bs.DataSource = data2;
+            bs.Filter = "ShippmentID LIKE '" + ShippmentID.Text + "'";
+            dataGridView1.DataSource = bs;
         }
 
         private void comboBox1_SelectedIndexChanged_1(object sender, EventArgs e)
@@ -169,7 +216,7 @@ namespace WinFormsApp1
 
         private void button2_Click(object sender, EventArgs e)
         {
-            orders o = new orders();
+            Import o = new Import();
             o.Show();
             this.Hide();
 
@@ -197,6 +244,7 @@ namespace WinFormsApp1
             SupplierID.Text = Convert.ToString(row.Cells["SupplierID"].Value);
             productid.Text = Convert.ToString(row.Cells["ProductID"].Value);
             AmountOrder.Text = Convert.ToString(row.Cells["AmountOrder"].Value);
+            importPriceItem.Text = Convert.ToString(row.Cells["ImportPriceItem"].Value);
         }
         private void button1_Click(object sender, EventArgs e)
         {
@@ -205,14 +253,14 @@ namespace WinFormsApp1
 
         private void button4_Click(object sender, EventArgs e)
         {
-            string query = "UPDATE DetailOrder SET AmountOrder = " + Convert.ToInt32(AmountOrder.Text) + "  WHERE ShippmentID = '" + ShippmentID.Text + "' AND SupplierID = '" + SupplierID.Text + "' AND ProductID = '" + productid.Text + "'";
+            string query = "UPDATE DetailImport SET AmountOrder = " + Convert.ToInt32(AmountOrder.Text) + "  WHERE ShippmentID = '" + ShippmentID.Text + "' AND SupplierID = '" + SupplierID.Text + "' AND ProductID = '" + productid.Text + "'";
             Exe(query);
             load();
         }
         ConnectData c = new ConnectData();
         private void button5_Click_1(object sender, EventArgs e)
         {
-            string query = "DELETE FROM DetailOrder WHERE ShippmentID = '" + ShippmentID.Text + "' AND SupplierID = '" + SupplierID.Text + "' AND ProductID = '" + productid.Text + "'";
+            string query = "DELETE FROM DetailImport WHERE ShippmentID = '" + ShippmentID.Text + "' AND SupplierID = '" + SupplierID.Text + "' AND ProductID = '" + productid.Text + "'";
             Exe(query);
             load();
         }
@@ -236,6 +284,28 @@ namespace WinFormsApp1
         private void ShippmentID_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void button3_Click_1(object sender, EventArgs e)
+        {
+            Menu o = new Menu();
+            o.Show();
+            this.Hide();
+        }
+
+        private void button6_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void DetailImport_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (tat == 0)
+            {
+                DialogResult DR = MessageBox.Show("Bạn có muốn FormClosing không", "Thông Báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (DR == DialogResult.No)
+                    e.Cancel = true;
+            }
         }
     }
 }

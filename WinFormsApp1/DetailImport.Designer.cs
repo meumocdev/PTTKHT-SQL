@@ -4,7 +4,7 @@ using Label = System.Windows.Forms.Label;
 
 namespace WinFormsApp1
 {
-    partial class DetailOrder
+    partial class DetailImport
     {
         /// <summary>
         /// Required designer variable.
@@ -38,10 +38,14 @@ namespace WinFormsApp1
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
             panel1 = new Panel();
+            button3 = new Button();
             label4 = new Label();
             textBox1 = new TextBox();
             button2 = new Button();
             panel2 = new Panel();
+            label8 = new Label();
+            label7 = new Label();
+            importPriceItem = new TextBox();
             SupplierID = new ComboBox();
             ShippmentID = new TextBox();
             button5 = new Button();
@@ -57,8 +61,6 @@ namespace WinFormsApp1
             dataGridView1 = new DataGridView();
             label2 = new Label();
             label1 = new Label();
-            button6 = new Button();
-            button3 = new Button();
             bindingSource1 = new BindingSource(components);
             panel1.SuspendLayout();
             panel2.SuspendLayout();
@@ -69,6 +71,7 @@ namespace WinFormsApp1
             // panel1
             // 
             panel1.BackColor = Color.LightCyan;
+            panel1.Controls.Add(button3);
             panel1.Controls.Add(label4);
             panel1.Controls.Add(textBox1);
             panel1.Controls.Add(button2);
@@ -76,14 +79,28 @@ namespace WinFormsApp1
             panel1.Controls.Add(dataGridView1);
             panel1.Controls.Add(label2);
             panel1.Controls.Add(label1);
-            panel1.Controls.Add(button6);
-            panel1.Controls.Add(button3);
             panel1.Location = new Point(10, 11);
             panel1.Margin = new Padding(3, 2, 3, 2);
             panel1.Name = "panel1";
             panel1.Size = new Size(864, 482);
             panel1.TabIndex = 0;
             panel1.Paint += panel1_Paint;
+            // 
+            // button3
+            // 
+            button3.BackColor = Color.Lavender;
+            button3.Cursor = Cursors.Hand;
+            button3.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            button3.ForeColor = Color.DarkMagenta;
+            button3.Location = new Point(712, 339);
+            button3.Margin = new Padding(3, 2, 3, 2);
+            button3.Name = "button3";
+            button3.Size = new Size(103, 34);
+            button3.TabIndex = 36;
+            button3.Text = "MENU";
+            button3.TextAlign = ContentAlignment.TopCenter;
+            button3.UseVisualStyleBackColor = false;
+            button3.Click += button3_Click_1;
             // 
             // label4
             // 
@@ -114,7 +131,7 @@ namespace WinFormsApp1
             button2.Cursor = Cursors.Hand;
             button2.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point);
             button2.ForeColor = Color.DarkMagenta;
-            button2.Location = new Point(711, 391);
+            button2.Location = new Point(711, 400);
             button2.Margin = new Padding(3, 2, 3, 2);
             button2.Name = "button2";
             button2.Size = new Size(103, 34);
@@ -128,6 +145,9 @@ namespace WinFormsApp1
             // 
             panel2.BackColor = Color.LightCyan;
             panel2.BorderStyle = BorderStyle.FixedSingle;
+            panel2.Controls.Add(label8);
+            panel2.Controls.Add(label7);
+            panel2.Controls.Add(importPriceItem);
             panel2.Controls.Add(SupplierID);
             panel2.Controls.Add(ShippmentID);
             panel2.Controls.Add(button5);
@@ -143,16 +163,46 @@ namespace WinFormsApp1
             panel2.Location = new Point(57, 250);
             panel2.Margin = new Padding(3, 2, 3, 2);
             panel2.Name = "panel2";
-            panel2.Size = new Size(619, 207);
+            panel2.Size = new Size(619, 230);
             panel2.TabIndex = 18;
+            // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.BackColor = Color.LightCyan;
+            label8.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            label8.ForeColor = Color.DarkMagenta;
+            label8.Location = new Point(10, 70);
+            label8.Name = "label8";
+            label8.Size = new Size(65, 15);
+            label8.TabIndex = 44;
+            label8.Text = "SupplierID";
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.BackColor = Color.LightCyan;
+            label7.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            label7.ForeColor = Color.DarkMagenta;
+            label7.Location = new Point(269, 131);
+            label7.Name = "label7";
+            label7.Size = new Size(94, 15);
+            label7.TabIndex = 43;
+            label7.Text = "ImportPriceItem";
+            // 
+            // importPriceItem
+            // 
+            importPriceItem.Location = new Point(369, 129);
+            importPriceItem.Name = "importPriceItem";
+            importPriceItem.Size = new Size(232, 23);
+            importPriceItem.TabIndex = 42;
             // 
             // SupplierID
             // 
             SupplierID.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point);
             SupplierID.ForeColor = Color.DarkMagenta;
             SupplierID.FormattingEnabled = true;
-            SupplierID.Items.AddRange(new object[] { "C01", "C02", "C03", "C04", "C05", "C06", "C07" });
-            SupplierID.Location = new Point(326, 115);
+            SupplierID.Location = new Point(10, 99);
             SupplierID.Margin = new Padding(3, 2, 3, 2);
             SupplierID.Name = "SupplierID";
             SupplierID.Size = new Size(232, 23);
@@ -175,7 +225,7 @@ namespace WinFormsApp1
             button5.Cursor = Cursors.Hand;
             button5.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point);
             button5.ForeColor = Color.DarkMagenta;
-            button5.Location = new Point(326, 162);
+            button5.Location = new Point(326, 179);
             button5.Margin = new Padding(3, 2, 3, 2);
             button5.Name = "button5";
             button5.Size = new Size(84, 30);
@@ -191,7 +241,7 @@ namespace WinFormsApp1
             button4.Cursor = Cursors.Hand;
             button4.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point);
             button4.ForeColor = Color.DarkMagenta;
-            button4.Location = new Point(188, 162);
+            button4.Location = new Point(185, 179);
             button4.Margin = new Padding(3, 2, 3, 2);
             button4.Name = "button4";
             button4.Size = new Size(84, 30);
@@ -207,7 +257,7 @@ namespace WinFormsApp1
             label5.BackColor = Color.LightCyan;
             label5.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point);
             label5.ForeColor = Color.DarkMagenta;
-            label5.Location = new Point(10, 92);
+            label5.Location = new Point(283, 80);
             label5.Name = "label5";
             label5.Size = new Size(80, 15);
             label5.TabIndex = 34;
@@ -216,10 +266,10 @@ namespace WinFormsApp1
             // AmountOrder
             // 
             AmountOrder.BorderStyle = BorderStyle.FixedSingle;
-            AmountOrder.Location = new Point(10, 117);
+            AmountOrder.Location = new Point(369, 79);
             AmountOrder.Margin = new Padding(2);
             AmountOrder.Name = "AmountOrder";
-            AmountOrder.Size = new Size(232, 23);
+            AmountOrder.Size = new Size(115, 23);
             AmountOrder.TabIndex = 33;
             // 
             // button1
@@ -228,7 +278,7 @@ namespace WinFormsApp1
             button1.Cursor = Cursors.Hand;
             button1.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point);
             button1.ForeColor = Color.DarkMagenta;
-            button1.Location = new Point(474, 162);
+            button1.Location = new Point(474, 179);
             button1.Margin = new Padding(3, 2, 3, 2);
             button1.Name = "button1";
             button1.Size = new Size(84, 30);
@@ -256,7 +306,7 @@ namespace WinFormsApp1
             label3.AutoSize = true;
             label3.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point);
             label3.ForeColor = Color.DarkMagenta;
-            label3.Location = new Point(326, 10);
+            label3.Location = new Point(302, 35);
             label3.Name = "label3";
             label3.Size = new Size(61, 15);
             label3.TabIndex = 2;
@@ -268,7 +318,7 @@ namespace WinFormsApp1
             button7.Cursor = Cursors.Hand;
             button7.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point);
             button7.ForeColor = Color.DarkMagenta;
-            button7.Location = new Point(52, 162);
+            button7.Location = new Point(48, 179);
             button7.Margin = new Padding(3, 2, 3, 2);
             button7.Name = "button7";
             button7.Size = new Size(84, 30);
@@ -283,8 +333,7 @@ namespace WinFormsApp1
             productid.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point);
             productid.ForeColor = Color.DarkMagenta;
             productid.FormattingEnabled = true;
-            productid.Items.AddRange(new object[] { "DD01", "DD02", "TL15", "TL90", "TV14", "TV21", "TV29", "VD01", "VD02" });
-            productid.Location = new Point(326, 34);
+            productid.Location = new Point(369, 34);
             productid.Margin = new Padding(3, 2, 3, 2);
             productid.Name = "productid";
             productid.Size = new Size(232, 23);
@@ -373,42 +422,10 @@ namespace WinFormsApp1
             label1.Name = "label1";
             label1.Size = new Size(864, 41);
             label1.TabIndex = 0;
-            label1.Text = "DETAILORDER";
+            label1.Text = "DETAIL IMPORT";
             label1.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // button6
-            // 
-            button6.BackColor = Color.Lavender;
-            button6.Cursor = Cursors.Hand;
-            button6.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            button6.ForeColor = Color.DarkMagenta;
-            button6.Location = new Point(711, 321);
-            button6.Margin = new Padding(3, 2, 3, 2);
-            button6.Name = "button6";
-            button6.Size = new Size(103, 34);
-            button6.TabIndex = 26;
-            button6.Text = "INSTORAGE PAGE";
-            button6.TextAlign = ContentAlignment.TopCenter;
-            button6.UseVisualStyleBackColor = false;
-            button6.Click += button6_Click;
-            // 
-            // button3
-            // 
-            button3.BackColor = Color.Lavender;
-            button3.Cursor = Cursors.Hand;
-            button3.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            button3.ForeColor = Color.DarkMagenta;
-            button3.Location = new Point(711, 261);
-            button3.Margin = new Padding(3, 2, 3, 2);
-            button3.Name = "button3";
-            button3.Size = new Size(103, 34);
-            button3.TabIndex = 25;
-            button3.Text = "DETAILBILLIMPORT";
-            button3.TextAlign = ContentAlignment.TopCenter;
-            button3.UseVisualStyleBackColor = false;
-            button3.Click += button3_Click;
-            // 
-            // DetailOrder
+            // DetailImport
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -419,9 +436,10 @@ namespace WinFormsApp1
             Margin = new Padding(3, 2, 3, 2);
             MaximizeBox = false;
             MinimizeBox = false;
-            Name = "DetailOrder";
+            Name = "DetailImport";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Form1";
+            Text = "MENU";
+            FormClosing += DetailImport_FormClosing;
             Load += ADD_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
@@ -442,10 +460,8 @@ namespace WinFormsApp1
         private Label label6;
         private DataGridView dataGridView1;
         private Panel panel2;
-        private Button button3;
         private Button button1;
         private Button button7;
-        private Button button6;
         private Label label10;
         private Label label5;
         private TextBox AmountOrder;
@@ -457,6 +473,10 @@ namespace WinFormsApp1
         private TextBox ShippmentID;
         private ComboBox SupplierID;
         private BindingSource bindingSource1;
+        private TextBox importPriceItem;
+        private Button button3;
+        private Label label7;
+        private Label label8;
     }
 }
 

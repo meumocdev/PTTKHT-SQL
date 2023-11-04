@@ -163,5 +163,54 @@ namespace WinFormsApp1
         {
 
         }
+
+        private void button3_Click_1(object sender, EventArgs e)
+        {
+            if (dataGridView1.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Vui lòng chọn hàng để xóa!");
+                return;
+            }
+            DialogResult result = MessageBox.Show("Bạn có chắc xóa không?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result == DialogResult.Yes)
+            {
+                string exportBillID = dataGridView1.SelectedRows[0].Cells["ProductID"].Value.ToString();
+                using (SqlConnection conn = new SqlConnection())
+                {
+                    try
+                    {
+                        c.connect();
+                        string sql = "DELETE FROM InStorage WHERE ProductID = @ProductID";
+                        SqlCommand cmd = new SqlCommand(sql, c.conn);
+                        cmd.Parameters.AddWithValue("@ProductID", exportBillID);
+                        int affectedRows = cmd.ExecuteNonQuery();
+                        if (affectedRows > 0)
+                        {
+                            MessageBox.Show("Xóa dữ liệu thành công!");
+                            DataTable data2 = new DataTable();
+                            string query2 = "SELECT ID,ProductID,InStorageAfter FROM InStorage";
+                            SqlCommand cmd2 = new SqlCommand(query2, c.conn);
+                            cmd2.Connection = c.conn;
+                            SqlDataAdapter adp2 = new SqlDataAdapter(cmd2);
+                            adp2.Fill(data2);
+                            dataGridView1.DataSource = data2;
+                        }
+                        else
+                        {
+                            MessageBox.Show("Xóa dữ liệu thất bại!");
+                        }
+                        conn.Close();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
+                }
+            }
+            else
+            {
+                return;
+            }
+        }
     }
 }

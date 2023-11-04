@@ -20,14 +20,14 @@ namespace WinFormsApp1
 
         private void button3_Click(object sender, EventArgs e)
         {
-            orders chg = new orders();
+            Import chg = new Import();
             chg.Show();
             this.Hide();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            DetailOrder chg = new DetailOrder();
+            DetailImport chg = new DetailImport();
             chg.Show();
             this.Hide();
         }
@@ -41,14 +41,12 @@ namespace WinFormsApp1
 
         private void button4_Click(object sender, EventArgs e)
         {
-            importBill chg = new importBill();
-            chg.Show();
-            this.Hide();
+
         }
 
         private void button6_Click(object sender, EventArgs e)
         {
-            DetailIp chg = new DetailIp();
+            AddPr chg = new AddPr();
             chg.Show();
             this.Hide();
         }
@@ -81,6 +79,13 @@ namespace WinFormsApp1
             dialog = MessageBox.Show("Bạn có muốn thoát hay không", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (dialog == DialogResult.Yes)
                 Application.Exit();
+        }
+
+        private void button4_Click_1(object sender, EventArgs e)
+        {
+            AddPr chg = new AddPr();
+            chg.Show();
+            this.Hide();
         }
     }
 }

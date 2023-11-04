@@ -33,26 +33,24 @@
             button9 = new Button();
             button8 = new Button();
             button7 = new Button();
-            button6 = new Button();
             button5 = new Button();
-            button4 = new Button();
             button2 = new Button();
             button1 = new Button();
             button3 = new Button();
             label1 = new Label();
+            button4 = new Button();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
             // panel1
             // 
             panel1.BackColor = Color.LightCyan;
+            panel1.Controls.Add(button4);
             panel1.Controls.Add(label2);
             panel1.Controls.Add(button9);
             panel1.Controls.Add(button8);
             panel1.Controls.Add(button7);
-            panel1.Controls.Add(button6);
             panel1.Controls.Add(button5);
-            panel1.Controls.Add(button4);
             panel1.Controls.Add(button2);
             panel1.Controls.Add(button1);
             panel1.Controls.Add(button3);
@@ -83,7 +81,7 @@
             button9.Cursor = Cursors.Hand;
             button9.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point);
             button9.ForeColor = Color.DarkMagenta;
-            button9.Location = new Point(495, 253);
+            button9.Location = new Point(325, 253);
             button9.Margin = new Padding(3, 2, 3, 2);
             button9.Name = "button9";
             button9.Size = new Size(108, 26);
@@ -125,29 +123,13 @@
             button7.UseVisualStyleBackColor = false;
             button7.Click += button7_Click;
             // 
-            // button6
-            // 
-            button6.BackColor = Color.Lavender;
-            button6.Cursor = Cursors.Hand;
-            button6.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            button6.ForeColor = Color.DarkMagenta;
-            button6.Location = new Point(325, 181);
-            button6.Margin = new Padding(3, 2, 3, 2);
-            button6.Name = "button6";
-            button6.Size = new Size(108, 26);
-            button6.TabIndex = 26;
-            button6.Text = "DetailImport";
-            button6.TextAlign = ContentAlignment.TopCenter;
-            button6.UseVisualStyleBackColor = false;
-            button6.Click += button6_Click;
-            // 
             // button5
             // 
             button5.BackColor = Color.Lavender;
             button5.Cursor = Cursors.Hand;
             button5.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point);
             button5.ForeColor = Color.DarkMagenta;
-            button5.Location = new Point(325, 253);
+            button5.Location = new Point(325, 181);
             button5.Margin = new Padding(3, 2, 3, 2);
             button5.Name = "button5";
             button5.Size = new Size(108, 26);
@@ -156,22 +138,6 @@
             button5.TextAlign = ContentAlignment.TopCenter;
             button5.UseVisualStyleBackColor = false;
             button5.Click += button5_Click;
-            // 
-            // button4
-            // 
-            button4.BackColor = Color.Lavender;
-            button4.Cursor = Cursors.Hand;
-            button4.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            button4.ForeColor = Color.DarkMagenta;
-            button4.Location = new Point(325, 120);
-            button4.Margin = new Padding(3, 2, 3, 2);
-            button4.Name = "button4";
-            button4.Size = new Size(108, 26);
-            button4.TabIndex = 24;
-            button4.Text = "Import";
-            button4.TextAlign = ContentAlignment.TopCenter;
-            button4.UseVisualStyleBackColor = false;
-            button4.Click += button4_Click;
             // 
             // button2
             // 
@@ -200,7 +166,7 @@
             button1.Name = "button1";
             button1.Size = new Size(108, 26);
             button1.TabIndex = 22;
-            button1.Text = "DetailOrder";
+            button1.Text = "DetailImport";
             button1.TextAlign = ContentAlignment.TopCenter;
             button1.UseVisualStyleBackColor = false;
             button1.Click += button1_Click;
@@ -216,7 +182,7 @@
             button3.Name = "button3";
             button3.Size = new Size(108, 26);
             button3.TabIndex = 21;
-            button3.Text = "Orders";
+            button3.Text = "Import";
             button3.TextAlign = ContentAlignment.TopCenter;
             button3.UseVisualStyleBackColor = false;
             button3.Click += button3_Click;
@@ -234,6 +200,22 @@
             label1.TabIndex = 0;
             label1.Text = "ĐƠN BÁN HÀNG";
             label1.TextAlign = ContentAlignment.TopCenter;
+            // 
+            // button4
+            // 
+            button4.BackColor = Color.Lavender;
+            button4.Cursor = Cursors.Hand;
+            button4.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            button4.ForeColor = Color.DarkMagenta;
+            button4.Location = new Point(325, 120);
+            button4.Margin = new Padding(3, 2, 3, 2);
+            button4.Name = "button4";
+            button4.Size = new Size(108, 26);
+            button4.TabIndex = 31;
+            button4.Text = "AddPr";
+            button4.TextAlign = ContentAlignment.TopCenter;
+            button4.UseVisualStyleBackColor = false;
+            button4.Click += button4_Click_1;
             // 
             // Menu
             // 
@@ -256,11 +238,10 @@
         private Button button9;
         private Button button8;
         private Button button7;
-        private Button button6;
         private Button button5;
-        private Button button4;
         private Button button2;
         private Button button1;
         private Label label2;
+        private Button button4;
     }
 }

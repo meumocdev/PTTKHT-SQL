@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\sour\\WinFormsApp1\\WinFormsApp1.csproj": {}
+    "C:\\Users\\vyna1\\source\\repos\\PTTKHT-SQL\\WinFormsApp1\\WinFormsApp1.csproj": {}
   },
   "projects": {
-    "D:\\sour\\WinFormsApp1\\WinFormsApp1.csproj": {
+    "C:\\Users\\vyna1\\source\\repos\\PTTKHT-SQL\\WinFormsApp1\\WinFormsApp1.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\sour\\WinFormsApp1\\WinFormsApp1.csproj",
+        "projectUniqueName": "C:\\Users\\vyna1\\source\\repos\\PTTKHT-SQL\\WinFormsApp1\\WinFormsApp1.csproj",
         "projectName": "WinFormsApp1",
-        "projectPath": "D:\\sour\\WinFormsApp1\\WinFormsApp1.csproj",
+        "projectPath": "C:\\Users\\vyna1\\source\\repos\\PTTKHT-SQL\\WinFormsApp1\\WinFormsApp1.csproj",
         "packagesPath": "C:\\Users\\vyna1\\.nuget\\packages\\",
-        "outputPath": "D:\\sour\\WinFormsApp1\\obj\\",
+        "outputPath": "C:\\Users\\vyna1\\source\\repos\\PTTKHT-SQL\\WinFormsApp1\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "D:\\Share\\NuGetPackages"

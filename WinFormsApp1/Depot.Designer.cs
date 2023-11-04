@@ -41,6 +41,7 @@
             label4 = new Label();
             dataGridView1 = new DataGridView();
             label1 = new Label();
+            button3 = new Button();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
@@ -62,6 +63,7 @@
             // panel2
             // 
             panel2.BorderStyle = BorderStyle.FixedSingle;
+            panel2.Controls.Add(button3);
             panel2.Controls.Add(button1);
             panel2.Controls.Add(button2);
             panel2.Controls.Add(button4);
@@ -205,6 +207,22 @@
             label1.TextAlign = ContentAlignment.MiddleCenter;
             label1.Click += label1_Click;
             // 
+            // button3
+            // 
+            button3.BackColor = Color.Lavender;
+            button3.Cursor = Cursors.Hand;
+            button3.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            button3.ForeColor = Color.DarkMagenta;
+            button3.Location = new Point(514, 22);
+            button3.Margin = new Padding(3, 2, 3, 2);
+            button3.Name = "button3";
+            button3.Size = new Size(107, 28);
+            button3.TabIndex = 32;
+            button3.Text = "DELETE";
+            button3.TextAlign = ContentAlignment.TopCenter;
+            button3.UseVisualStyleBackColor = false;
+            button3.Click += button3_Click_1;
+            // 
             // Depot
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -237,5 +255,6 @@
         private ComboBox comboBox1;
         private Button button2;
         private Button button1;
+        private Button button3;
     }
 }

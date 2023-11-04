@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "7+EPw+thocDrM8MZlqlnSb6b9clRXrRKWtdEjFYhEQrb4CdCmmeVLROW8GcOA0b/oWGJA/UgKMuHI299kzP3Zw==",
+  "dgSpecHash": "/LBsycWIJX+bGB7SmTNvmrCoGwHuiVmYne8F6MFezW82GCoQpio+0rY+si6NT3dlQCEtB7P7p/Vj2SZvwhskTg==",
   "success": true,
-  "projectFilePath": "D:\\sour\\WinFormsApp1\\WinFormsApp1.csproj",
+  "projectFilePath": "C:\\Users\\vyna1\\source\\repos\\PTTKHT-SQL\\WinFormsApp1\\WinFormsApp1.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\vyna1\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",
     "C:\\Users\\vyna1\\.nuget\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",

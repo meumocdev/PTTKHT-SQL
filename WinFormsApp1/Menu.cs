@@ -1,7 +1,9 @@
-﻿using System;
+﻿using Microsoft.VisualBasic.ApplicationServices;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -20,6 +22,7 @@ namespace WinFormsApp1
 
         private void button3_Click(object sender, EventArgs e)
         {
+
             Import chg = new Import();
             chg.Show();
             this.Hide();
@@ -56,6 +59,12 @@ namespace WinFormsApp1
             Login chg = new Login();
             chg.Show();
             this.Hide();
+
+
+            Close();
+            User.Logout();
+
+            
         }
 
         private void button7_Click(object sender, EventArgs e)
@@ -63,7 +72,9 @@ namespace WinFormsApp1
             Sell chg = new Sell();
             chg.Show();
             this.Hide();
+
         }
+
 
         private void button8_Click(object sender, EventArgs e)
         {
@@ -86,6 +97,41 @@ namespace WinFormsApp1
             AddPr chg = new AddPr();
             chg.Show();
             this.Hide();
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void Menu_Load(object sender, EventArgs e)
+        {
+            if (User.CurrentUser.IsImport)
+            {
+                button7.Enabled = false;
+                button8.Enabled = false;
+            }
+
+            if (User.CurrentUser.IsSale)
+            {
+                button3.Enabled = false;
+                button1.Enabled = false;
+            }
+
+
+            if (User.CurrentUser.IsAdmin)
+                lbl_Role.Text = "Current User: Admin";
+            else if (User.CurrentUser.IsSale)
+                lbl_Role.Text = "Current User: Sale";
+            else if (User.CurrentUser.IsImport)
+                lbl_Role.Text = "Current User: Import";
+        }
+
+        
+
+        private void lbl_Role_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

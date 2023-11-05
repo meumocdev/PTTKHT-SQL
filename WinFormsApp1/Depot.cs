@@ -89,6 +89,11 @@ namespace WinFormsApp1
             adp2.Fill(data2);
             dataGridView1.DataSource = data2;
 
+
+            // Check quyền của người dùng
+            if (User.CurrentUser.IsImport || User.CurrentUser.IsSale)
+                button3.Enabled = false;
+
         }
 
         private void button2_Click_1(object sender, EventArgs e)

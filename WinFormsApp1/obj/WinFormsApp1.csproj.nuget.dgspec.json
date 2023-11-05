@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\vyna1\\source\\repos\\PTTKHT-SQL\\WinFormsApp1\\WinFormsApp1.csproj": {}
+    "C:\\Users\\Admin\\OneDrive\\Máy tính\\Stuff\\PTTKHT-SQL\\WinFormsApp1\\WinFormsApp1.csproj": {}
   },
   "projects": {
-    "C:\\Users\\vyna1\\source\\repos\\PTTKHT-SQL\\WinFormsApp1\\WinFormsApp1.csproj": {
+    "C:\\Users\\Admin\\OneDrive\\Máy tính\\Stuff\\PTTKHT-SQL\\WinFormsApp1\\WinFormsApp1.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\vyna1\\source\\repos\\PTTKHT-SQL\\WinFormsApp1\\WinFormsApp1.csproj",
+        "projectUniqueName": "C:\\Users\\Admin\\OneDrive\\Máy tính\\Stuff\\PTTKHT-SQL\\WinFormsApp1\\WinFormsApp1.csproj",
         "projectName": "WinFormsApp1",
-        "projectPath": "C:\\Users\\vyna1\\source\\repos\\PTTKHT-SQL\\WinFormsApp1\\WinFormsApp1.csproj",
-        "packagesPath": "C:\\Users\\vyna1\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\vyna1\\source\\repos\\PTTKHT-SQL\\WinFormsApp1\\obj\\",
+        "projectPath": "C:\\Users\\Admin\\OneDrive\\Máy tính\\Stuff\\PTTKHT-SQL\\WinFormsApp1\\WinFormsApp1.csproj",
+        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Admin\\OneDrive\\Máy tính\\Stuff\\PTTKHT-SQL\\WinFormsApp1\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "D:\\Share\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\vyna1\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -26,7 +22,6 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {

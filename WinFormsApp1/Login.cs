@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace WinFormsApp1
 {
@@ -66,29 +67,65 @@ namespace WinFormsApp1
 
         private void button3_Click(object sender, EventArgs e)
         {
-            ConnectData c = new ConnectData();
-            c.connect();
-            string query = "Select * From account where username = '" + textBox1.Text +
-                "' and password = '" + textBox4.Text + "'";
-            SqlCommand cmd = new SqlCommand(query, c.conn);
-            cmd.Connection = c.conn;
-            SqlDataReader reader = cmd.ExecuteReader();
-            if (reader.Read() == false)
+            if (textBox1.Text == "Admin" && textBox4.Text == "123456789")
             {
-                MessageBox.Show("Đăng nhập không thành công");
-                textBox1.Text = "";
-                textBox4.Text = "";
-                textBox1.Focus();
+                ConnectData c = new ConnectData();
+                c.connect();
+
+                // Check để xem có đúng là user mong muốn hay không
+                string query = "SELECT SYSTEM_USER;";
+                SqlCommand command = new SqlCommand(query, c.conn);
+                string currentUser = (string)command.ExecuteScalar();
+                MessageBox.Show(string.Format("Current User: {0}", currentUser));
+
+                User.CurrentUser.IsAdmin = textBox1.Text == "Admin";
+
+                Menu menu = new Menu();
+                this.Hide();
+                menu.Show();
+
+            }
+
+            else if (textBox1.Text == "Sale" && textBox4.Text == "123456789")
+            {
+                ConnectData c = new ConnectData();
+                c.connectSale();
+
+                // Check để xem có đúng là user mong muốn hay không
+                string query = "SELECT SYSTEM_USER;";
+                SqlCommand command = new SqlCommand(query, c.conn);
+                string currentUser = (string)command.ExecuteScalar();
+                MessageBox.Show(string.Format("Current User: {0}", currentUser));
+
+                User.CurrentUser.IsSale = textBox1.Text == "Sale";
+
+                Menu menu = new Menu();
+                this.Hide();
+                menu.Show();
+            }
+
+            else if (textBox1.Text == "Import" && textBox4.Text == "123456789")
+            {
+                ConnectData c = new ConnectData();
+                c.connectImport();
+
+                // Check để xem có đúng là user mong muốn hay không
+                string query = "SELECT SYSTEM_USER;";
+                SqlCommand command = new SqlCommand(query, c.conn);
+                string currentUser = (string)command.ExecuteScalar();
+                MessageBox.Show(string.Format("Current User: {0}", currentUser));
+
+                User.CurrentUser.IsImport = textBox1.Text == "Import";
+
+                Menu menu = new Menu();
+                this.Hide();
+                menu.Show();
             }
             else
-            {
-                Menu mn = new Menu();
-                mn.Show();
-                this.Hide();
-            }
- 
-        }
+                MessageBox.Show("Đăng nhập không thành công");
 
+
+        }
 
 
         private void button2_Leave(object sender, EventArgs e)

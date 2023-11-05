@@ -82,10 +82,9 @@
             panel1.Controls.Add(button6);
             panel1.Controls.Add(panel2);
             panel1.Controls.Add(label1);
-            panel1.Location = new Point(-3, -2);
-            panel1.Margin = new Padding(3, 2, 3, 2);
+            panel1.Location = new Point(-3, -3);
             panel1.Name = "panel1";
-            panel1.Size = new Size(945, 500);
+            panel1.Size = new Size(1080, 667);
             panel1.TabIndex = 2;
             // 
             // label10
@@ -93,19 +92,19 @@
             label10.AutoSize = true;
             label10.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point);
             label10.ForeColor = Color.DarkMagenta;
-            label10.Location = new Point(626, 44);
+            label10.Location = new Point(715, 59);
             label10.Name = "label10";
-            label10.Size = new Size(56, 15);
+            label10.Size = new Size(70, 18);
             label10.TabIndex = 27;
             label10.Text = "SEARCH";
             // 
             // textBox1
             // 
             textBox1.BorderStyle = BorderStyle.FixedSingle;
-            textBox1.Location = new Point(701, 41);
-            textBox1.Margin = new Padding(2);
+            textBox1.Location = new Point(801, 55);
+            textBox1.Margin = new Padding(2, 3, 2, 3);
             textBox1.Name = "textBox1";
-            textBox1.Size = new Size(230, 23);
+            textBox1.Size = new Size(263, 27);
             textBox1.TabIndex = 26;
             textBox1.TextChanged += textBox1_TextChanged;
             // 
@@ -132,8 +131,7 @@
             dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
             dataGridView2.DefaultCellStyle = dataGridViewCellStyle2;
             dataGridView2.GridColor = Color.Thistle;
-            dataGridView2.Location = new Point(72, 85);
-            dataGridView2.Margin = new Padding(3, 2, 3, 2);
+            dataGridView2.Location = new Point(82, 113);
             dataGridView2.Name = "dataGridView2";
             dataGridView2.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
@@ -151,7 +149,7 @@
             dataGridViewCellStyle4.SelectionForeColor = Color.DarkMagenta;
             dataGridView2.RowsDefaultCellStyle = dataGridViewCellStyle4;
             dataGridView2.RowTemplate.Height = 24;
-            dataGridView2.Size = new Size(802, 231);
+            dataGridView2.Size = new Size(917, 308);
             dataGridView2.TabIndex = 25;
             dataGridView2.CellClick += dataGridView2_CellClick;
             // 
@@ -161,10 +159,9 @@
             button5.Cursor = Cursors.Hand;
             button5.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point);
             button5.ForeColor = Color.DarkMagenta;
-            button5.Location = new Point(795, 430);
-            button5.Margin = new Padding(3, 2, 3, 2);
+            button5.Location = new Point(909, 573);
             button5.Name = "button5";
-            button5.Size = new Size(79, 29);
+            button5.Size = new Size(90, 39);
             button5.TabIndex = 22;
             button5.Text = "EXIT";
             button5.TextAlign = ContentAlignment.TopCenter;
@@ -177,10 +174,9 @@
             button7.Cursor = Cursors.Hand;
             button7.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point);
             button7.ForeColor = Color.DarkMagenta;
-            button7.Location = new Point(795, 336);
-            button7.Margin = new Padding(3, 2, 3, 2);
+            button7.Location = new Point(909, 448);
             button7.Name = "button7";
-            button7.Size = new Size(79, 31);
+            button7.Size = new Size(90, 41);
             button7.TabIndex = 24;
             button7.Text = "INSTORAGE";
             button7.TextAlign = ContentAlignment.TopCenter;
@@ -193,10 +189,9 @@
             button6.Cursor = Cursors.Hand;
             button6.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point);
             button6.ForeColor = Color.DarkMagenta;
-            button6.Location = new Point(795, 381);
-            button6.Margin = new Padding(3, 2, 3, 2);
+            button6.Location = new Point(909, 508);
             button6.Name = "button6";
-            button6.Size = new Size(79, 31);
+            button6.Size = new Size(90, 41);
             button6.TabIndex = 23;
             button6.Text = "MENU";
             button6.TextAlign = ContentAlignment.TopCenter;
@@ -218,10 +213,9 @@
             panel2.Controls.Add(button1);
             panel2.Controls.Add(button3);
             panel2.Controls.Add(button2);
-            panel2.Location = new Point(72, 331);
-            panel2.Margin = new Padding(3, 2, 3, 2);
+            panel2.Location = new Point(82, 441);
             panel2.Name = "panel2";
-            panel2.Size = new Size(684, 152);
+            panel2.Size = new Size(781, 202);
             panel2.TabIndex = 18;
             // 
             // panel3
@@ -242,17 +236,15 @@
             panel3.Controls.Add(button8);
             panel3.Controls.Add(update);
             panel3.Location = new Point(-1, -1);
-            panel3.Margin = new Padding(3, 2, 3, 2);
             panel3.Name = "panel3";
-            panel3.Size = new Size(684, 152);
+            panel3.Size = new Size(781, 202);
             panel3.TabIndex = 30;
             // 
             // ExportPriceItem
             // 
-            ExportPriceItem.Location = new Point(395, 100);
-            ExportPriceItem.Margin = new Padding(3, 2, 3, 2);
+            ExportPriceItem.Location = new Point(451, 133);
             ExportPriceItem.Name = "ExportPriceItem";
-            ExportPriceItem.Size = new Size(167, 23);
+            ExportPriceItem.Size = new Size(190, 27);
             ExportPriceItem.TabIndex = 35;
             ExportPriceItem.TextChanged += ExportPriceItem_TextChanged;
             // 
@@ -261,24 +253,26 @@
             label11.AutoSize = true;
             label11.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point);
             label11.ForeColor = Color.DarkMagenta;
-            label11.Location = new Point(285, 102);
+            label11.Location = new Point(326, 136);
             label11.Name = "label11";
-            label11.Size = new Size(94, 15);
+            label11.Size = new Size(113, 18);
             label11.TabIndex = 34;
             label11.Text = "ExportPriceItem";
             // 
             // ProductName
             // 
-            ProductName.Location = new Point(19, 90);
+            ProductName.Location = new Point(22, 120);
+            ProductName.Margin = new Padding(3, 4, 3, 4);
             ProductName.Name = "ProductName";
-            ProductName.Size = new Size(236, 23);
+            ProductName.Size = new Size(269, 27);
             ProductName.TabIndex = 33;
             // 
             // ProductID
             // 
-            ProductID.Location = new Point(19, 35);
+            ProductID.Location = new Point(22, 47);
+            ProductID.Margin = new Padding(3, 4, 3, 4);
             ProductID.Name = "ProductID";
-            ProductID.Size = new Size(195, 23);
+            ProductID.Size = new Size(222, 27);
             ProductID.TabIndex = 32;
             ProductID.TextChanged += ProductID_TextChanged;
             // 
@@ -288,10 +282,9 @@
             reset.Cursor = Cursors.Hand;
             reset.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point);
             reset.ForeColor = Color.DarkMagenta;
-            reset.Location = new Point(581, 102);
-            reset.Margin = new Padding(3, 2, 3, 2);
+            reset.Location = new Point(664, 136);
             reset.Name = "reset";
-            reset.Size = new Size(66, 29);
+            reset.Size = new Size(75, 39);
             reset.TabIndex = 31;
             reset.Text = "RESET";
             reset.TextAlign = ContentAlignment.TopCenter;
@@ -300,10 +293,9 @@
             // 
             // ImportPriceItem
             // 
-            ImportPriceItem.Location = new Point(395, 57);
-            ImportPriceItem.Margin = new Padding(3, 2, 3, 2);
+            ImportPriceItem.Location = new Point(451, 76);
             ImportPriceItem.Name = "ImportPriceItem";
-            ImportPriceItem.Size = new Size(167, 23);
+            ImportPriceItem.Size = new Size(190, 27);
             ImportPriceItem.TabIndex = 30;
             // 
             // label6
@@ -311,18 +303,17 @@
             label6.AutoSize = true;
             label6.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point);
             label6.ForeColor = Color.DarkMagenta;
-            label6.Location = new Point(285, 65);
+            label6.Location = new Point(326, 87);
             label6.Name = "label6";
-            label6.Size = new Size(94, 15);
+            label6.Size = new Size(112, 18);
             label6.TabIndex = 29;
             label6.Text = "ImportPriceItem";
             // 
             // Currency
             // 
-            Currency.Location = new Point(395, 13);
-            Currency.Margin = new Padding(3, 2, 3, 2);
+            Currency.Location = new Point(451, 17);
             Currency.Name = "Currency";
-            Currency.Size = new Size(144, 23);
+            Currency.Size = new Size(164, 27);
             Currency.TabIndex = 28;
             // 
             // label7
@@ -330,9 +321,9 @@
             label7.AutoSize = true;
             label7.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point);
             label7.ForeColor = Color.DarkMagenta;
-            label7.Location = new Point(285, 20);
+            label7.Location = new Point(326, 27);
             label7.Name = "label7";
-            label7.Size = new Size(55, 15);
+            label7.Size = new Size(68, 18);
             label7.TabIndex = 27;
             label7.Text = "Currency";
             // 
@@ -341,9 +332,9 @@
             label8.AutoSize = true;
             label8.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point);
             label8.ForeColor = Color.DarkMagenta;
-            label8.Location = new Point(19, 65);
+            label8.Location = new Point(22, 87);
             label8.Name = "label8";
-            label8.Size = new Size(83, 15);
+            label8.Size = new Size(100, 18);
             label8.TabIndex = 26;
             label8.Text = "ProductName";
             // 
@@ -352,9 +343,9 @@
             label9.AutoSize = true;
             label9.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point);
             label9.ForeColor = Color.DarkMagenta;
-            label9.Location = new Point(19, 12);
+            label9.Location = new Point(22, 16);
             label9.Name = "label9";
-            label9.Size = new Size(61, 15);
+            label9.Size = new Size(74, 18);
             label9.TabIndex = 2;
             label9.Text = "ProductID";
             // 
@@ -364,10 +355,9 @@
             button8.Cursor = Cursors.Hand;
             button8.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point);
             button8.ForeColor = Color.DarkMagenta;
-            button8.Location = new Point(581, 13);
-            button8.Margin = new Padding(3, 2, 3, 2);
+            button8.Location = new Point(664, 17);
             button8.Name = "button8";
-            button8.Size = new Size(66, 28);
+            button8.Size = new Size(75, 37);
             button8.TabIndex = 19;
             button8.Text = "INSERT";
             button8.TextAlign = ContentAlignment.TopCenter;
@@ -380,10 +370,9 @@
             update.Cursor = Cursors.Hand;
             update.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point);
             update.ForeColor = Color.DarkMagenta;
-            update.Location = new Point(581, 60);
-            update.Margin = new Padding(3, 2, 3, 2);
+            update.Location = new Point(664, 80);
             update.Name = "update";
-            update.Size = new Size(66, 28);
+            update.Size = new Size(75, 37);
             update.TabIndex = 21;
             update.Text = "UPDATE";
             update.TextAlign = ContentAlignment.TopCenter;
@@ -395,18 +384,17 @@
             label5.AutoSize = true;
             label5.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point);
             label5.ForeColor = Color.DarkMagenta;
-            label5.Location = new Point(328, 74);
+            label5.Location = new Point(375, 99);
             label5.Name = "label5";
-            label5.Size = new Size(71, 15);
+            label5.Size = new Size(83, 18);
             label5.TabIndex = 29;
             label5.Text = "ImportBillID";
             // 
             // textBox2
             // 
-            textBox2.Location = new Point(328, 40);
-            textBox2.Margin = new Padding(3, 2, 3, 2);
+            textBox2.Location = new Point(375, 53);
             textBox2.Name = "textBox2";
-            textBox2.Size = new Size(167, 23);
+            textBox2.Size = new Size(190, 27);
             textBox2.TabIndex = 28;
             // 
             // label4
@@ -414,9 +402,9 @@
             label4.AutoSize = true;
             label4.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point);
             label4.ForeColor = Color.DarkMagenta;
-            label4.Location = new Point(328, 20);
+            label4.Location = new Point(375, 27);
             label4.Name = "label4";
-            label4.Size = new Size(71, 15);
+            label4.Size = new Size(83, 18);
             label4.TabIndex = 27;
             label4.Text = "ImportBillID";
             // 
@@ -425,9 +413,9 @@
             label2.AutoSize = true;
             label2.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point);
             label2.ForeColor = Color.DarkMagenta;
-            label2.Location = new Point(23, 74);
+            label2.Location = new Point(26, 99);
             label2.Name = "label2";
-            label2.Size = new Size(61, 15);
+            label2.Size = new Size(74, 18);
             label2.TabIndex = 26;
             label2.Text = "ProductID";
             // 
@@ -437,10 +425,9 @@
             shippmentid.ForeColor = Color.DarkMagenta;
             shippmentid.FormattingEnabled = true;
             shippmentid.Items.AddRange(new object[] { "DD01", "DD02", "VD02", "TV14", "TV29" });
-            shippmentid.Location = new Point(23, 102);
-            shippmentid.Margin = new Padding(3, 2, 3, 2);
+            shippmentid.Location = new Point(26, 136);
             shippmentid.Name = "shippmentid";
-            shippmentid.Size = new Size(238, 23);
+            shippmentid.Size = new Size(271, 26);
             shippmentid.TabIndex = 25;
             shippmentid.Text = "ProductID";
             // 
@@ -449,9 +436,9 @@
             label3.AutoSize = true;
             label3.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point);
             label3.ForeColor = Color.DarkMagenta;
-            label3.Location = new Point(23, 20);
+            label3.Location = new Point(26, 27);
             label3.Name = "label3";
-            label3.Size = new Size(71, 15);
+            label3.Size = new Size(83, 18);
             label3.TabIndex = 2;
             label3.Text = "ImportBillID";
             // 
@@ -461,10 +448,9 @@
             madon.ForeColor = Color.DarkMagenta;
             madon.FormattingEnabled = true;
             madon.Items.AddRange(new object[] { "N001", "N002", "N003", "N004" });
-            madon.Location = new Point(23, 40);
-            madon.Margin = new Padding(3, 2, 3, 2);
+            madon.Location = new Point(26, 53);
             madon.Name = "madon";
-            madon.Size = new Size(238, 23);
+            madon.Size = new Size(271, 26);
             madon.TabIndex = 3;
             madon.Text = "ImportBillID";
             // 
@@ -474,10 +460,9 @@
             button1.Cursor = Cursors.Hand;
             button1.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point);
             button1.ForeColor = Color.DarkMagenta;
-            button1.Location = new Point(531, 20);
-            button1.Margin = new Padding(3, 2, 3, 2);
+            button1.Location = new Point(607, 27);
             button1.Name = "button1";
-            button1.Size = new Size(66, 21);
+            button1.Size = new Size(75, 28);
             button1.TabIndex = 19;
             button1.Text = "INSERT";
             button1.TextAlign = ContentAlignment.TopCenter;
@@ -490,10 +475,9 @@
             button3.Cursor = Cursors.Hand;
             button3.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point);
             button3.ForeColor = Color.DarkMagenta;
-            button3.Location = new Point(531, 67);
-            button3.Margin = new Padding(3, 2, 3, 2);
+            button3.Location = new Point(607, 89);
             button3.Name = "button3";
-            button3.Size = new Size(66, 21);
+            button3.Size = new Size(75, 28);
             button3.TabIndex = 21;
             button3.Text = "UPDATE";
             button3.TextAlign = ContentAlignment.TopCenter;
@@ -505,10 +489,9 @@
             button2.Cursor = Cursors.Hand;
             button2.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point);
             button2.ForeColor = Color.DarkMagenta;
-            button2.Location = new Point(531, 102);
-            button2.Margin = new Padding(3, 2, 3, 2);
+            button2.Location = new Point(607, 136);
             button2.Name = "button2";
-            button2.Size = new Size(66, 21);
+            button2.Size = new Size(75, 28);
             button2.TabIndex = 20;
             button2.Text = "DELETE";
             button2.TextAlign = ContentAlignment.TopCenter;
@@ -522,24 +505,25 @@
             label1.ForeColor = Color.DarkMagenta;
             label1.Location = new Point(0, 0);
             label1.Name = "label1";
-            label1.Size = new Size(945, 40);
+            label1.Size = new Size(1080, 53);
             label1.TabIndex = 0;
             label1.Text = "ADD PRODUCTS";
             label1.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // AddPr
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(937, 492);
+            ClientSize = new Size(1071, 656);
             Controls.Add(panel1);
-            Margin = new Padding(4);
+            Margin = new Padding(5, 5, 5, 5);
             MaximizeBox = false;
             MinimizeBox = false;
             Name = "AddPr";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Form2";
             FormClosing += DetailIp_FormClosing;
+            Load += AddPr_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView2).EndInit();

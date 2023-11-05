@@ -20,12 +20,31 @@ namespace WinFormsApp1
   
   
         }
+
+        public void connectImport()
+        {
+            string connectString = @"Data Source =localhost; Initial Catalog = Storage1; User ID = Import ; Password = 123456789; TrustServerCertificate=True";
+            conn = new SqlConnection(connectString);
+            conn.Open();
+        }
+
+        public void connectSale()
+        {
+            string connectString = @"Data Source =localhost; Initial Catalog = Storage1; User ID = Sale ; Password = 123456789; TrustServerCertificate=True";
+            conn = new SqlConnection(connectString);
+            conn.Open();
+        }
+
+
         public void disconnect()
         {
             conn.Close();
             conn.Dispose();
             conn = null;
         }
+
+
+
     }
 }
 

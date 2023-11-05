@@ -45,7 +45,7 @@ namespace WinFormsApp1
                 {
                     try
                     {
-                        c.connect();
+                        c.connectSale();
                         string sql = "DELETE FROM DetailBillExport WHERE ExportBillID = @ExportBillID";
                         string sql2 = "DELETE FROM ExportBill WHERE ExportBillID = @ExportBillID";
                         SqlCommand cmd = new SqlCommand(sql, c.conn);
@@ -123,7 +123,7 @@ namespace WinFormsApp1
         ConnectData c = new ConnectData();
         private void DetailEp_Load(object sender, EventArgs e)
         {
-            c.connect();
+            c.connectSale();
             DataSet data = new DataSet();
             string query = "SELECT D.ExportBillID, E.ExportDate, SUM(D.PriceExport) AS TotalPriceExport FROM DetailBillExport AS D LEFT JOIN ExportBill AS E ON D.ExportBillID = E.ExportBillID GROUP BY D.ExportBillID, E.ExportDate";
             SqlCommand cmd = new SqlCommand(query, c.conn);
@@ -154,7 +154,7 @@ namespace WinFormsApp1
             {
                 try
                 {
-                    c.connect();
+                    c.connectSale();
                     string sql = "SELECT * FROM DetailBillExport WHERE ExportBillID = @ExportBillID";
                     SqlCommand cmd2 = new SqlCommand(sql, c.conn);
                     cmd2.Parameters.AddWithValue("@ExportBillID", exportBillID);
@@ -185,7 +185,7 @@ namespace WinFormsApp1
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            c.connect();
+            c.connectSale();
             DataSet data = new DataSet();
             string query = "SELECT D.ExportBillID, E.ExportDate, SUM(D.PriceExport) AS TotalPriceExport FROM DetailBillExport AS D LEFT JOIN ExportBill AS E ON D.ExportBillID = E.ExportBillID GROUP BY D.ExportBillID, E.ExportDate";
             SqlCommand cmd = new SqlCommand(query, c.conn);
@@ -195,21 +195,51 @@ namespace WinFormsApp1
             dataGridView1.DataSource = data.Tables[0];
         }
 
+        //private void button3_Click(object sender, EventArgs e)
+        //{
+        //    c.connect();
+        //    DataTable data4 = new DataTable();
+        //    string qt = dataGridView1.CurrentRow.Cells["AmountExport"].Value.ToString();
+        //    string id = dataGridView1.CurrentRow.Cells["ExportBillID"].Value.ToString();
+        //    string pr = dataGridView1.CurrentRow.Cells["ProductID"].Value.ToString();
+        //    string query4 = "UPDATE DetailBillExport SET AmountExport = @qt WHERE ExportBillID = @id AND ProductID = @pr";
+        //    SqlCommand cmd4 = new SqlCommand(query4, c.conn);
+        //    cmd4.Parameters.AddWithValue("@qt", qt);
+        //    cmd4.Parameters.AddWithValue("@id", id);
+        //    cmd4.Parameters.AddWithValue("@pr", pr);
+        //    cmd4.Connection = c.conn;
+        //    SqlDataAdapter adp4 = new SqlDataAdapter(cmd4);
+        //    cmd4.ExecuteNonQuery();
+        //    dataGridView1.Refresh();
+        //}
+
+
         private void button3_Click(object sender, EventArgs e)
         {
-            c.connect();
-            DataTable data4 = new DataTable();
+            c.connectSale();
+
             string qt = dataGridView1.CurrentRow.Cells["AmountExport"].Value.ToString();
             string id = dataGridView1.CurrentRow.Cells["ExportBillID"].Value.ToString();
             string pr = dataGridView1.CurrentRow.Cells["ProductID"].Value.ToString();
             string query4 = "UPDATE DetailBillExport SET AmountExport = @qt WHERE ExportBillID = @id AND ProductID = @pr";
-            SqlCommand cmd4 = new SqlCommand(query4, c.conn);
-            cmd4.Parameters.AddWithValue("@qt", qt);
-            cmd4.Parameters.AddWithValue("@id", id);
-            cmd4.Parameters.AddWithValue("@pr", pr);
-            cmd4.Connection = c.conn;
-            SqlDataAdapter adp4 = new SqlDataAdapter(cmd4);
-            cmd4.ExecuteNonQuery();
+
+            using (SqlCommand cmd4 = new SqlCommand(query4, c.conn))
+            {
+                cmd4.Parameters.AddWithValue("@qt", qt);
+                cmd4.Parameters.AddWithValue("@id", id);
+                cmd4.Parameters.AddWithValue("@pr", pr);
+
+                try
+                {
+                    cmd4.ExecuteNonQuery();
+                }
+                catch (Exception ex)
+                {
+                    // Handle any errors that occur during the execution of the SQL command.
+                    Console.WriteLine("Bạn chưa thay đổi");
+                }
+            }
+
             dataGridView1.Refresh();
         }
     }

@@ -97,7 +97,7 @@ namespace WinFormsApp1
 
         private void button6_Click(object sender, EventArgs e)
         {
-           Menu ad = new Menu();
+            Menu ad = new Menu();
             ad.Show();
             this.Hide();
         }
@@ -253,6 +253,15 @@ namespace WinFormsApp1
         private void ExportPriceItem_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void AddPr_Load(object sender, EventArgs e)
+        {
+            if (User.CurrentUser.IsImport || User.CurrentUser.IsSale)
+            {
+                button8.Enabled= false;
+                update.Enabled= false;
+            }
         }
     }
 }

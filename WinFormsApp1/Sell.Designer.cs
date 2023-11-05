@@ -75,9 +75,8 @@
             panel1.Controls.Add(dataGridView1);
             panel1.Controls.Add(label1);
             panel1.Location = new Point(3, 0);
-            panel1.Margin = new Padding(3, 2, 3, 2);
             panel1.Name = "panel1";
-            panel1.Size = new Size(953, 518);
+            panel1.Size = new Size(1089, 691);
             panel1.TabIndex = 1;
             // 
             // button7
@@ -86,10 +85,9 @@
             button7.Cursor = Cursors.Hand;
             button7.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point);
             button7.ForeColor = Color.DarkMagenta;
-            button7.Location = new Point(588, 426);
-            button7.Margin = new Padding(3, 2, 3, 2);
+            button7.Location = new Point(672, 568);
             button7.Name = "button7";
-            button7.Size = new Size(123, 40);
+            button7.Size = new Size(141, 53);
             button7.TabIndex = 27;
             button7.Text = "UPDATE";
             button7.TextAlign = ContentAlignment.TopCenter;
@@ -98,9 +96,10 @@
             // 
             // dateTimePicker1
             // 
-            dateTimePicker1.Location = new Point(658, 12);
+            dateTimePicker1.Location = new Point(752, 16);
+            dateTimePicker1.Margin = new Padding(3, 4, 3, 4);
             dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(200, 23);
+            dateTimePicker1.Size = new Size(228, 27);
             dateTimePicker1.TabIndex = 26;
             dateTimePicker1.ValueChanged += dateTimePicker1_ValueChanged;
             // 
@@ -110,10 +109,9 @@
             button2.Cursor = Cursors.Hand;
             button2.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point);
             button2.ForeColor = Color.DarkMagenta;
-            button2.Location = new Point(770, 426);
-            button2.Margin = new Padding(3, 2, 3, 2);
+            button2.Location = new Point(880, 568);
             button2.Name = "button2";
-            button2.Size = new Size(123, 40);
+            button2.Size = new Size(141, 53);
             button2.TabIndex = 24;
             button2.Text = "DELETE";
             button2.TextAlign = ContentAlignment.TopCenter;
@@ -126,10 +124,9 @@
             button5.Cursor = Cursors.Hand;
             button5.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point);
             button5.ForeColor = Color.DarkMagenta;
-            button5.Location = new Point(416, 426);
-            button5.Margin = new Padding(3, 2, 3, 2);
+            button5.Location = new Point(475, 568);
             button5.Name = "button5";
-            button5.Size = new Size(123, 40);
+            button5.Size = new Size(141, 53);
             button5.TabIndex = 23;
             button5.Text = "PRINT ";
             button5.TextAlign = ContentAlignment.TopCenter;
@@ -154,20 +151,18 @@
             panel2.Controls.Add(label5);
             panel2.Controls.Add(textBox2);
             panel2.Controls.Add(label6);
-            panel2.Location = new Point(17, 91);
-            panel2.Margin = new Padding(3, 2, 3, 2);
+            panel2.Location = new Point(19, 121);
             panel2.Name = "panel2";
-            panel2.Size = new Size(365, 319);
+            panel2.Size = new Size(417, 425);
             panel2.TabIndex = 18;
             // 
             // textBox3
             // 
             textBox3.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point);
             textBox3.ForeColor = Color.DarkMagenta;
-            textBox3.Location = new Point(122, 25);
-            textBox3.Margin = new Padding(3, 2, 3, 2);
+            textBox3.Location = new Point(139, 33);
             textBox3.Name = "textBox3";
-            textBox3.Size = new Size(238, 21);
+            textBox3.Size = new Size(271, 24);
             textBox3.TabIndex = 30;
             textBox3.TextChanged += textBox3_TextChanged;
             // 
@@ -176,9 +171,9 @@
             label2.AutoSize = true;
             label2.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point);
             label2.ForeColor = Color.DarkMagenta;
-            label2.Location = new Point(10, 28);
+            label2.Location = new Point(11, 37);
             label2.Name = "label2";
-            label2.Size = new Size(71, 15);
+            label2.Size = new Size(84, 18);
             label2.TabIndex = 29;
             label2.Text = "ExportBillID";
             // 
@@ -188,10 +183,9 @@
             button4.Cursor = Cursors.Hand;
             button4.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point);
             button4.ForeColor = Color.DarkMagenta;
-            button4.Location = new Point(63, 283);
-            button4.Margin = new Padding(3, 2, 3, 2);
+            button4.Location = new Point(72, 377);
             button4.Name = "button4";
-            button4.Size = new Size(84, 32);
+            button4.Size = new Size(96, 43);
             button4.TabIndex = 28;
             button4.Text = "RESET";
             button4.TextAlign = ContentAlignment.TopCenter;
@@ -204,10 +198,9 @@
             button1.Cursor = Cursors.Hand;
             button1.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point);
             button1.ForeColor = Color.DarkMagenta;
-            button1.Location = new Point(63, 238);
-            button1.Margin = new Padding(3, 2, 3, 2);
+            button1.Location = new Point(72, 317);
             button1.Name = "button1";
-            button1.Size = new Size(84, 32);
+            button1.Size = new Size(96, 43);
             button1.TabIndex = 27;
             button1.Text = "ADD";
             button1.TextAlign = ContentAlignment.TopCenter;
@@ -220,10 +213,9 @@
             button6.Cursor = Cursors.Hand;
             button6.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point);
             button6.ForeColor = Color.DarkMagenta;
-            button6.Location = new Point(220, 238);
-            button6.Margin = new Padding(3, 2, 3, 2);
+            button6.Location = new Point(251, 317);
             button6.Name = "button6";
-            button6.Size = new Size(84, 32);
+            button6.Size = new Size(96, 43);
             button6.TabIndex = 26;
             button6.Text = "MENU";
             button6.TextAlign = ContentAlignment.TopCenter;
@@ -236,10 +228,9 @@
             button3.Cursor = Cursors.Hand;
             button3.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point);
             button3.ForeColor = Color.DarkMagenta;
-            button3.Location = new Point(220, 283);
-            button3.Margin = new Padding(3, 2, 3, 2);
+            button3.Location = new Point(251, 377);
             button3.Name = "button3";
-            button3.Size = new Size(92, 32);
+            button3.Size = new Size(105, 43);
             button3.TabIndex = 25;
             button3.Text = "DETAILEP";
             button3.TextAlign = ContentAlignment.TopCenter;
@@ -252,10 +243,9 @@
             comboBox2.ForeColor = Color.DarkMagenta;
             comboBox2.FormattingEnabled = true;
             comboBox2.Items.AddRange(new object[] { "DD01", "DD02", "TL15", "TL90", "TV14", "TV21", "TV29", "VD01", "VD02" });
-            comboBox2.Location = new Point(122, 68);
-            comboBox2.Margin = new Padding(3, 2, 3, 2);
+            comboBox2.Location = new Point(139, 91);
             comboBox2.Name = "comboBox2";
-            comboBox2.Size = new Size(238, 23);
+            comboBox2.Size = new Size(271, 26);
             comboBox2.TabIndex = 24;
             comboBox2.SelectedIndexChanged += comboBox2_SelectedIndexChanged;
             // 
@@ -264,9 +254,9 @@
             label3.AutoSize = true;
             label3.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point);
             label3.ForeColor = Color.DarkMagenta;
-            label3.Location = new Point(10, 71);
+            label3.Location = new Point(11, 95);
             label3.Name = "label3";
-            label3.Size = new Size(61, 15);
+            label3.Size = new Size(74, 18);
             label3.TabIndex = 2;
             label3.Text = "ProductID";
             // 
@@ -276,10 +266,9 @@
             comboBox1.ForeColor = Color.DarkMagenta;
             comboBox1.FormattingEnabled = true;
             comboBox1.Items.AddRange(new object[] { "DD01", "DD02", "TL15", "TL90", "TV14", "TV21", "TV29", "VD01", "VD02" });
-            comboBox1.Location = new Point(122, 110);
-            comboBox1.Margin = new Padding(3, 2, 3, 2);
+            comboBox1.Location = new Point(139, 147);
             comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(238, 23);
+            comboBox1.Size = new Size(271, 26);
             comboBox1.TabIndex = 3;
             comboBox1.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
             // 
@@ -288,9 +277,9 @@
             label4.AutoSize = true;
             label4.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point);
             label4.ForeColor = Color.DarkMagenta;
-            label4.Location = new Point(10, 161);
+            label4.Location = new Point(11, 215);
             label4.Name = "label4";
-            label4.Size = new Size(84, 15);
+            label4.Size = new Size(102, 18);
             label4.TabIndex = 4;
             label4.Text = "AmountExport";
             // 
@@ -298,10 +287,9 @@
             // 
             textBox1.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point);
             textBox1.ForeColor = Color.DarkMagenta;
-            textBox1.Location = new Point(122, 158);
-            textBox1.Margin = new Padding(3, 2, 3, 2);
+            textBox1.Location = new Point(139, 211);
             textBox1.Name = "textBox1";
-            textBox1.Size = new Size(238, 21);
+            textBox1.Size = new Size(271, 24);
             textBox1.TabIndex = 5;
             // 
             // label5
@@ -309,9 +297,9 @@
             label5.AutoSize = true;
             label5.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point);
             label5.ForeColor = Color.DarkMagenta;
-            label5.Location = new Point(10, 199);
+            label5.Location = new Point(11, 265);
             label5.Name = "label5";
-            label5.Size = new Size(94, 15);
+            label5.Size = new Size(113, 18);
             label5.TabIndex = 7;
             label5.Text = "ExportPriceItem";
             // 
@@ -319,10 +307,9 @@
             // 
             textBox2.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point);
             textBox2.ForeColor = Color.DarkMagenta;
-            textBox2.Location = new Point(122, 196);
-            textBox2.Margin = new Padding(3, 2, 3, 2);
+            textBox2.Location = new Point(139, 261);
             textBox2.Name = "textBox2";
-            textBox2.Size = new Size(238, 21);
+            textBox2.Size = new Size(271, 24);
             textBox2.TabIndex = 8;
             textBox2.TextChanged += textBox2_TextChanged;
             // 
@@ -332,9 +319,9 @@
             label6.BackColor = Color.LightCyan;
             label6.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point);
             label6.ForeColor = Color.DarkMagenta;
-            label6.Location = new Point(10, 113);
+            label6.Location = new Point(11, 151);
             label6.Name = "label6";
-            label6.Size = new Size(83, 15);
+            label6.Size = new Size(100, 18);
             label6.TabIndex = 9;
             label6.Text = "ProductName";
             // 
@@ -344,9 +331,9 @@
             label7.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
             label7.ForeColor = Color.DarkMagenta;
             label7.ImageAlign = ContentAlignment.TopCenter;
-            label7.Location = new Point(579, 49);
+            label7.Location = new Point(662, 65);
             label7.Name = "label7";
-            label7.Size = new Size(66, 20);
+            label7.Size = new Size(82, 25);
             label7.TabIndex = 12;
             label7.Text = "DETAIL";
             label7.TextAlign = ContentAlignment.TopCenter;
@@ -374,8 +361,7 @@
             dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
             dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
             dataGridView1.GridColor = Color.Thistle;
-            dataGridView1.Location = new Point(392, 91);
-            dataGridView1.Margin = new Padding(3, 2, 3, 2);
+            dataGridView1.Location = new Point(448, 121);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
@@ -393,7 +379,7 @@
             dataGridViewCellStyle4.SelectionForeColor = Color.DarkMagenta;
             dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle4;
             dataGridView1.RowTemplate.Height = 24;
-            dataGridView1.Size = new Size(518, 319);
+            dataGridView1.Size = new Size(592, 425);
             dataGridView1.TabIndex = 11;
             dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             dataGridView1.RowsAdded += dataGridView1_RowsAdded;
@@ -405,9 +391,9 @@
             label1.Font = new Font("Microsoft Sans Serif", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
             label1.ForeColor = Color.DarkMagenta;
             label1.ImageAlign = ContentAlignment.TopCenter;
-            label1.Location = new Point(368, 9);
+            label1.Location = new Point(421, 12);
             label1.Name = "label1";
-            label1.Size = new Size(55, 24);
+            label1.Size = new Size(71, 29);
             label1.TabIndex = 0;
             label1.Text = "SELL";
             label1.TextAlign = ContentAlignment.TopCenter;
@@ -415,11 +401,11 @@
             // 
             // Sell
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(934, 519);
+            ClientSize = new Size(1067, 692);
             Controls.Add(panel1);
-            Margin = new Padding(4);
+            Margin = new Padding(5, 5, 5, 5);
             Name = "Sell";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Form2";

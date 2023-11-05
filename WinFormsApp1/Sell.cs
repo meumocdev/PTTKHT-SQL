@@ -59,7 +59,7 @@ namespace WinFormsApp1
         ConnectData c = new ConnectData();
         private void Sell_Load(object sender, EventArgs e)
         {
-            c.connect();
+            c.connectSale();
             DataTable data = new DataTable();
             string query = "Select * From PRODUCT";
             SqlCommand cmd = new SqlCommand(query, c.conn);
@@ -90,7 +90,7 @@ namespace WinFormsApp1
         }
         private void button1_Click(object sender, EventArgs e)
         {
-            c.connect();
+            c.connectSale();
             DataTable data = new DataTable();
             string query = "INSERT INTO DetailBillExport (ExportBillID, ProductID, AmountExport, ExportPriceItem, PriceExport) VALUES (@ExportBillID, @ProductID, @AmountExport, @ExportPriceItem)";
             string exportBillID = textBox3.Text;
@@ -147,7 +147,7 @@ namespace WinFormsApp1
 
         private void button2_Click(object sender, EventArgs e)
         {
-            c.connect();
+            c.connectSale();
             DataTable data4 = new DataTable();
             string id = dataGridView1.CurrentRow.Cells["ProductID"].Value.ToString();
             string exportBillID = textBox3.Text;
@@ -177,7 +177,7 @@ namespace WinFormsApp1
         }
         private void button5_Click(object sender, EventArgs e)
         {
-            c.connect();
+            c.connectSale();
             DataTable data = new DataTable();
             string query = "SELECT e.ExportBillID, e.ExportDate, d.ProductID, d.AmountExport, d.ExportPriceItem, d.PriceExport FROM ExportBill e INNER JOIN DetailBillExport d ON e.ExportBillID = d.ExportBillID";
             SqlCommand cmd = new SqlCommand(query, c.conn);
@@ -232,7 +232,7 @@ namespace WinFormsApp1
 
         private void button7_Click(object sender, EventArgs e)
         {
-            c.connect();
+            c.connectSale();
             DataTable data4 = new DataTable();
 
             string qt = dataGridView1.CurrentRow.Cells["AmountExport"].Value.ToString();

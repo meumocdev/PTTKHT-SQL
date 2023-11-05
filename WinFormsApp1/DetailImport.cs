@@ -172,7 +172,7 @@ namespace WinFormsApp1
 
         private void button7_Click(object sender, EventArgs e)
         {
-            c.connect();
+            c.connectImport();
             DataTable data = new DataTable();
             string query = "INSERT INTO DetailImport(ShippmentID,SupplierID,ProductID,AmountOrder, ImportPriceItem, PriceOrder) VALUES (@ShippmentID, @SupplierID,@ProductID, @AmountOrder, @ImportPriceItem)";
             string exportBillID = ShippmentID.Text;

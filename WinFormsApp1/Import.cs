@@ -146,7 +146,7 @@ namespace WinFormsApp1
                 {
                     try
                     {
-                        c.connect();
+                        c.connectImport();
                         string sql = "DELETE FROM Import WHERE ShippmentID = @ShippmentID";
                         SqlCommand cmd = new SqlCommand(sql, c.conn);
                         cmd.Parameters.AddWithValue("@ShippmentID", shippmentID);
@@ -216,7 +216,7 @@ namespace WinFormsApp1
             {
                 try
                 {
-                    c.connect();
+                    c.connectImport();
                     string sql = "SELECT * FROM DetailImport WHERE ShippmentID = @ShippmentID";
                     SqlCommand cmd2 = new SqlCommand(sql, c.conn);
                     cmd2.Parameters.AddWithValue("@ShippmentID", shippmentID);
